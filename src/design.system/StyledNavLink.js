@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
-const StyledNavLink = styled(Link)`
+const NavLinkPlato = styled(Link)`
 
     background-color: ${props => props.logout ? "red" : "var(--color)"};
     
     color: white;
     text-decoration: none;
+    padding: 0.25em 0.5em;
 `
 
-export default StyledNavLink
+export default NavLinkPlato
