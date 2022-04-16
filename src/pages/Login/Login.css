@@ -1,0 +1,37 @@
+.login-container {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30rem;
+}
+
+fieldset {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-inputs{
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field{
+  display: flex;
+  flex-direction: column;
+  margin: .25em 0;
+}
+
+label {
+  margin-bottom: .125em;
+
+}
+
+.login-btn-group {
+  align-self: flex-end;
+  margin-top: .5em;
+  margin-right: -.25rem;
+}
