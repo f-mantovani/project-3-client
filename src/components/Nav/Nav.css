@@ -8,7 +8,13 @@
 
 .untoggled-button {
     align-self: flex-end;
+    width: 1em;
+}
+
+.toggle-button {
+    align-self: center;
     width: 2em;
+
 }
 
 .toggled {
@@ -17,12 +23,6 @@
 
 .untoggled-button:hover, .toggle-button:hover {
     cursor: pointer;
-}
-
-.toggle-button {
-    align-self: center;
-    width: 2em;
-
 }
 
 .active-link {
