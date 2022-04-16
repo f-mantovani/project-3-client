@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderPlato from '../design.system/HeaderPlato'
 
-const LoginHeader = () => {
+const LogoHeader = () => {
   return (
     <HeaderPlato>
       <img src="..." alt= "..." />
@@ -9,4 +9,4 @@ const LoginHeader = () => {
   )
 }
 
-export default LoginHeader
+export default LogoHeader
