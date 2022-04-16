@@ -24,7 +24,7 @@ const Navbar = () => {
     <img onClick={() => setToggle(!toggle)} 
          src={closeIcon}
          alt="menu toggle"
-         className="untoggle-button"
+         className={!toggle ? "untoggle-button" : "toggled"}
          />
     
     <h1 className={toggle && "toggled"}>Plato</h1>
