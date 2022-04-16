@@ -11,14 +11,20 @@ const Navbar = () => {
   const [ toggle, setToggle ] = useState(false)
 
   return (
-
+    <>
+    {toggle &&
+    <img onClick={() => setToggle(!toggle)} 
+         src={menuToggle}
+         alt="menu toggle"
+         className="toggle-button-burger"
+         />}
     
     <SideBar toggled={toggle} className='nav-side-bar'>
 
     <img onClick={() => setToggle(!toggle)} 
-         src={toggle ? menuToggle : closeIcon}
+         src={closeIcon}
          alt="menu toggle"
-         className={toggle ? "toggle-button" : "untoggled-button"}
+         className="untoggle-button"
          />
     
     <h1 className={toggle && "toggled"}>Plato</h1>
@@ -34,6 +40,7 @@ const Navbar = () => {
     <NavLinkPlato className={toggle && "toggled"} logout to="/">Logout</NavLinkPlato>
     
     </SideBar>
+    </>
     
   )
 }

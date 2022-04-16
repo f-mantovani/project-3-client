@@ -6,22 +6,24 @@
     margin-bottom: 1rem;
 }
 
-.untoggled-button {
+.untoggle-button {
     align-self: flex-end;
+    margin: 0.5em 0em;
     width: 1em;
+
 }
 
-.toggle-button {
-    align-self: center;
+.toggle-button-burger {
+    position: fixed;
     width: 2em;
-
+    margin: 0.5em;
 }
 
 .toggled {
     display: none;
 }
 
-.untoggled-button:hover, .toggle-button:hover {
+.untoggle-button:hover, .toggle-button-burger:hover {
     cursor: pointer;
 }
 
