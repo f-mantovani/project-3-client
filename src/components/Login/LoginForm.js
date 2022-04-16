@@ -6,8 +6,13 @@ import NavLinkPlato from '../../design.system/NavLinkPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
 
 const LoginForm = () => {
-  const { email, password, handleEmailInput, handlePasswordInput, loginUser } =
-    useFormInput()
+  const { 
+    email, 
+    password, 
+    handleEmailInput, 
+    handlePasswordInput, 
+    loginUser 
+  } = useFormInput()
 
   return (
     <>
@@ -34,7 +39,7 @@ const LoginForm = () => {
               ></InputPlato>
             </div>
             <div className='login-btn-group'>
-              <NavLinkPlato to='/signup'>Sign up</NavLinkPlato>
+              <NavLinkPlato logout to='/signup'>Sign up</NavLinkPlato>
               <ButtonPlato onClick={loginUser}>Login</ButtonPlato>
             </div>
           </div>

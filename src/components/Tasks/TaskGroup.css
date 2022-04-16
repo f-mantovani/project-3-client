@@ -1,0 +1,21 @@
+.task-group-container {
+  margin-left: 10em;
+  padding-top: 0.625em;
+  margin-bottom: 6em;
+}
+
+.tabs {
+  display: flex;
+  margin-left: 10em;
+  padding-top: 0.625em;
+  margin-bottom: 6em; 
+}
+
+.tabs div {
+  margin: 0 1em;
+}
+
+.active {
+  border-bottom: steelblue 2px solid;
+}
+
