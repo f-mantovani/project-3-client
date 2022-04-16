@@ -1,13 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import NavLinkPlato from '../design.system/StyledNavLink'
+import NavLinkPlato from '../design.system/NavLinkPlato'
 
 const Navbar = () => {
   return (
     <nav>
     <h1>Plato</h1>
     <NavLinkPlato to="/">Home</NavLinkPlato>
-    <NavLinkPlato logout to="/">Logou</NavLinkPlato>
+    <NavLinkPlato logout to="/">Logout</NavLinkPlato>
     </nav>
   )
 }

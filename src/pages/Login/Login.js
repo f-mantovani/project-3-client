@@ -3,7 +3,7 @@ import './Login.css'
 import LoginHeader from '../../components/LoginHeader'
 import ButtonPlato from '../../design.system/ButtonPlato'
 import InputPlato from '../../design.system/InputPlato'
-import NavLinkPlato from '../../design.system/StyledNavLink'
+import NavLinkPlato from '../../design.system/NavLinkPlato'
 
 const Login = () => {
   return (
