@@ -1,0 +1,30 @@
+.nav-side-bar ul {
+    list-style: none;
+}
+
+.nav-side-bar li {
+    margin-bottom: 1rem;
+}
+
+.untoggled-button {
+    align-self: flex-end;
+    width: 2em;
+}
+
+.toggled {
+    display: none;
+}
+
+.untoggled-button:hover, .toggle-button:hover {
+    cursor: pointer;
+}
+
+.toggle-button {
+    align-self: center;
+    width: 2em;
+
+}
+
+.active-link {
+    color: white;
+}
