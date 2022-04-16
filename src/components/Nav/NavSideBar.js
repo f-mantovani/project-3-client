@@ -4,8 +4,8 @@ import styled from 'styled-components'
     const SideBar = styled.nav `
         
         
-        width: ${props => props.toggled ? "7%" : "36%"};
-        padding: ${props => props.toggled ? "0.5em 0.2em" : "0.5em 1em"};
+        width: ${props => props.toggled ? "0%" : "36%"};
+        padding: ${props => props.toggled ? "0" : "0.5em 1em"};
 
         background-color: steelblue;
         color: white;
