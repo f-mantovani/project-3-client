@@ -24,12 +24,14 @@ const Navbar = () => {
     <h1 className={toggle && "toggled"}>Plato</h1>
 
     <ul className={toggle && "toggled"}>
-      <li ><NavLinkPlato activeClassName="active-link" to="/dashboard">Dashboard</NavLinkPlato></li>
+      <li><NavLinkPlato to="/dashboard">Dashboard</NavLinkPlato></li>
       <li><NavLinkPlato to="/mytasks">My Tasks</NavLinkPlato></li>
       <li><NavLinkPlato to="/events">Events</NavLinkPlato></li>
       <li><NavLinkPlato to="/books">Books</NavLinkPlato></li>
-      <li><NavLinkPlato logout to="/">Logout</NavLinkPlato></li>
+      
     </ul>
+
+    <NavLinkPlato className={toggle && "toggled"} logout to="/">Logout</NavLinkPlato>
     
     </SideBar>
     

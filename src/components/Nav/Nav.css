@@ -3,12 +3,12 @@
 }
 
 .nav-side-bar li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .untoggled-button {
     align-self: flex-end;
-    width: 20%;
+    width: 2em;
 }
 
 .toggled {
@@ -21,6 +21,7 @@
 
 .toggle-button {
     align-self: center;
+    width: 2em;
 
 }
 
