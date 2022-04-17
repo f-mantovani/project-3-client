@@ -39,7 +39,8 @@
 }
 
 .custom-checkbox:focus + .task-label::before {
-  background-color: black;
+  border: .05em slateblue solid;
+  box-shadow: 2px 2px 2px slateblue;
 }
 
 
