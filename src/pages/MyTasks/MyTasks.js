@@ -25,7 +25,7 @@ const kanban = [
 
 const MyTasks = () => {
 
-const [active, setActive] = useState(types[1])
+const [active, setActive] = useState(types[0])
 
   return (
     <div>
