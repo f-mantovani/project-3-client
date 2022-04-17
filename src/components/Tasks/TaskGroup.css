@@ -7,10 +7,6 @@
   justify-content: center;
 }
 
-.tabs div {
-  margin: 0 1em;
-}
-
 .task-group-container{
   display: flex;
   flex-direction: column;

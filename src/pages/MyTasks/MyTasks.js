@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '../../components/Navbar'
 import TaskGroup from '../../components/Tasks/TaskGroup'
+import TabPlato from '../../design.system/TabPlato'
 
 const types = [ "To Do", "Doing", "Done"]
 
@@ -32,12 +33,12 @@ const [active, setActive] = useState(types[0])
       <Navbar/>
       <div className='tabs'>
         {types.map(type => (
-          <div
+          <TabPlato
           key={type}
           className={active === type && 'active'}
           onClick={() => setActive(type)}>
             {type}
-          </div>
+          </TabPlato>
         ))}
       </div>
       {active === types[0] && <TaskGroup kanban={kanban} name='todo'>To Do</TaskGroup>}
