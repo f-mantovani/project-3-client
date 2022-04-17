@@ -1,10 +1,16 @@
 import React from 'react'
+import './TaskCard.css'
+import CardPlato from '../../design.system/CardPlato'
 
-const TaskCard = () => {
+
+const TaskCard = ({ title, status, index }) => {
   return (
-    <div className='task-card'>
-      <h4> Eu sou uma task card </h4>
-    </div>
+    <CardPlato className='task-card'>
+      <div className='checkbox-container'>
+        <input type='checkbox' id={index} className='custom-checkbox'/>
+        <label htmlFor={index} className='task-label'> {title} </label>
+      </div>
+    </CardPlato>
   )
 }
 
