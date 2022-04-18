@@ -39,7 +39,7 @@ const LoginForm = () => {
               ></InputPlato>
             </div>
             <div className='login-btn-group'>
-              <NavLinkPlato logout to='/signup'>Sign up</NavLinkPlato>
+              <NavLinkPlato logout="true" to='/signup'>Sign up</NavLinkPlato>
               <ButtonPlato onClick={loginUser}>Login</ButtonPlato>
             </div>
           </div>
