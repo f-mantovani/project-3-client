@@ -6,41 +6,45 @@ import NavLinkPlato from '../../design.system/NavLinkPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
 
 const LoginForm = () => {
-  const { 
-    email, 
-    password, 
-    handleEmailInput, 
-    handlePasswordInput, 
-    loginUser 
-  } = useFormInput()
+  const { email, password, handleEmailInput, handlePasswordInput, loginUser } =
+    useFormInput()
 
   return (
     <>
       <div className='login-container'>
         <fieldset>
-          <legend>Login</legend>
+        <div>
+          <legend className='main-title'>Access your account</legend>
+          <div className='signup-header'>
+            <p className='overline'>Don’T have an account YET?</p>
+            <NavLinkPlato to='/signup' signup="true">Register Here</NavLinkPlato>
+          </div>
+        </div>
           <div className='login-inputs'>
             <div className='input-field'>
-              <label htmlFor='email'>Email: </label>
+              
               <InputPlato
                 id='email'
-                placeholder='email aqui'
+                name='email'
+                placeholder='example@email.com'
                 value={email}
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
+              <label htmlFor='email'>Email address </label>
             </div>
             <div className='input-field'>
-              <label htmlFor='password'>Password: </label>
+              
               <InputPlato
                 id='password'
-                placeholder='password aqui'
+                name='password'
+                placeholder='*********'
                 value={password}
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
+              <label htmlFor='password'>Password </label>
             </div>
             <div className='login-btn-group'>
-              <NavLinkPlato logout="true" to='/signup'>Sign up</NavLinkPlato>
-              <ButtonPlato onClick={loginUser}>Login</ButtonPlato>
+              <ButtonPlato login="true" onClick={loginUser}>Login</ButtonPlato>
             </div>
           </div>
         </fieldset>

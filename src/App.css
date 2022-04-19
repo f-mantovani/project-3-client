@@ -3,7 +3,7 @@
 :root {
   font-family: 'Krub', sans-serif;
   background: linear-gradient(180deg, #042539 0%, #010c13 100%);
-  --font-color: #ffffff;
+  --font-color: #F1F1F1;
   --fw-300: 300;
   --fw-400: 400;
   --fw-600: 600;
@@ -14,13 +14,14 @@
   --fs-xtra-large:1rem;
   --fs-sub-title:1.25rem;
   --fs-main-title:1.5rem;
+  overflow: hidden;
 }
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-  margin: 1em 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -37,6 +38,14 @@ h5 {
 }
 
 h1 {
+  font-style: normal;
+  font-weight: var(--fw-400);
+  font-size: var(--fs-main-title);
+  line-height: 120%;
+  color: var(--font-color);
+}
+
+.main-title {
   font-style: normal;
   font-weight: var(--fw-400);
   font-size: var(--fs-main-title);
