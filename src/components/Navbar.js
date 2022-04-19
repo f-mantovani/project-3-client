@@ -8,7 +8,7 @@ import './Nav/Nav.css'
 
 const Navbar = () => {
 
-  const [ toggle, setToggle ] = useState(false)
+  const [ toggle, setToggle ] = useState(true)
 
   return (
     <>

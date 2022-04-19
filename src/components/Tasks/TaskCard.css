@@ -1,0 +1,49 @@
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox{
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+}
+
+.task-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.task-label::before {
+  content: '';
+  width: 1.25em;
+  height: 1.25em;
+  border: .05em solid black;
+  border-radius: 100%;
+  margin-right: 0.25em;
+}
+
+.custom-checkbox:checked + .task-label::before {
+  content:'\002714';
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-label:hover::before,
+.custom-checkbox:hover + .task-label::before {
+  background-color: black;
+}
+
+.custom-checkbox:focus + .task-label::before {
+  border: .05em slateblue solid;
+  box-shadow: 2px 2px 2px slateblue;
+}
+
+
+
+
+
