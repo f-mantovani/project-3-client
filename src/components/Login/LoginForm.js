@@ -26,8 +26,9 @@ const LoginForm = () => {
               <InputPlato
                 id='email'
                 name='email'
-                placeholder='example@email.com'
+                placeholder='johndoe@email.com'
                 value={email}
+                required
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
               <label htmlFor='email'>Email address </label>
@@ -37,8 +38,10 @@ const LoginForm = () => {
               <InputPlato
                 id='password'
                 name='password'
+                type='password'
                 placeholder='*********'
                 value={password}
+                required
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
               <label htmlFor='password'>Password </label>
