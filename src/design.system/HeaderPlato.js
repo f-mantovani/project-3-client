@@ -3,8 +3,8 @@ import styled from "styled-components"
 const HeaderPlato = styled.div`
   background-color: steelblue;
   color: white;
-  padding: 2em 50%;
-  margin-bottom: 2rem;
+  min-height: 3rem;
+  padding: 0 50%;
 `
 
 export default HeaderPlato

@@ -27,9 +27,9 @@ const Navbar = () => {
          className={!toggle ? "untoggle-button" : "toggled"}
          />
     
-    <h1 className={toggle && "toggled"}>Plato</h1>
+    <h1 className={toggle ? "toggled" : "undefined"}>Plato</h1>
 
-    <ul className={toggle && "toggled"}>
+    <ul className={toggle ? "toggled" : "undefined"}>
       <li><NavLinkPlato to="/dashboard">Dashboard</NavLinkPlato></li>
       <li><NavLinkPlato to="/mytasks">My Tasks</NavLinkPlato></li>
       <li><NavLinkPlato to="/events">Events</NavLinkPlato></li>
@@ -37,7 +37,7 @@ const Navbar = () => {
       
     </ul>
 
-    <NavLinkPlato className={toggle && "toggled"} logout to="/">Logout</NavLinkPlato>
+    <NavLinkPlato className={toggle ? "toggled" : "undefined"} logout="true" to="/">Logout</NavLinkPlato>
     
     </SideBar>
     </>

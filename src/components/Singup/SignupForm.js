@@ -23,38 +23,41 @@ const SignupForm = () => {
           <legend>Sign up</legend>
           <div className='login-inputs'>
             <div className='input-field'>
-              <label htmlFor='name'>Name: </label>
               <InputPlato
                 id='name'
-                placeholder='name here'
+                placeholder='John Doe'
                 type='text'
                 value={name}
+                required
                 onChange={(e) => handleNameInput(e)}
               ></InputPlato>
+              <label htmlFor='name'>Name </label>
             </div>
             <div className='input-field'>
-              <label htmlFor='email'>Email: </label>
               <InputPlato
                 id='email'
-                placeholder='email here'
+                placeholder='johndoe@email.com'
                 type='text'
                 value={email}
+                required
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
+              <label htmlFor='email'>Email address </label>
             </div>
             <div className='input-field'>
-              <label htmlFor='password'>Password: </label>
               <InputPlato
                 id='password'
-                placeholder='password here'
+                placeholder='***********'
                 type='password'
+                required
                 value={password}
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
+              <label htmlFor='password'>Password </label>
             </div>
             <div className='login-btn-group'>
               <ButtonPlato onClick={() => navigate('/')}>Cancel</ButtonPlato>
-              <ButtonPlato onClick={signUpUser}>Sign up</ButtonPlato>
+              <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
             </div>
           </div>
         </fieldset>
