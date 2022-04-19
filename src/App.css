@@ -2,7 +2,6 @@
 
 :root {
   font-family: 'Krub', sans-serif;
-  background: linear-gradient(180deg, #042539 0%, #010c13 100%);
   --font-color: #F1F1F1;
   --fw-300: 300;
   --fw-400: 400;
@@ -35,6 +34,11 @@ h3,
 h4,
 h5 {
   margin: 1em 0;
+}
+
+body {
+  background: linear-gradient(180deg, #042539 0%, #010c13 100%);
+  height: 100vh;
 }
 
 h1 {
@@ -123,7 +127,7 @@ h4 {
   font-weight: var(--fw-600);
   font-size: var(--fs-medium);
   line-height: var(--fs-medium);
-  color: var(--font-color);
+  /* color: var(--font-color); */
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }

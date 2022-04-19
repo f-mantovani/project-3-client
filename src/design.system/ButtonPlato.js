@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const ButtonPlato = styled.div`
   cursor: pointer;
-  
+  color: #042539;
   ${(props) =>
     props.login &&
     `
@@ -10,7 +10,6 @@ const ButtonPlato = styled.div`
             font-weight: var(--fw-600);
             font-size: var(--fs-medium);
             line-height: var(--fs-medium);
-            color: var(--font-color);
             letter-spacing: 0.04em;
             text-transform: uppercase;
             background: 
@@ -25,6 +24,7 @@ const ButtonPlato = styled.div`
               background: #5491A0;
             }        
         `}
+  
 `
 
 export default ButtonPlato

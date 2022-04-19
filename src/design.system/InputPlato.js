@@ -22,14 +22,14 @@ const InputPlato = styled.input`
   :valid + label {
     position: absolute;
     top: -1rem;
-    left: 0.5em;
+    left: 0.85em;
     font-style: normal;
     font-weight: var(--fw-400);
     font-size: var(--fs-small);
     line-height: var(--fs-large);
     color: var(--font-color);
     border: none;
-    transition: 0.3 ease;
+    transition: 0.3s ease;
   }
 
   :focus {
