@@ -18,8 +18,9 @@ const InputPlato = styled.input`
     opacity: 1;
     transition: 300ms ease-in;
   }
-  :focus + label,
-  :valid + label {
+  
+  :focus + .input-label,
+  :valid + .input-label {
     position: absolute;
     top: -1rem;
     left: 0.85em;

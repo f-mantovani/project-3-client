@@ -31,7 +31,7 @@ const LoginForm = () => {
                 required
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
-              <label htmlFor='email'>Email address </label>
+              <label className='input-label' htmlFor='email'>Email address </label>
             </div>
             <div className='input-field'>
               
@@ -44,7 +44,7 @@ const LoginForm = () => {
                 required
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
-              <label htmlFor='password'>Password </label>
+              <label className='input-label' htmlFor='password'>Password </label>
             </div>
             <div className='login-btn-group'>
               <ButtonPlato login="true" onClick={loginUser}>Login</ButtonPlato>

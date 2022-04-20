@@ -46,7 +46,7 @@ legend {
   min-height: 3rem;
 }
 
-label {
+.input-label {
   position: absolute;
   top: 0;
 }

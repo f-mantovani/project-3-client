@@ -8,6 +8,7 @@ const DevelopedFooterPlato = styled.p`
   width: 100%;
   text-align: center;
   bottom: .5rem;
+  
 `
 
 export default DevelopedFooterPlato
