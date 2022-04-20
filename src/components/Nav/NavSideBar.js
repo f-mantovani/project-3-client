@@ -18,7 +18,7 @@ import styled from 'styled-components'
         right: 0;
         flex-direction: column;
         transition-duration: 0.3s;
-        z-index: 1;
+        z-index: 2;
     `
 
 export default SideBar

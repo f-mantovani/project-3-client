@@ -4,21 +4,13 @@ import { Link } from "react-router-dom"
 const NavLinkPlato = styled(Link)`
     /* default */
     color: var(--font-color);
-    font-weight: 900;
+    font-weight: 300;
     text-decoration: none;
-
-    ${props => props.logout && `
-            background-color: red;
-            padding: 0.25em 0.5em;
-            color: white;
-            align-self: center;
-            margin-top: 5em;
-        `
-    } 
 
     ${props => props.signup && `
            font-style: normal;
-           font-weight: 500;
+           font-family: 'Krub';
+           font-weight: 300;
            font-size: var(--fs-xtra-small);
            line-height: var(--fs-xtra-small);
            letter-spacing: 0.015em;
