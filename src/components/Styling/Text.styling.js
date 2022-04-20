@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Text.styling = () => {
+const TextStyling = () => {
   return (
     <>
       <p>space Start</p>
@@ -26,4 +26,4 @@ const Text.styling = () => {
   )
 }
 
-export default Text.styling
+export default TextStyling

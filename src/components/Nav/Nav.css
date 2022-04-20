@@ -7,7 +7,7 @@
 }
 
 .untoggle-button {
-    align-self: flex-end;
+    align-self: flex-start;
     padding: 0.5rem 0rem;
     width: 1em;
 
@@ -15,8 +15,11 @@
 
 .toggle-button-burger {
     position: fixed;
-    width: 2em;
-    margin: 0.5em;
+    top:0;
+    right: 0;
+    width: 1.8em;
+    margin: 0.7em 1em;
+    padding: 0.2em;
 }
 
 .toggled {

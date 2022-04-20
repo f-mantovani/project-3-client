@@ -2,7 +2,7 @@ import React from 'react'
 import NavLinkPlato from '../design.system/NavLinkPlato'
 import { useState } from 'react'
 import SideBar from './Nav/NavSideBar'
-import menuToggle from '../assets/menu-1768000-1502336.webp'
+import menuToggle from '../assets/burger-icon.png'
 import closeIcon from '../assets/icon-close-512.webp'
 import './Nav/Nav.css'
 
