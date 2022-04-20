@@ -6,7 +6,6 @@ const TaskGroup = ({ children, kanban, name }) => {
   return (
     <>
       <div className='task-group-container'>
-        <h3>Eu sou um {children} GROUP</h3>
         <div
           className='task-card-grouping'
         >
