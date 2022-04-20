@@ -25,11 +25,5 @@
   border-bottom: 2px solid #F1F1F1;
 }
 
-.task-group-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 
