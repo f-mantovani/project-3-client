@@ -3,6 +3,7 @@ import LogoHeader from '../../components/LogoHeader'
 import LoginForm from '../../components/Login/LoginForm'
 import Navbar from '../../components/Navbar'
 import DevelopedFooterPlato from '../../design.system/DevelopedFooterPlato'
+import TextStyling from '../../components/Styling/Text.styling'
 
 const Login = () => {
   return (
