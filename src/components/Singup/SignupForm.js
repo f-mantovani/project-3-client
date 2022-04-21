@@ -1,11 +1,12 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import ButtonPlato from '../../design.system/ButtonPlato'
+import ColumnContainer from '../../design.system/ColumnContainer'
 import InputPlato from '../../design.system/InputPlato'
+import NavLinkPlato from '../../design.system/NavLinkPlato'
+import RequiredPlato from '../../design.system/RequiredPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
 
 const SignupForm = () => {
-  const navigate = useNavigate()
   const {
     name,
     email,
@@ -20,7 +21,13 @@ const SignupForm = () => {
     <>
       <div className='login-container'>
         <fieldset>
-          <legend>Sign up</legend>
+        <div>
+          <legend className='main-title'>Create new account</legend>
+          <div className='signup-header'>
+            <p className='overline'>Already have an account?</p>
+            <NavLinkPlato to='/' signup="true">Login Here</NavLinkPlato>
+          </div>
+        </div>
           <div className='login-inputs'>
             <div className='input-field'>
               <InputPlato
@@ -31,7 +38,8 @@ const SignupForm = () => {
                 required
                 onChange={(e) => handleNameInput(e)}
               ></InputPlato>
-              <label htmlFor='name'>Name </label>
+              <label className='input-label' htmlFor='name'>Name </label>
+              <RequiredPlato blue='true' />
             </div>
             <div className='input-field'>
               <InputPlato
@@ -42,7 +50,8 @@ const SignupForm = () => {
                 required
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
-              <label htmlFor='email'>Email address </label>
+              <label className='input-label' htmlFor='email'>Email address </label>
+              <RequiredPlato blue='true' />
             </div>
             <div className='input-field'>
               <InputPlato
@@ -53,10 +62,10 @@ const SignupForm = () => {
                 value={password}
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
-              <label htmlFor='password'>Password </label>
+              <label className='input-label' htmlFor='password'>Password </label>
+              <RequiredPlato blue='true' />
             </div>
             <div className='login-btn-group'>
-              <ButtonPlato onClick={() => navigate('/')}>Cancel</ButtonPlato>
               <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
             </div>
           </div>

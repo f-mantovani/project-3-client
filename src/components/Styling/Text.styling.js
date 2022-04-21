@@ -6,6 +6,7 @@ const TextStyling = () => {
       <p>space Start</p>
       <p>space Start</p>
       <p>space Start</p>
+      <p>space Start</p>
       <h1>This is H1</h1>
       <h2>This is H2</h2>
       <h4>This is H4</h4>

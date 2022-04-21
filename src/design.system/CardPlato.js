@@ -1,12 +1,23 @@
 import styled from 'styled-components'
 
 const CardPlato = styled.div`
-  padding: 2em 8em;
-  margin: 1rem auto;
-  border-radius: 5px;
-  box-shadow: .125rem .125rem .125rem .125rem rgba(0, 0, 0, .4);
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  background: rgba(241, 241, 241, 0.05);
+  padding: 0.75rem 0 0.75rem 1rem;
+  min-height: 4rem;
+  margin: 0.25em 0;
+
+  ${(props) => props.muted && `
+    .task-label{
+      color: rgba(241, 241, 241, 0.5);
+    }
+    .custom-checkbox {
+      color: rgba(241, 241, 241, 0.5);
+    }
+  `}
 `
 
 export default CardPlato

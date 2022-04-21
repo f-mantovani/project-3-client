@@ -6,11 +6,8 @@ const TaskGroup = ({ children, kanban, name }) => {
   return (
     <>
       <div className='task-group-container'>
-        <h3>Eu sou um {children} GROUP</h3>
         <div
-          className={`task-card-grouping ${
-            children ? 'open-card' : 'closed-card'
-          }`}
+          className='task-card-grouping'
         >
           {kanban
             .filter((todo) => todo.status === name)

@@ -1,20 +1,29 @@
-.tabs {
-  display: flex;
-  margin: 0 auto;
-  padding-top: 1.5em;
-  width: 90%;
-  align-items: center;
-  justify-content: center;
+.task-header {
+  min-height: 3rem;
+  padding-top: 1em;
+  margin-bottom: .75rem;
 }
 
-.task-group-container{
+.task-header h1{
+  margin-left: 1.5rem;
+}
+
+.task-tab-header {
   display: flex;
   flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  margin: 0 .625em;
+  padding-bottom: 0.75em;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .active {
-  border-bottom: steelblue 2px solid;
+  border-bottom: 2px solid #F1F1F1;
 }
+
+
 
