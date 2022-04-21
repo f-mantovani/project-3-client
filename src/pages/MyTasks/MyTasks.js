@@ -43,7 +43,7 @@ const MyTasks = () => {
           {types.map((type) => (
             <TabPlato
               key={type}
-              className={active === type && 'active'}
+              active={active === type && 'active'}
               onClick={() => setActive(type)}
             >
               <p className='label'>{type}</p>

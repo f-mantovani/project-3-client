@@ -24,11 +24,12 @@
 
 .toggle-gray-cover {
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     background: rgba(220, 220, 220, 0.3);
     position: fixed;
     transition-duration: 1s;
     z-index: 2;
+    margin-top: -1em;
 }
 
 .toggled {

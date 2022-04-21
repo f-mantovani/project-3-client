@@ -3,6 +3,8 @@ import Navbar from '../../components/Navbar'
 import { useState } from 'react'
 import TabPlato from '../../design.system/TabPlato'
 import LineBreak from '../../design.system/LineBreakePlato'
+import PageHeaderPlato from '../../design.system/PageHeaderPlato'
+import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 
 const Dashboard = () => {
 
@@ -13,16 +15,17 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="page-header">
+      
+      <PageHeaderPlato>
         <Navbar/>
         <h1>Dashboard</h1>
-      </div>
-      <div className='tab-header'>
+      </PageHeaderPlato>
+      <TabHeaderPlato>
         <div className='tabs'>
           {types.map((type) => (
             <TabPlato
               key={type}
-              className={active === type && 'active'}
+              active={active === type && 'active'}
               onClick={() => setActive(type)}
             >
               <p className='label'>{type}</p>
@@ -31,11 +34,9 @@ const Dashboard = () => {
 
           
         </div>
-        <LineBreak />
-        </div>
+        </TabHeaderPlato>
 
-
-        
+        <LineBreak />     
     </div>
   )
 }
