@@ -4,6 +4,7 @@ const CardPlato = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   background: rgba(241, 241, 241, 0.05);
   padding: 0.75rem 0 0.75rem 1rem;
   min-height: 4rem;

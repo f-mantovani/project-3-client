@@ -27,7 +27,7 @@ const kanban = [
   { title: 'done2', status: 'done', _id: '14' },
 ]
 
-// const kanban = []
+// const kanban = [] 
 
 const MyTasks = () => {
   const [active, setActive] = useState(types[0])
