@@ -3,7 +3,6 @@ import NavLinkPlato from '../design.system/NavLinkPlato'
 import { useState } from 'react'
 import SideBar from './Nav/NavSideBar'
 import menuToggle from '../assets/burger-icon.png'
-import closeIcon from '../assets/x-exit.png'
 import './Nav/Nav.css'
 import NavUserDisplay from './Nav/NavUserDisplay'
 

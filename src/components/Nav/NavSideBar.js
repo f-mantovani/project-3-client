@@ -8,7 +8,6 @@ import styled from 'styled-components'
         padding: ${props => props.toggled ? "0" : "0.5em 1em"};
 
         background: linear-gradient(180deg, #042539 0%, #010C13 100%);
-        border-left: 0.05em white solid;
         color: white;
         height: 100vh;
         overflow: hidden;
