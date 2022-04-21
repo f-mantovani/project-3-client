@@ -7,16 +7,28 @@
 }
 
 .untoggle-button {
-    align-self: flex-end;
+    align-self: flex-start;
     padding: 0.5rem 0rem;
-    width: 1em;
+    width: 0.7em;
 
 }
 
 .toggle-button-burger {
     position: fixed;
-    width: 2em;
-    margin: 0.5em;
+    top:0;
+    right: 0;
+    width: 1.8em;
+    margin: 0.7em 1em;
+    padding: 0.2em;
+}
+
+.toggle-gray-cover {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(220, 220, 220, 0.3);
+    position: fixed;
+    transition-duration: 1s;
+    z-index: 2;
 }
 
 .toggled {
@@ -30,3 +42,16 @@
 .active-link {
     color: white;
 }
+
+.user-info {
+    display: flex;
+    margin: 1em 0 3em 0;
+
+}
+
+.user-info img {
+    max-width: 100%;
+    object-fit: contain;
+    margin-right: 0.3em;
+}
+
