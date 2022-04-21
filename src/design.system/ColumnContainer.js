@@ -10,6 +10,7 @@ const ColumnContainer = styled.div`
     min-height: 2.5rem;
     padding-right: 1.125em;
   `}
+  
   ${props => props.mt3 && `
     margin-top: 3rem;
   `}

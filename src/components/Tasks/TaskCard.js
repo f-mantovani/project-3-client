@@ -12,7 +12,7 @@ const TaskCard = ({ title, status, index }) => {
         <input type='checkbox' id={index} className='custom-checkbox' />
         <label
           htmlFor={index}
-          className={`task-label  `}
+          className='task-label'
         >
           <Body done={status === 'done'}  muted={status === 'done'} >{title}</Body>
         </label>
