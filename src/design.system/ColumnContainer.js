@@ -18,6 +18,12 @@ const ColumnContainer = styled.div`
   ${props => props.mt075 && `
     margin-top: 0.75rem;
   `}
+  
+  ${props => props.rowSpaceBetween && `
+    flex-direction: row;
+    justify-content: space-between;
+  `}
 `
+  
 
 export default ColumnContainer
