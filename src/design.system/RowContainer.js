@@ -18,6 +18,11 @@ const RowContainer = styled.div`
 
     overflow: scroll;
 
+    & > div {
+
+      align-self: center;
+    }
+
     `}
 
     
