@@ -35,7 +35,7 @@ const DashboardBooks = ({books}) => {
         <ColumnContainer startSpaceBetween>
           <Body>No books added to this list yet...</Body>
           <NavLinkPlato to="/books">
-            <Label smalllink>SEARCH A NEW BOOK</Label>
+            <Label smalllink>SEARCH FOR A NEW BOOK</Label>
           </NavLinkPlato>
         </ColumnContainer>}
         
