@@ -47,6 +47,15 @@ ${props => props.eventImg && `
       width: 1em;
     }
   `}
+
+${props => props.bookContainer && `
+    margin: 2em;
+    text-align: center;
+    
+    & > img {
+      width: 3em;
+    }
+  `}
 `
   
 

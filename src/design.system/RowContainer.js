@@ -14,6 +14,12 @@ const RowContainer = styled.div`
     
     `}
 
+    ${props => props.bookRowContainer && `
+
+    overflow: scroll;
+
+    `}
+
     
 
 

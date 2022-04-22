@@ -8,6 +8,8 @@ import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import DashboardTasks from '../../components/Dashboard/DashboardTasks'
 import DashboardEvents from '../../components/Dashboard/DashboardEvents'
 import books from '../../books.json'
+import DashboardBooks from '../../components/Dashboard/DashboardBooks'
+
 
 const Dashboard = () => {
 
@@ -84,6 +86,8 @@ const Dashboard = () => {
         <DashboardTasks kanban={kanban}/> 
 
         <DashboardEvents events={events}/>
+
+        <DashboardBooks books={books}/>
         
         </>
         }
