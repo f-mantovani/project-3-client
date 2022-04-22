@@ -9,19 +9,36 @@ import BookCardDashboard from '../Books/BookCardDashboard'
 const DashboardBooks = ({books}) => {
   const mostRecentBooks = getMostRecentBooks(books)
 
-  console.log(mostRecentBooks)
-
   return (
 
     <>
         <ColumnContainer rowSpaceBetween>
+
             <h2>Books recently added</h2>
-            <NavLinkPlato to="/events"><Label smalllink>View All</Label></NavLinkPlato>
+            {mostRecentBooks.length > 0
+            &&
+            <NavLinkPlato to="/events">
+              <Label smalllink>View All</Label>
+            </NavLinkPlato>}
         </ColumnContainer>
 
+        {mostRecentBooks.length > 0
+
+        ? 
+        
         <RowContainer bookRowContainer>
         {mostRecentBooks.map(book => <BookCardDashboard title={book.name} image={book.imageUrl}/>)}
         </RowContainer>
+
+        : 
+
+        <ColumnContainer startSpaceBetween>
+          <Body>No books added to this list yet...</Body>
+          <NavLinkPlato to="/mytasks">
+            <Label smalllink>SEARCH A NEW BOOK</Label>
+          </NavLinkPlato>
+        </ColumnContainer>}
+        
     </>
   )
 }
