@@ -32,12 +32,20 @@ ${props => props.startSpaceBetween && `
     padding: 0 1.125em;
   `}
 
-${props => props.alignFlexEnd && `
+${props => props.eventText && `
     justify-content: center;
-    align-items: flex-end;
-    text-align: right;
+    align-items: flex-start;
+    text-align: left;
     min-height: 2em;
     padding: 0 1.125em;
+    width: 90%;
+  `}
+
+${props => props.eventImg && `
+    
+    & > img {
+      width: 1em;
+    }
   `}
 `
   

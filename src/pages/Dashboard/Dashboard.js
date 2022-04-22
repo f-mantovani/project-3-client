@@ -45,7 +45,7 @@ const Dashboard = () => {
     },
     {
       title: "Teste delete outro user",
-      date: new Date('2022-12-02T23:00:00.000+00:00'),
+      date: new Date('2022-05-02T23:00:00.000+00:00'),
       is_past: true,
       id: "2"
     }

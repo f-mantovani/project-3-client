@@ -13,7 +13,7 @@ const DashboardEvents = ({ events }) => {
         <div>
     <ColumnContainer rowSpaceBetween>
         <h2>Upcoming Events</h2>
-        {upcomingEvents && <NavLinkPlato to="/events"><Label muted>View All</Label></NavLinkPlato>}
+        {upcomingEvents.length > 0 && <NavLinkPlato to="/events"><Label muted>View All</Label></NavLinkPlato>}
     </ColumnContainer>
     </div>
 
@@ -22,8 +22,8 @@ const DashboardEvents = ({ events }) => {
     ? upcomingEvents.map(event => <EventCard event={event}/>)
 
     : <ColumnContainer startSpaceBetween>
-        <Body>No events created yet......</Body>
-        <NavLinkPlato to="/mytasks"><Label muted>View To Do List</Label></NavLinkPlato>
+        <Body>No events in the next 14 days...</Body>
+        <NavLinkPlato to="/mytasks"><Label muted>View Events List</Label></NavLinkPlato>
     </ColumnContainer>
 
     }
