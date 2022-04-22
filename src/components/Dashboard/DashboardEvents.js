@@ -19,7 +19,7 @@ const DashboardEvents = ({ events }) => {
 
     {upcomingEvents.length > 0
 
-    ? upcomingEvents.map(event => <EventCard event={event}/>)
+    ? upcomingEvents.map(event => <EventCard key={event.id} event={event}/>)
 
     : <ColumnContainer startSpaceBetween>
         <Body>No events in the next 14 days...</Body>
