@@ -24,6 +24,13 @@ const ColumnContainer = styled.div`
     justify-content: space-between;
     padding: 1.125em;
   `}
+
+${props => props.startSpaceBetween && `
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 2em;
+    padding: 0 1.125em;
+  `}
 `
   
 

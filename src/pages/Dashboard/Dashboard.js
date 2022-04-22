@@ -16,13 +16,13 @@ const Dashboard = () => {
       // Some data mocking for rendering test
 
   const kanban = [
-    { title: 'fazer html', status: 'todo', _id: '1' },
-    { title: 'fazer css', status: 'todo', _id: '2' },
-    { title: 'estudar matemática', status: 'todo', _id: '3' },
-    { title: 'doing1', status: 'doing', _id: '4' },
-    { title: 'doing2', status: 'doing', _id: '5' },
-    { title: 'doing3', status: 'doing', _id: '6' },
-    { title: 'doing3', status: 'doing', _id: '7' },
+    { title: 'fazer html', status: 'done', _id: '1' },
+    { title: 'fazer css', status: 'done', _id: '2' },
+    { title: 'estudar matemática', status: 'done', _id: '3' },
+    { title: 'doing1', status: 'done', _id: '4' },
+    { title: 'doing2', status: 'done', _id: '5' },
+    { title: 'doing3', status: 'done', _id: '6' },
+    { title: 'doing3', status: 'done', _id: '7' },
     { title: 'done1', status: 'done', _id: '8' },
     { title: 'done2', status: 'done', _id: '9' },
   ]
@@ -53,7 +53,14 @@ const Dashboard = () => {
 
         <LineBreak />    
         
+        {active === types[0] && 
+        
         <DashboardTasks kanban={kanban}/> 
+
+        
+        
+        
+        }
     </div>
   )
 }
