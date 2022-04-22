@@ -7,6 +7,7 @@ import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import DashboardTasks from '../../components/Dashboard/DashboardTasks'
 import DashboardEvents from '../../components/Dashboard/DashboardEvents'
+import books from '../../books.json'
 
 const Dashboard = () => {
 
