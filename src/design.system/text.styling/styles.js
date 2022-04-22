@@ -90,7 +90,7 @@ export const Label = styled.p`
     font-weight: var(--fw-400);
     font-size: var(--fs-small);
     line-height: var(--fs-large);
-    color: var(--font-link);  
+    color: var(--font-link);`}
     
   ${(props) => props.muted &&`
     color: #73BEC5;
