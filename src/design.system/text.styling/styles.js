@@ -19,6 +19,10 @@ export const Body = styled.p`
   ${(props) =>props.muted && `
     color: rgba(241, 241, 241, 0.5);
   `}
+
+  ${(props) => props.destructive &&`
+    color: var(--font-destructive);
+  `}
 `
 
 export const H1 = styled.h1`
@@ -60,6 +64,7 @@ export const Subtitle2 = styled.p`
     color: var(--font-color);
     text-decoration-line: line-through;
   `}
+
   ${(props) => props.muted &&`
     color: rgba(241, 241, 241, 0.5);
   `}
@@ -72,14 +77,21 @@ export const Label = styled.p`
   line-height: var(--fs-large);
   color: var(--font-color);
 
-  ${(props) => props.muted &&`
+  ${(props) => props.smallmuted &&`
     font-style: normal;
     font-weight: var(--fw-400);
     font-size: var(--fs-small);
     line-height: var(--fs-large);
-    color: var(--font-color);
+    color: rgba(241, 241, 241, 0.5);
   `}
 
+  ${(props) => props.smalllink &&`
+    font-style: normal;
+    font-weight: var(--fw-400);
+    font-size: var(--fs-small);
+    line-height: var(--fs-large);
+    color: var(--font-link);  
+    
   ${(props) => props.muted &&`
     color: #73BEC5;
     text-transform: uppercase;
@@ -102,6 +114,10 @@ export const Overline = styled.p`
   color: var(--font-color);
   letter-spacing: 0.015em;
   text-transform: uppercase;
+
+  ${props => props.destructive && `
+    color: var(--font-destructive)
+  `}
 ` 
 
 

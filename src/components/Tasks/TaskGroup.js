@@ -1,5 +1,4 @@
 import TaskCard from './TaskCard'
-import './TaskGroup.css'
 
 const TaskGroup = ({ children, kanban, name }) => {
 
