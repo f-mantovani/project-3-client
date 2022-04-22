@@ -17,7 +17,7 @@ const DashboardBooks = ({books}) => {
             <h2>Books recently added</h2>
             {mostRecentBooks.length > 0
             &&
-            <NavLinkPlato to="/events">
+            <NavLinkPlato to="/books">
               <Label smalllink>View All</Label>
             </NavLinkPlato>}
         </ColumnContainer>
@@ -34,7 +34,7 @@ const DashboardBooks = ({books}) => {
 
         <ColumnContainer startSpaceBetween>
           <Body>No books added to this list yet...</Body>
-          <NavLinkPlato to="/mytasks">
+          <NavLinkPlato to="/books">
             <Label smalllink>SEARCH A NEW BOOK</Label>
           </NavLinkPlato>
         </ColumnContainer>}

@@ -23,7 +23,7 @@ const DashboardEvents = ({ events }) => {
 
     : <ColumnContainer startSpaceBetween>
         <Body>No events in the next 14 days...</Body>
-        <NavLinkPlato to="/mytasks"><Label smalllink>View Events List</Label></NavLinkPlato>
+        <NavLinkPlato to="/events"><Label smalllink>View Events List</Label></NavLinkPlato>
     </ColumnContainer>
 
     }
