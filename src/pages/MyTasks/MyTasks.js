@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar'
 import NoTasks from '../../components/Tasks/NoTasks'
 import TaskGroup from '../../components/Tasks/TaskGroup'
 import CardPlato from '../../design.system/CardPlato'
+import CustomCheckboxPlato from '../../design.system/CustomCheckboxPlato'
 import LineBreakPlato from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
@@ -61,6 +62,7 @@ const MyTasks = () => {
       )}
       {(!kanban.length || active === types[0]) && (
         <CardPlato muted>
+        <CustomCheckboxPlato>
           <input
             type='checkbox'
             id='add-new-task'
@@ -69,6 +71,8 @@ const MyTasks = () => {
           <label htmlFor='add-new-task' className='task-label body'>
             Add new task...
           </label>
+
+        </CustomCheckboxPlato>
         </CardPlato>
       )}
       {!kanban.length && <NoTasks />}

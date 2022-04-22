@@ -3,7 +3,7 @@ import ButtonPlato from '../../design.system/ButtonPlato'
 import ColumnContainer from '../../design.system/ColumnContainer'
 import InputPlato from '../../design.system/InputPlato'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
-import RequiredPlato from '../../design.system/RequiredPlato'
+import DotPlato from '../../design.system/DotPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
 
 const SignupForm = () => {
@@ -39,7 +39,7 @@ const SignupForm = () => {
                 onChange={(e) => handleNameInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='name'>Name </label>
-              <RequiredPlato blue='true' />
+              <DotPlato required='true' />
             </div>
             <div className='input-field'>
               <InputPlato
@@ -51,7 +51,7 @@ const SignupForm = () => {
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='email'>Email address </label>
-              <RequiredPlato blue='true' />
+              <DotPlato required='true' />
             </div>
             <div className='input-field'>
               <InputPlato
@@ -63,7 +63,7 @@ const SignupForm = () => {
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='password'>Password </label>
-              <RequiredPlato blue='true' />
+              <DotPlato required='true' />
             </div>
             <div className='login-btn-group'>
               <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
