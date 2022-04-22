@@ -31,6 +31,14 @@ ${props => props.startSpaceBetween && `
     min-height: 2em;
     padding: 0 1.125em;
   `}
+
+${props => props.alignFlexEnd && `
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+    min-height: 2em;
+    padding: 0 1.125em;
+  `}
 `
   
 
