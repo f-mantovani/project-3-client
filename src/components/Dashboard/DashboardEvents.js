@@ -13,7 +13,7 @@ const DashboardEvents = ({ events }) => {
         <div>
     <ColumnContainer rowSpaceBetween>
         <h2>Upcoming Events</h2>
-        <NavLinkPlato to="/events"><Label muted>View All</Label></NavLinkPlato>
+        {upcomingEvents && <NavLinkPlato to="/events"><Label muted>View All</Label></NavLinkPlato>}
     </ColumnContainer>
     </div>
 
