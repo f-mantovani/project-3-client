@@ -81,7 +81,8 @@ export const Label = styled.p`
   `}
 
   ${(props) => props.muted &&`
-    color: rgba(241, 241, 241, 0.5);
+    color: #73BEC5;
+    text-transform: uppercase;
   `}
 ` 
 export const ButtonLabel = styled.p`
