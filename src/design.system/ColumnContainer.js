@@ -22,6 +22,30 @@ const ColumnContainer = styled.div`
   ${props => props.rowSpaceBetween && `
     flex-direction: row;
     justify-content: space-between;
+    padding: 1.125em;
+  `}
+
+${props => props.startSpaceBetween && `
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 2em;
+    padding: 0 1.125em;
+  `}
+
+${props => props.eventText && `
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    min-height: 2em;
+    padding: 0 1.125em;
+    width: 90%;
+  `}
+
+${props => props.eventImg && `
+    
+    & > img {
+      width: 1em;
+    }
   `}
 `
   

@@ -91,6 +91,10 @@ export const Label = styled.p`
     font-size: var(--fs-small);
     line-height: var(--fs-large);
     color: var(--font-link);  
+    
+  ${(props) => props.muted &&`
+    color: #73BEC5;
+    text-transform: uppercase;
   `}
 ` 
 export const ButtonLabel = styled.p`

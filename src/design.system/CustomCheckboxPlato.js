@@ -50,9 +50,6 @@ const CustomCheckboxPlato = styled.div`
     }
   
   `}
-
-
-  
 `
 
 export default CustomCheckboxPlato
