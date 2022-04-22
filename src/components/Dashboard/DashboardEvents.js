@@ -17,11 +17,14 @@ const DashboardEvents = ({ events }) => {
     </ColumnContainer>
     </div>
 
-    {upcomingEvents
+    {upcomingEvents.length > 0
 
-    ? <Body>{upcomingEvents.map(event => <EventCard event={event}/>)}</Body>
+    ? upcomingEvents.map(event => <EventCard event={event}/>)
 
-    : <Body>None</Body>
+    : <ColumnContainer startSpaceBetween>
+        <Body>No events created yet......</Body>
+        <NavLinkPlato to="/mytasks"><Label muted>View To Do List</Label></NavLinkPlato>
+    </ColumnContainer>
 
     }
     </>
