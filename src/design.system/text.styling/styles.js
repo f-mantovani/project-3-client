@@ -101,6 +101,10 @@ export const Overline = styled.p`
   color: var(--font-color);
   letter-spacing: 0.015em;
   text-transform: uppercase;
+
+  ${props => props.destructive && `
+    color: #E05252;
+  `}
 ` 
 
 

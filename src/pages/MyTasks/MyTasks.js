@@ -4,6 +4,8 @@ import NoTasks from '../../components/Tasks/NoTasks'
 import TaskGroup from '../../components/Tasks/TaskGroup'
 import CardPlato from '../../design.system/CardPlato'
 import LineBreakPlato from '../../design.system/LineBreakePlato'
+import PageHeaderPlato from '../../design.system/PageHeaderPlato'
+import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
 
 const types = ['To Do', 'Doing', 'Done']
@@ -34,11 +36,11 @@ const MyTasks = () => {
 
   return (
     <div>
-      <div className='task-header'>
+      <PageHeaderPlato>
         <Navbar />
         <h1>Tasks</h1>
-      </div>
-      <div className='task-tab-header'>
+      </PageHeaderPlato>
+      <TabHeaderPlato>
         <div className='tabs'>
           {types.map((type) => (
             <TabPlato
@@ -51,7 +53,7 @@ const MyTasks = () => {
           ))}
         </div>
         <LineBreakPlato />
-      </div>
+      </TabHeaderPlato>
       {active === types[0] && (
         <TaskGroup kanban={kanban} name='todo'>
           To Do
