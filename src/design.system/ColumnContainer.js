@@ -22,6 +22,7 @@ const ColumnContainer = styled.div`
   ${props => props.rowSpaceBetween && `
     flex-direction: row;
     justify-content: space-between;
+    padding: 1.125em;
   `}
 `
   
