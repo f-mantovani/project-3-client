@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import ColumnContainer from '../../design.system/ColumnContainer'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 import RowContainer from '../../design.system/RowContainer'
@@ -7,7 +7,14 @@ import getMostRecentBooks from '../../utils/controllers/getMostRecentBooks'
 import BookCardDashboard from '../Books/BookCardDashboard'
 
 const DashboardBooks = ({books}) => {
-  const mostRecentBooks = getMostRecentBooks(books)
+  
+
+  const [mostRecentBooks, setMostRecentBooks] = useState([])
+
+  useEffect(() => {
+    setMostRecentBooks(getMostRecentBooks(books))
+  }, [])
+  
 
   return (
 
