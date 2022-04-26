@@ -1,8 +1,6 @@
 const getMostRecentBooks = (books) => {
 
-    const mostRecentBooks = books.sort((a,b) => {
-        if (a.createdAt > b.createdAt) return  -1
-    })
+    const mostRecentBooks = books.reverse()
 
     return mostRecentBooks.slice(0, 5)
 
