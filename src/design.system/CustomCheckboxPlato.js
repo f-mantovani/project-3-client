@@ -8,7 +8,6 @@ const CustomCheckboxPlato = styled.div`
   position: relative;
 
   .task-label {
-  cursor: pointer;
   display: flex;
   align-items: center;
   }
@@ -23,20 +22,27 @@ const CustomCheckboxPlato = styled.div`
   }
 
   .custom-checkbox{
-  cursor: pointer;
   position: absolute;
   opacity: 0;  
   }
 
   ${props => props.checkable && `
+    .task-label {
+      cursor: pointer;
+    }
+
+    .custom-checkbox{
+      cursor: pointer;
+    }
+
     .task-label:hover::before,
     .custom-checkbox:hover + .task-label::before {
       background-color: black;
     }
 
     .custom-checkbox:focus + .task-label::before {
-    border: .05em slateblue solid;
-    box-shadow: 2px 2px 2px slateblue;
+      border: .05em slateblue solid;
+      box-shadow: 2px 2px 2px slateblue;
     }   
 
     .custom-checkbox:checked + .task-label::before{
