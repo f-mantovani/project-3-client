@@ -7,6 +7,10 @@ import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import DashboardTasks from '../../components/Dashboard/DashboardTasks'
 import DashboardEvents from '../../components/Dashboard/DashboardEvents'
+import books from '../../books.json'
+import DashboardBooks from '../../components/Dashboard/DashboardBooks'
+import ColumnContainer from '../../design.system/ColumnContainer'
+
 
 const Dashboard = () => {
 
@@ -83,6 +87,13 @@ const Dashboard = () => {
         <DashboardTasks kanban={kanban}/> 
 
         <DashboardEvents events={events}/>
+
+        <DashboardBooks books={books}/>
+
+        {/* Page Breather */}
+        <ColumnContainer>
+          <br/><br/><br/><br/>
+        </ColumnContainer>
         
         </>
         }
