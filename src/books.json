@@ -1,0 +1,105 @@
+[
+	{
+		"_id": "6262c3d551624b76fad50469",
+		"name": "Fight Club",
+		"author": "Chuck Palahniuk",
+		"createdByUser": "6258a2b9ab2f7510f870def4",
+		"favoritedByUsers": [
+			"6258a2b9ab2f7510f870def4"
+		],
+		"createdAt": "2022-04-12T15:03:49.363Z",
+		"updatedAt": "2022-04-22T15:09:35.448Z",
+		"__v": 0,
+		"imageUrl": "https://res.cloudinary.com/dtgsmvuaw/image/upload/v1650640175/platoDatabase/oeamflu3ksmcuikftqrm.jpg"
+	},
+	{
+		"_id": "6262c3e651624b76fad5046c",
+		"name": "Breakfast of the Champions",
+		"author": "Kurt Vonnegut",
+		"createdByUser": "6258a2b9ab2f7510f870def4",
+		"favoritedByUsers": [
+			"6258a2b9ab2f7510f870def4"
+		],
+		"createdAt": "2022-04-21T15:04:06.265Z",
+		"updatedAt": "2022-04-22T15:10:27.145Z",
+		"__v": 0,
+		"imageUrl": "https://res.cloudinary.com/dtgsmvuaw/image/upload/v1650640226/platoDatabase/tkvewnmafl80ardluygh.jpg"
+	},
+	{
+		"_id": "6262c40151624b76fad5046f",
+		"name": "Gravity Rainbow",
+		"author": "Thomas Pynchon",
+		"createdByUser": "6258a2b9ab2f7510f870def4",
+		"favoritedByUsers": [
+			"6258a2b9ab2f7510f870def4"
+		],
+		"createdAt": "2022-04-22T15:04:33.182Z",
+		"updatedAt": "2022-04-22T15:11:31.513Z",
+		"__v": 0,
+		"imageUrl": "https://res.cloudinary.com/dtgsmvuaw/image/upload/v1650640291/platoDatabase/vrz1qntuntfjiale44h1.jpg"
+	},
+	{
+		"_id": "6262c42a51624b76fad50472",
+		"name": "Catch-22",
+		"author": "Joseph Heller",
+		"createdByUser": "6258a2b9ab2f7510f870def4",
+		"favoritedByUsers": [
+			"6258a2b9ab2f7510f870def4"
+		],
+		"createdAt": "2022-04-18T15:05:14.459Z",
+		"updatedAt": "2022-04-22T15:12:46.103Z",
+		"__v": 0,
+		"imageUrl": "https://res.cloudinary.com/dtgsmvuaw/image/upload/v1650640365/platoDatabase/ub1k4gnyfnkcjgaufm5v.jpg"
+	},
+	{
+		"_id": "6262c46d51624b76fad50475",
+		"name": "Metamorphosis",
+		"author": "Franz Kafka",
+		"createdByUser": "6258a2b9ab2f7510f870def4",
+		"favoritedByUsers": [
+			"6258a2b9ab2f7510f870def4"
+		],
+		"createdAt": "2022-04-19T15:06:21.067Z",
+		"updatedAt": "2022-04-22T15:13:41.195Z",
+		"__v": 0,
+		"imageUrl": "https://res.cloudinary.com/dtgsmvuaw/image/upload/v1650640420/platoDatabase/dfs9eqoz6ubf7yvzdnzr.jpg"
+	},
+	{
+		"_id": "6262c47f51624b76fad50478",
+		"name": "A Hora da Estrela",
+		"author": "Clarice Lispector",
+		"createdByUser": "6258a2b9ab2f7510f870def4",
+		"favoritedByUsers": [
+			"6258a2b9ab2f7510f870def4"
+		],
+		"createdAt": "2022-04-20T15:06:39.784Z",
+		"updatedAt": "2022-04-22T15:14:31.679Z",
+		"__v": 0,
+		"imageUrl": "https://res.cloudinary.com/dtgsmvuaw/image/upload/v1650640471/platoDatabase/zrttyvvvmoflft20wqop.jpg"
+	},
+	{
+		"_id": "6262c4df51624b76fad5047c",
+		"name": "Os Gregos",
+		"author": "Isaac Asimov",
+		"createdByUser": "6258a2b9ab2f7510f870def4",
+		"favoritedByUsers": [
+			"6258a2b9ab2f7510f870def4"
+		],
+		"createdAt": "2022-04-20T15:08:15.091Z",
+		"updatedAt": "2022-04-22T15:17:12.563Z",
+		"__v": 0,
+		"imageUrl": "https://res.cloudinary.com/dtgsmvuaw/image/upload/v1650640632/platoDatabase/wsyqbvyjg7jvrao5lpfr.jpg"
+	},
+	{
+		"_id": "6262c4ea51624b76fad5047f",
+		"name": "Nausea",
+		"author": "Jean-Paul Sartre",
+		"createdByUser": "6258a2b9ab2f7510f870def4",
+		"favoritedByUsers": [
+			"6258a2b9ab2f7510f870def4"
+		],
+		"createdAt": "2022-04-17T15:08:26.150Z",
+		"updatedAt": "2022-04-22T15:08:26.150Z",
+		"__v": 0
+	}
+]
