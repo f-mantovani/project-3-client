@@ -9,6 +9,7 @@ const ColumnContainer = styled.div`
   ${props => props.kebab && `
     min-height: 2.5rem;
     padding-right: 1.125em;
+    position: relative
   `}
   
   ${props => props.mt3 && `
