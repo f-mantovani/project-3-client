@@ -55,7 +55,7 @@ const Events = () => {
         }
 
         {active === types[1] && 
-          pastEvents.map(event => <EventCard key={event.id} event={event}/>)
+          pastEvents.map(event => <EventCard done key={event.id} event={event}/>)
 }
     </div>
   )
