@@ -14,22 +14,21 @@
 }
 
 .toggle-button-burger {
-    position: fixed;
-    top:0;
-    right: 0;
     width: 1.8em;
-    margin: 0.7em 1em;
+    margin: 0 1em;
     padding: 0.2em;
 }
 
 .toggle-gray-cover {
     width: 100vw;
-    height: 110vh;
+    height: 200vh;
     background: rgba(220, 220, 220, 0.3);
     position: fixed;
+    top:0;
+    right: 0;
     transition-duration: 1s;
     z-index: 2;
-    margin-top: -1em;
+    margin-top: -3em;
 }
 
 .toggled {
