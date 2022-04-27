@@ -1,8 +1,7 @@
 const getMostRecentBooks = (books) => {
 
-    const mostRecentBooks = books.reverse()
 
-    return mostRecentBooks.slice(0, 5)
+    return books.slice(-5, books.length).reverse()
 
 }
 
