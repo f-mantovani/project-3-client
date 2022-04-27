@@ -4,12 +4,18 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
+import events from '../../events.json'
+import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 
 const Events = () => {
 
   const types = ['Upcoming', 'Previous']
 
   const [active, setActive] = useState(types[0])
+
+  const sortedEvents = getPastAndUpcomingEvents(events)
+
+  const { pastEvents, upcomingEvents } = sortedEvents
 
 
   return (
