@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import EventCard from '../../components/Events/EventCard'
 import Navbar from '../../components/Navbar'
 import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
+import { Body } from '../../design.system/text.styling/styles'
 import events from '../../events.json'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 
@@ -17,6 +19,9 @@ const Events = () => {
 
   const { pastEvents, upcomingEvents } = sortedEvents
 
+  console.log(pastEvents, upcomingEvents)
+
+  
 
   return (
     <div>
@@ -44,12 +49,14 @@ const Events = () => {
         <LineBreak />  
 
         {active === types[0] && 
+          
+          upcomingEvents.map(event => <EventCard key={event.id} event={event}/>)
 
-        <p>Upcoming</p>}
+        }
 
         {active === types[1] && 
-
-        <p>Previous</p>}
+          pastEvents.map(event => <EventCard key={event.id} event={event}/>)
+}
     </div>
   )
 }
