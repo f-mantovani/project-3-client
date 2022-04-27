@@ -15,7 +15,6 @@
   --fs-xtra-large:1rem;
   --fs-sub-title:1.25rem;
   --fs-main-title:1.5rem;
-  overflow: hidden;
 }
 
 *,
@@ -24,6 +23,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+input {
+  font-family: inherit;
 }
 
 img {

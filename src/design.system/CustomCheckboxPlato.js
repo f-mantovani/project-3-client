@@ -26,6 +26,14 @@ const CustomCheckboxPlato = styled.div`
   opacity: 0;  
   }
 
+  .task-add {
+    background: transparent;
+    position: absolute;
+    margin-left: 2rem;
+    border: none;
+    outline: none;
+  }
+
   ${props => props.checkable && `
     .task-label {
       cursor: pointer;

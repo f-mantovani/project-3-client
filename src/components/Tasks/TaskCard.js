@@ -5,7 +5,6 @@ import ColumnContainer from '../../design.system/ColumnContainer'
 import DotPlato from '../../design.system/DotPlato'
 import { Body } from '../../design.system/text.styling/styles'
 import OutsideClicker from '../OutsideClicker'
-
 import MenuCollapsable from '../MenuCollapsable'
 import TaskDotMenu from './TaskDotMenu'
 
