@@ -13,8 +13,8 @@ const EventCard = ({event, done}) => {
         <EventCardDate date={event.date}/>
 
         <ColumnContainer eventText>
-            {done ? <Subtitle2 done>{event.title}</Subtitle2> : <Subtitle2>{event.title}</Subtitle2>}
-            {done ? <Body done>{event.description}</Body> : <Body>{event.description}</Body> }
+            {done ? <Subtitle2 muted done>{event.title}</Subtitle2> : <Subtitle2>{event.title}</Subtitle2>}
+            {done ? <Body muted done>{event.description}</Body> : <Body>{event.description}</Body> }
         </ColumnContainer>
 
         <ColumnContainer kebab='true'>
