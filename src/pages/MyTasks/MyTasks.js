@@ -38,8 +38,8 @@ const MyTasks = () => {
   return (
     <div>
       <PageHeaderPlato>
-        <Navbar />
         <h1>Tasks</h1>
+        <Navbar />
       </PageHeaderPlato>
       <TabHeaderPlato>
         <div className='tabs'>

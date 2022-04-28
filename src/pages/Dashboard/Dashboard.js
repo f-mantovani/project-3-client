@@ -60,8 +60,8 @@ const Dashboard = () => {
     <div>
       
       <PageHeaderPlato>
-        <Navbar/>
         <h1>Dashboard</h1>
+        <Navbar/>
       </PageHeaderPlato>
       <TabHeaderPlato>
         <div className='tabs'>

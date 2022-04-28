@@ -11,7 +11,7 @@ const Navbar = () => {
   const [ toggle, setToggle ] = useState(true)
 
   return (
-    <>
+    <div>
     {toggle &&
     <img onClick={() => setToggle(!toggle)} 
          src={menuToggle}
@@ -49,7 +49,7 @@ const Navbar = () => {
     
     
     </SideBar>
-    </>
+    </div>
     
   )
 }
