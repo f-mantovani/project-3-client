@@ -13,6 +13,7 @@ import RowContainer from '../../design.system/RowContainer'
 import BookCardDashboard from '../../components/Books/BookCardDashboard'
 import searchIcon from '../../assets/search.png'
 import SearchIcon from '../../design.system/SearchIcon'
+import SearchInputPlato from '../../design.system/SearchInputPlato'
 
 const types = ['To Read', 'Done']
 
@@ -22,6 +23,14 @@ const Books = () => {
 
   return (
     <>
+      <SearchInputPlato>
+        <SearchIcon src={searchIcon} alt='magnifying glass for search icon' />
+        <input id='search' name='search' type='text' required className='search-input'/>
+        <label className='input-label' htmlFor='search'>
+          <H2 muted>Search by titlle, author...</H2>
+        </label>
+      </SearchInputPlato>
+
       <PageHeaderPlato>
         <H1>Books</H1>
         <div className='flex space-between'>
@@ -43,9 +52,8 @@ const Books = () => {
         </div>
         <LineBreak />
       </TabHeaderPlato>
-      {(!books.length && active === types[0]) && (
-        <NoBooks />) }
-        {(active === types[0] && books.length) &&
+      {!books.length && active === types[0] && <NoBooks />}
+      {active === types[0] && books.length && (
         <>
           <ColumnContainer rowSpaceBetween>
             <H2>Reading now</H2>
@@ -57,26 +65,34 @@ const Books = () => {
           </ColumnContainer>
           <RowContainer bookRowContainer>
             {books.map((book) => (
-              <BookCardDashboard key={book._id} title={book.name} image={book.imageUrl} />
+              <BookCardDashboard
+                key={book._id}
+                title={book.name}
+                image={book.imageUrl}
+              />
             ))}
           </RowContainer>
           <div className='pb375'>
-          <ColumnContainer rowSpaceBetween mt325>
-            <H2>Reading list</H2>
-            <ColumnContainer kebab>
-              <DotPlato />
-              <DotPlato />
-              <DotPlato />
+            <ColumnContainer rowSpaceBetween mt325>
+              <H2>Reading list</H2>
+              <ColumnContainer kebab>
+                <DotPlato />
+                <DotPlato />
+                <DotPlato />
+              </ColumnContainer>
             </ColumnContainer>
-          </ColumnContainer>
-          <RowContainer bookRowContainer>
-            {books.map((book) => (
-              <BookCardDashboard key={book._id}title={book.name} image={book.imageUrl} />
-            ))}
-          </RowContainer>
+            <RowContainer bookRowContainer>
+              {books.map((book) => (
+                <BookCardDashboard
+                  key={book._id}
+                  title={book.name}
+                  image={book.imageUrl}
+                />
+              ))}
+            </RowContainer>
           </div>
         </>
-      }
+      )}
     </>
   )
 }
