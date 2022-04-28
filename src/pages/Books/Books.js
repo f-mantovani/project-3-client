@@ -11,6 +11,8 @@ import ColumnContainer from '../../design.system/ColumnContainer'
 import DotPlato from '../../design.system/DotPlato'
 import RowContainer from '../../design.system/RowContainer'
 import BookCardDashboard from '../../components/Books/BookCardDashboard'
+import searchIcon from '../../assets/search.png'
+import SearchIcon from '../../design.system/SearchIcon'
 
 const types = ['To Read', 'Done']
 
@@ -22,7 +24,10 @@ const Books = () => {
     <>
       <PageHeaderPlato>
         <H1>Books</H1>
-        <Navbar />
+        <div className='flex space-between'>
+          <SearchIcon src={searchIcon} alt='magnifying glass for search icon' />
+          <Navbar />
+        </div>
       </PageHeaderPlato>
       <TabHeaderPlato>
         <div className='tabs'>
@@ -38,9 +43,9 @@ const Books = () => {
         </div>
         <LineBreak />
       </TabHeaderPlato>
-      {!books.length ? (
-        <NoBooks />
-      ) : (
+      {(!books.length && active === types[0]) && (
+        <NoBooks />) }
+        {(active === types[0] && books.length) &&
         <>
           <ColumnContainer rowSpaceBetween>
             <H2>Reading now</H2>
@@ -71,7 +76,7 @@ const Books = () => {
           </RowContainer>
           </div>
         </>
-      )}
+      }
     </>
   )
 }

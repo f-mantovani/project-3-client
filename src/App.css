@@ -144,3 +144,11 @@ h4 {
 .pb375 {
   padding-bottom: 3.75rem;
 }
+
+.flex {
+  display: flex;
+} 
+.space-between{
+  justify-content: space-between;
+  align-items: center;
+}
