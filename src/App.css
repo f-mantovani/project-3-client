@@ -140,3 +140,7 @@ h4 {
   letter-spacing: 0.015em;
   text-transform: uppercase;
 }
+
+.pb375 {
+  padding-bottom: 3.75rem;
+}

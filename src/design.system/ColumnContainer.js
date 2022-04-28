@@ -16,6 +16,10 @@ const ColumnContainer = styled.div`
     margin-top: 3rem;
   `}
 
+  ${props => props.mt325 && `
+    margin-top: 3.25rem;
+  `}
+
   ${props => props.mt5 && `
     margin-top: 5rem;
   `}

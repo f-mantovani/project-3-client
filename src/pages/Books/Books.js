@@ -4,16 +4,20 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { H1, Label } from '../../design.system/text.styling/styles'
+import { H1, H2, Label } from '../../design.system/text.styling/styles'
 import books from '../../books.json'
 import NoBooks from '../../components/Books/NoBooks'
+import ColumnContainer from '../../design.system/ColumnContainer'
+import DotPlato from '../../design.system/DotPlato'
+import RowContainer from '../../design.system/RowContainer'
+import BookCardDashboard from '../../components/Books/BookCardDashboard'
 
 const types = ['To Read', 'Done']
 
 const Books = () => {
   const [active, setActive] = useState(types[0])
-  books = []
-  
+  // books = []
+
   return (
     <>
       <PageHeaderPlato>
@@ -34,7 +38,40 @@ const Books = () => {
         </div>
         <LineBreak />
       </TabHeaderPlato>
-      {!books.length && <NoBooks />}
+      {!books.length ? (
+        <NoBooks />
+      ) : (
+        <>
+          <ColumnContainer rowSpaceBetween>
+            <H2>Reading now</H2>
+            <ColumnContainer kebab>
+              <DotPlato />
+              <DotPlato />
+              <DotPlato />
+            </ColumnContainer>
+          </ColumnContainer>
+          <RowContainer bookRowContainer>
+            {books.map((book) => (
+              <BookCardDashboard key={book._id} title={book.name} image={book.imageUrl} />
+            ))}
+          </RowContainer>
+          <div className='pb375'>
+          <ColumnContainer rowSpaceBetween mt325>
+            <H2>Reading list</H2>
+            <ColumnContainer kebab>
+              <DotPlato />
+              <DotPlato />
+              <DotPlato />
+            </ColumnContainer>
+          </ColumnContainer>
+          <RowContainer bookRowContainer>
+            {books.map((book) => (
+              <BookCardDashboard key={book._id}title={book.name} image={book.imageUrl} />
+            ))}
+          </RowContainer>
+          </div>
+        </>
+      )}
     </>
   )
 }
