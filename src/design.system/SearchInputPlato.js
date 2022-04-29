@@ -13,8 +13,6 @@ const SearchInputPlato = styled.div`
   position: fixed;
   bottom: 0;
   z-index: 100;
-  /* transition: bottom ease 1s; */
-
 
   & > div {
     display: flex;

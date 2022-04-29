@@ -4,7 +4,7 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { H1, H2, Label } from '../../design.system/text.styling/styles'
+import { Body, H1, H2, Label } from '../../design.system/text.styling/styles'
 import books from '../../books.json'
 import NoBooks from '../../components/Books/NoBooks'
 import ColumnContainer from '../../design.system/ColumnContainer'
@@ -20,7 +20,7 @@ const types = ['To Read', 'Done']
 
 const Books = () => {
   const [active, setActive] = useState(types[0])
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   // books = []
 
   const changeOpen = () => {
@@ -38,7 +38,11 @@ const Books = () => {
       <PageHeaderPlato>
         <H1>Books</H1>
         <div className='flex space-between'>
-          <Icon src={searchIcon} alt='magnifying glass for search icon' onClick={() => changeOpen()} />
+          <Icon
+            src={searchIcon}
+            alt='magnifying glass for search icon'
+            onClick={() => changeOpen()}
+          />
           <Navbar />
         </div>
       </PageHeaderPlato>
@@ -61,11 +65,11 @@ const Books = () => {
         <>
           <ColumnContainer rowSpaceBetween>
             <H2>Reading now</H2>
-            <ColumnContainer kebab>
+           <ColumnContainer kebab>
               <DotPlato />
               <DotPlato />
               <DotPlato />
-            </ColumnContainer>
+            </ColumnContainer> 
           </ColumnContainer>
           <RowContainer bookRowContainer>
             {books.map((book) => (
