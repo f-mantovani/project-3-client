@@ -8,6 +8,8 @@ import EventCard from '../Events/EventCard'
 const DashboardEvents = ({ events }) => {
 
   const upcomingEvents = getUpcomingEvents(events)
+
+  console.log(upcomingEvents)
   return (
     <>
         <div>

@@ -5,16 +5,14 @@ import ColumnContainer from '../../design.system/ColumnContainer'
 import DotPlato from '../../design.system/DotPlato'
 import { Body } from '../../design.system/text.styling/styles'
 import OutsideClicker from '../OutsideClicker'
-
 import MenuCollapsable from '../MenuCollapsable'
 import TaskDotMenu from './TaskDotMenu'
+import useCollapseMenu from '../../utils/controllers/useCollapseMenu'
 
 
 const TaskCard = ({ title, status, index }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const handleCollapse = () => {
-    setIsOpen(!isOpen)
-  }
+  const { isOpen, setIsOpen, handleCollapse } = useCollapseMenu()
+  
   return (
     <CardPlato className='task-card'>
       <CustomCheckboxPlato checkable>

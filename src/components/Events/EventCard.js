@@ -5,7 +5,7 @@ import DotPlato from '../../design.system/DotPlato'
 import { Body, Subtitle2 } from '../../design.system/text.styling/styles'
 import EventCardDate from './EventCardDate'
 
-const EventCard = ({event}) => {
+const EventCard = ({event, done}) => {
 
   return (
     <CardPlato>
@@ -13,8 +13,8 @@ const EventCard = ({event}) => {
         <EventCardDate date={event.date}/>
 
         <ColumnContainer eventText>
-            <Subtitle2>{event.title}</Subtitle2>
-            <Body>{event.description}</Body>
+            {done ? <Subtitle2 muted done>{event.title}</Subtitle2> : <Subtitle2>{event.title}</Subtitle2>}
+            {done ? <Body muted done>{event.description}</Body> : <Body>{event.description}</Body> }
         </ColumnContainer>
 
         <ColumnContainer kebab='true'>

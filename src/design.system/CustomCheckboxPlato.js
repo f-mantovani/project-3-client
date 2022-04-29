@@ -26,6 +26,14 @@ const CustomCheckboxPlato = styled.div`
   opacity: 0;  
   }
 
+  .task-add {
+    background: transparent;
+    position: absolute;
+    margin-left: 2rem;
+    border: none;
+    outline: none;
+  }
+
   ${props => props.checkable && `
     .task-label {
       cursor: pointer;
@@ -37,22 +45,22 @@ const CustomCheckboxPlato = styled.div`
 
     .task-label:hover::before,
     .custom-checkbox:hover + .task-label::before {
-      background-color: black;
+     
     }
 
     .custom-checkbox:focus + .task-label::before {
-      border: .05em slateblue solid;
-      box-shadow: 2px 2px 2px slateblue;
+      box-shadow: 1px solid rgba(241, 241, 241, 0.5);
     }   
 
     .custom-checkbox:checked + .task-label::before{
       content: '';
       border: none;
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1.35rem;
+      height: 1.35rem;
       background-image: url(${checkIcon});
-      background-size: 1.25rem 1.25rem;
+      background-size: 1.35rem 1.35rem;
       background-repeat: no-repeat;
+      margin-right:.65rem
     }
   
   `}
