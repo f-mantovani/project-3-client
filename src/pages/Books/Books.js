@@ -12,29 +12,33 @@ import DotPlato from '../../design.system/DotPlato'
 import RowContainer from '../../design.system/RowContainer'
 import BookCardDashboard from '../../components/Books/BookCardDashboard'
 import searchIcon from '../../assets/search.png'
-import SearchIcon from '../../design.system/SearchIcon'
-import SearchInputPlato from '../../design.system/SearchInputPlato'
+import Icon from '../../design.system/Icon'
+import SearchInput from '../../components/Books/SearchInput'
+import GrayArea from '../../design.system/GrayArea'
 
 const types = ['To Read', 'Done']
 
 const Books = () => {
   const [active, setActive] = useState(types[0])
+  const [open, setOpen] = useState(true)
   // books = []
+
+  const changeOpen = () => {
+    setOpen(!open)
+  }
 
   return (
     <>
-      <SearchInputPlato>
-        <SearchIcon src={searchIcon} alt='magnifying glass for search icon' />
-        <input id='search' name='search' type='text' required className='search-input'/>
-        <label className='input-label' htmlFor='search'>
-          <H2 muted>Search by titlle, author...</H2>
-        </label>
-      </SearchInputPlato>
-
+      {open && (
+        <>
+          <GrayArea onClick={() => changeOpen()} />
+          <SearchInput changeOpen={changeOpen} />
+        </>
+      )}
       <PageHeaderPlato>
         <H1>Books</H1>
         <div className='flex space-between'>
-          <SearchIcon src={searchIcon} alt='magnifying glass for search icon' />
+          <Icon src={searchIcon} alt='magnifying glass for search icon' onClick={() => changeOpen()} />
           <Navbar />
         </div>
       </PageHeaderPlato>
