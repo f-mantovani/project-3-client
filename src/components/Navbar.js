@@ -39,10 +39,10 @@ const Navbar = () => {
     <NavUserDisplay/>
 
     <ul className={toggle ? "toggled" : "undefined"}>
-      <li><NavLinkPlato to="/dashboard">Dashboard</NavLinkPlato></li>
-      <li><NavLinkPlato to="/mytasks">My Tasks</NavLinkPlato></li>
-      <li><NavLinkPlato to="/events">Events</NavLinkPlato></li>
-      <li><NavLinkPlato to="/books">Books</NavLinkPlato></li>
+      <li><NavLinkPlato to="/private/dashboard">Dashboard</NavLinkPlato></li>
+      <li><NavLinkPlato to="/private/mytasks">My Tasks</NavLinkPlato></li>
+      <li><NavLinkPlato to="/private/events">Events</NavLinkPlato></li>
+      <li><NavLinkPlato to="/private/books">Books</NavLinkPlato></li>
       <li><NavLinkPlato to="/" onClick={removeToken}>Logout</NavLinkPlato></li>
       
     </ul>

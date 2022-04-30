@@ -1,6 +1,7 @@
-const removeToken = (data) => {
-  if (!localStorage.getItem('token')) return
-  localStorage.removeItem('token')
+const removeToken = (error) => {
+  if (localStorage.getItem('token') || error.response.status === 401){ 
+    localStorage.removeItem('token')
+  }
 }
 
 export default removeToken

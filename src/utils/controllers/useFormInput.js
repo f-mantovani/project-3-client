@@ -24,7 +24,7 @@ const useFormInput = () => {
     try {
       const data = await apiConnect.logIn(logUser)
       saveToken(data)
-      navigate('/dashboard')
+      navigate('/private/dashboard')
       setEmail('')
       setPassword('')
     } catch (error) {
