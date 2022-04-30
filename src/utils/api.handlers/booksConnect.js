@@ -1,36 +1,55 @@
-import axios from 'axios'
-import removeToken from '../controllers/removeToken'
+import apiConstructor from './apiConstructor'
 
-class booksConnect {
-  constructor() {
-    this.api = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}`,
-    })
-    this.api.interceptors.request.use(
-      (config) => {
-        const token = localStorage.getItem('token')
-        if (token) {
-          config.headers = {
-            Authorization: `Bearer ${token}`,
-          }
-        }
-        return config
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
-
-    this.api.interceptors.response.use(
-      (response) => response,
-      (error) => {
-        removeToken(error)
-        throw error
-      }
-    )
+class booksConnect extends apiConstructor {
+  constructor(){
+    super('book')
   }
 
+  getAllTasks = async () => {
+    try {
+      const { data } = await this.api.get('/')
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  createTask = async (newEvent) => {
+    try {
+      const { data } = await this.api.post('/', newEvent)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  updateTitle = async (id ,updatedEvent) => {
+    try {
+      const { data } = await this.api.put(`/${id}`, updatedEvent)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  deleteTask = async (id) => {
+    try {
+      const { data } = await this.api.delete(`/deleteOne/${id}`)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  deleteAllTasks = async () => {
+    try {
+      const { data } = await this.api.delete('/deleteAll')
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
 
 }
 
-export default new booksConnect()
+export default new booksConnect ()

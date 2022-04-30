@@ -1,36 +1,55 @@
-import axios from 'axios'
-import removeToken from '../controllers/removeToken'
+import apiConstructor from './apiConstructor'
 
-class eventsConnect {
-  constructor() {
-    this.api = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}`,
-    })
-    this.api.interceptors.request.use(
-      (config) => {
-        const token = localStorage.getItem('token')
-        if (token) {
-          config.headers = {
-            Authorization: `Bearer ${token}`,
-          }
-        }
-        return config
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
-
-    this.api.interceptors.response.use(
-      (response) => response,
-      (error) => {
-        removeToken(error)
-        throw error
-      }
-    )
+class eventsConnect extends apiConstructor {
+  constructor(){
+    super('event')
   }
 
+  getAllEvents = async () => {
+    try {
+      const { data } = await this.api.get('/')
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  createEvent = async (newEvent) => {
+    try {
+      const { data } = await this.api.post('/', newEvent)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  updateEvent = async (id ,updatedEvent) => {
+    try {
+      const { data } = await this.api.put(`/${id}`, updatedEvent)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  deleteEvent = async (id) => {
+    try {
+      const { data } = await this.api.delete(`/deleteOne/${id}`)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  deleteAllEvents = async () => {
+    try {
+      const { data } = await this.api.delete('/deleteAll')
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
 
 }
 
-export default new eventsConnect()
+export default new eventsConnect ()
