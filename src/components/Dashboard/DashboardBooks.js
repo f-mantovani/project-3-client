@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import ColumnContainer from '../../design.system/ColumnContainer'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 import RowContainer from '../../design.system/RowContainer'
@@ -34,7 +35,11 @@ const DashboardBooks = ({books}) => {
         ? 
         
         <RowContainer bookRowContainer>
-        {mostRecentBooks.map(book => <BookCardDashboard title={book.name} image={book.imageUrl}/>)}
+        {mostRecentBooks.map(book => 
+      
+            <BookCardDashboard title={book.name} image={book.imageUrl} _id={book._id}/>
+       
+        )}
         </RowContainer>
 
         : 

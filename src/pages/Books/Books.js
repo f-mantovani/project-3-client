@@ -77,6 +77,7 @@ const Books = () => {
                 key={book._id}
                 title={book.name}
                 image={book.imageUrl}
+                _id={book._id}
               />
             ))}
           </RowContainer>
@@ -95,6 +96,7 @@ const Books = () => {
                   key={book._id}
                   title={book.name}
                   image={book.imageUrl}
+                  _id={book._id}
                 />
               ))}
             </RowContainer>
