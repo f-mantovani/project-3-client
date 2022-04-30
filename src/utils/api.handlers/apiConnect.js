@@ -1,11 +1,8 @@
-import axios from 'axios'
-import removeToken from '../controllers/removeToken'
 import apiConstructor from './apiConstructor'
 
 class apiConnect extends apiConstructor {
   constructor(){
-    let path = 'auth'
-    super(path)
+    super('auth')
   }
 
   signUp = async (payload) => {
