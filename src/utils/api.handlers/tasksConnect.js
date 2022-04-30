@@ -35,6 +35,7 @@ class tasksConnect extends apiConstructor {
   updateStatus = async (id ,newStatus) => {
     try {
       const { data } = await this.api.put(`/${id}`, newStatus)
+      console.log(data)
       return data
     } catch (error) {
       console.log(error.response.data)

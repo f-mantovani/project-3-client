@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CardPlato from '../../design.system/CardPlato'
 import CustomCheckboxPlato from '../../design.system/CustomCheckboxPlato'
 import ColumnContainer from '../../design.system/ColumnContainer'
@@ -30,7 +30,7 @@ const TaskCard = ({ title, status, id }) => {
           <DotPlato />
           <OutsideClicker isOpen={isOpen} setIsOpen={setIsOpen}>
             <MenuCollapsable>
-              <TaskDotMenu id={id}/>
+              <TaskDotMenu id={id} status={status} />
             </MenuCollapsable>
           </OutsideClicker>
         </ColumnContainer>
