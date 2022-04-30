@@ -24,7 +24,6 @@ const useFormInput = () => {
     const logUser = {email, password}
     try {
       const data = await apiConnect.logIn(logUser)
-      console.log(data)
       saveToken(data)
       navigate('/private/dashboard')
       setEmail('')
@@ -36,7 +35,6 @@ const useFormInput = () => {
   const signUpUser = () => {
     const newUser = {name, email, password}
     apiConnect.signUp(newUser)
-    console.log(newUser)
     setName('')
     setEmail('')
     setPassword('')

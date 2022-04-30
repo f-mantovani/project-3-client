@@ -1,5 +1,4 @@
 import apiConstructor from './apiConstructor'
-
 class apiConnect extends apiConstructor {
   constructor(){
     super('auth')

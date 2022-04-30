@@ -10,15 +10,15 @@ import TaskDotMenu from './TaskDotMenu'
 import useCollapseMenu from '../../utils/controllers/useCollapseMenu'
 
 
-const TaskCard = ({ title, status, index }) => {
+const TaskCard = ({ title, status, id }) => {
   const { isOpen, setIsOpen, handleCollapse } = useCollapseMenu()
   
   return (
     <CardPlato className='task-card'>
       <CustomCheckboxPlato checkable>
-        <input type='checkbox' id={index} className='custom-checkbox' />
+        <input type='checkbox' id={id} className='custom-checkbox' />
         <label
-          htmlFor={index}
+          htmlFor={id}
           className='task-label'
         >
           <Body done={status === 'done'}  muted={status === 'done'} >{title}</Body>
@@ -30,7 +30,7 @@ const TaskCard = ({ title, status, index }) => {
           <DotPlato />
           <OutsideClicker isOpen={isOpen} setIsOpen={setIsOpen}>
             <MenuCollapsable>
-              <TaskDotMenu />
+              <TaskDotMenu id={id}/>
             </MenuCollapsable>
           </OutsideClicker>
         </ColumnContainer>

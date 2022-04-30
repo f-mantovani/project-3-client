@@ -2,9 +2,9 @@ import axios from 'axios'
 import removeToken from '../controllers/removeToken'
 
 class apiConstructor {
-  constructor(domainExtends) {
+  constructor(path) {
     this.api = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}/${domainExtends}`,
+      baseURL: `${process.env.REACT_APP_API_URL}/${path}`,
     })
     this.api.interceptors.request.use(
       (config) => {

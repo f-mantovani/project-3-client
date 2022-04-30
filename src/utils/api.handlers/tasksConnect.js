@@ -22,6 +22,43 @@ class tasksConnect extends apiConstructor {
       console.log(error.response.data)
     }
   }
+
+  updateTitle = async (id ,newTitle) => {
+    try {
+      const { data } = await this.api.put(`/${id}`, newTitle)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  updateStatus = async (id ,newStatus) => {
+    try {
+      const { data } = await this.api.put(`/${id}`, newStatus)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  deleteTask = async (id) => {
+    try {
+      const { data } = await this.api.delete(`/deleteOne/${id}`)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  deleteAllTasks = async () => {
+    try {
+      const { data } = await this.api.delete('/deleteAll')
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
 }
 
 export default new tasksConnect ()

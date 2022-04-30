@@ -2,7 +2,7 @@ import React from 'react'
 import MenuCard from '../../design.system/MenuCard'
 import { Body } from '../../design.system/text.styling/styles'
 
-const TaskDotMenu = () => {
+const TaskDotMenu = ({id}) => {
   return (
     <>
       <MenuCard>
