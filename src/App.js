@@ -7,7 +7,6 @@ import Events from './pages/Events/Events';
 import MyTasks from './pages/MyTasks/MyTasks';
 import Books from './pages/Books/Books';
 import BookDetails from './components/Books/BookDetails';
-import books from './books.json'
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
     <Route path="/events" element={<Events/>}/>
     <Route path="/mytasks" element={<MyTasks/>}/>
     <Route path="/books" element={<Books/>}/>
-    <Route path="/book/:_id" element={<BookDetails books={books} />} />
+    <Route path="/book/:_id" element={<BookDetails />} />
    </Routes>
   );
 }
