@@ -5,6 +5,7 @@ import SideBar from './Nav/NavSideBar'
 import menuToggle from '../assets/burger-icon.png'
 import './Nav/Nav.css'
 import NavUserDisplay from './Nav/NavUserDisplay'
+import removeToken from '../utils/controllers/removeToken'
 
 const Navbar = () => {
 
@@ -42,7 +43,7 @@ const Navbar = () => {
       <li><NavLinkPlato to="/mytasks">My Tasks</NavLinkPlato></li>
       <li><NavLinkPlato to="/events">Events</NavLinkPlato></li>
       <li><NavLinkPlato to="/books">Books</NavLinkPlato></li>
-      <li><NavLinkPlato to="/">Logout</NavLinkPlato></li>
+      <li><NavLinkPlato to="/" onClick={removeToken}>Logout</NavLinkPlato></li>
       
     </ul>
 

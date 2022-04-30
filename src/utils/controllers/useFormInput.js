@@ -1,9 +1,13 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import apiConnect from '../api.handlers/apiConnect'
+import saveToken from './saveToken'
 
 const useFormInput = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const handleNameInput = (e) => { 
     setName(e.target.value)
@@ -15,16 +19,21 @@ const useFormInput = () => {
     setPassword(e.target.value)
    }
 
-  const loginUser = () => {
+  const loginUser = async () => {
     const logUser = {email, password}
-    // Login User
-    console.log(logUser)
-    setEmail('')
-    setPassword('')
+    try {
+      const data = await apiConnect.logIn(logUser)
+      saveToken(data)
+      navigate('/dashboard')
+      setEmail('')
+      setPassword('')
+    } catch (error) {
+      console.log(error)
+    }
   }
   const signUpUser = () => {
     const newUser = {name, email, password}
-    // Create user route
+    apiConnect.signUp(newUser)
     console.log(newUser)
     setName('')
     setEmail('')
