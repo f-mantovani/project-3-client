@@ -41,11 +41,11 @@ class booksConnect extends apiConstructor {
     }
   }
 
-  updateImage = async (file) => {
+  updateImage = async (id ,file) => {
     try {
       const imgData = new FormData()
       imgData.append('image', file)
-      const { data } = await this.api.put('/user/image', imgData)
+      const { data } = await this.api.put(`/book/image/${id}`, imgData)
       return data
     } catch (error) {
       console.log(error.response.data)

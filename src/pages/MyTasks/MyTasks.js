@@ -11,29 +11,31 @@ import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
 import { Overline } from '../../design.system/text.styling/styles'
+import tasksConnect from '../../utils/api.handlers/tasksConnect'
 import useTaskForm from '../../utils/controllers/useTaskForm'
+import { useQuery } from "react-query";
 
 
 const types = ['To Do', 'Doing', 'Done']
 
 // Some data mocking for rendering test
 
-const kanban = [
-  { title: 'fazer html', status: 'todo', _id: '1' },
-  { title: 'fazer css', status: 'todo', _id: '2' },
-  { title: 'fazer css', status: 'todo', _id: '3' },
-  { title: 'fazer css', status: 'todo', _id: '4' },
-  { title: 'fazer css', status: 'done', _id: '5' },
-  { title: 'fazer css', status: 'done', _id: '6' },
-  { title: 'fazer css', status: 'done', _id: '7' },
-  { title: 'fazer css', status: 'doing', _id: '8' },
-  { title: 'doing1', status: 'doing', _id: '9' },
-  { title: 'doing2', status: 'doing', _id: '10' },
-  { title: 'doing3', status: 'doing', _id: '11' },
-  { title: 'doing3', status: 'doing', _id: '12' },
-  { title: 'done1', status: 'done', _id: '13' },
-  { title: 'done2', status: 'done', _id: '14' },
-]
+// const kanban = [
+//   { title: 'fazer html', status: 'todo', _id: '1' },
+//   { title: 'fazer css', status: 'todo', _id: '2' },
+//   { title: 'fazer css', status: 'todo', _id: '3' },
+//   { title: 'fazer css', status: 'todo', _id: '4' },
+//   { title: 'fazer css', status: 'done', _id: '5' },
+//   { title: 'fazer css', status: 'done', _id: '6' },
+//   { title: 'fazer css', status: 'done', _id: '7' },
+//   { title: 'fazer css', status: 'doing', _id: '8' },
+//   { title: 'doing1', status: 'doing', _id: '9' },
+//   { title: 'doing2', status: 'doing', _id: '10' },
+//   { title: 'doing3', status: 'doing', _id: '11' },
+//   { title: 'doing3', status: 'doing', _id: '12' },
+//   { title: 'done1', status: 'done', _id: '13' },
+//   { title: 'done2', status: 'done', _id: '14' },
+// ]
 
 // const kanban = []
 
@@ -41,6 +43,12 @@ const MyTasks = () => {
   
   const [active, setActive] = useState(types[0])
   const { newTask, handleTaskInput, saveNewTask } = useTaskForm()
+  const { isLoading, error, data: kanban } = useQuery('kanban', tasksConnect.getAllTasks)
+
+  if (isLoading) return "Loading...";
+
+  if (error) return "An error has occurred: " + error.message;
+ 
 
   return (
     <div>
