@@ -1,11 +1,11 @@
 import apiConstructor from './apiConstructor'
 
 class booksConnect extends apiConstructor {
-  constructor(){
+  constructor() {
     super('book')
   }
 
-  getAllTasks = async () => {
+  getAllBooks = async () => {
     try {
       const { data } = await this.api.get('/')
       return data
@@ -14,25 +14,45 @@ class booksConnect extends apiConstructor {
     }
   }
 
-  createTask = async (newEvent) => {
+  getOneBook = async (id) => {
     try {
-      const { data } = await this.api.post('/', newEvent)
+      const { data } = await this.api.get(`${id}`)
       return data
     } catch (error) {
       console.log(error.response.data)
     }
   }
 
-  updateTitle = async (id ,updatedEvent) => {
+  createBook = async (newBook) => {
     try {
-      const { data } = await this.api.put(`/${id}`, updatedEvent)
+      const { data } = await this.api.post('/', newBook)
       return data
     } catch (error) {
       console.log(error.response.data)
     }
   }
 
-  deleteTask = async (id) => {
+  updateBook = async (id, updatedBook) => {
+    try {
+      const { data } = await this.api.put(`/${id}`, updatedBook)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  updateImage = async (file) => {
+    try {
+      const imgData = new FormData()
+      imgData.append('image', file)
+      const { data } = await this.api.put('/user/image', imgData)
+      return data
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
+  deleteBooks = async (id) => {
     try {
       const { data } = await this.api.delete(`/deleteOne/${id}`)
       return data
@@ -40,16 +60,6 @@ class booksConnect extends apiConstructor {
       console.log(error.response.data)
     }
   }
-
-  deleteAllTasks = async () => {
-    try {
-      const { data } = await this.api.delete('/deleteAll')
-      return data
-    } catch (error) {
-      console.log(error.response.data)
-    }
-  }
-
 }
 
-export default new booksConnect ()
+export default new booksConnect()
