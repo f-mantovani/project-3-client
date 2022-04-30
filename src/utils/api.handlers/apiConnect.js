@@ -1,33 +1,11 @@
 import axios from 'axios'
 import removeToken from '../controllers/removeToken'
+import apiConstructor from './apiConstructor'
 
-class apiConnect {
-  constructor() {
-    this.api = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}/auth`,
-    })
-    this.api.interceptors.request.use(
-      (config) => {
-        const token = localStorage.getItem('token')
-        if (token) {
-          config.headers = {
-            Authorization: `Bearer ${token}`,
-          }
-        }
-        return config
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
-
-    this.api.interceptors.response.use(
-      (response) => response,
-      (error) => {
-        removeToken(error)
-        throw error
-      }
-    )
+class apiConnect extends apiConstructor {
+  constructor(){
+    let path = 'auth'
+    super(path)
   }
 
   signUp = async (payload) => {
@@ -50,3 +28,4 @@ class apiConnect {
 }
 
 export default new apiConnect()
+
