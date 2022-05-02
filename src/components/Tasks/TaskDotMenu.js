@@ -18,7 +18,7 @@ const TaskDotMenu = ({ id, status }) => {
         <Body onClick={() => move(status, 'first', id)}>{status === 'todo' ? 'Move to Doing' : 'Move to To Do'}</Body>
       </MenuCard>
       <MenuCard>
-        <Body>{status === 'done' ? 'Move to To Do' : 'Move to Done'}</Body>
+        <Body onClick={() => move(status, 'second', id)}>{status === 'done' ? 'Move to Doing' : 'Move to Done'}</Body>
       </MenuCard>
       <MenuCard>
         <Body destructive onClick={() => deleteTask(id)}>Delete</Body>

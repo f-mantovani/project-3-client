@@ -73,7 +73,7 @@ const MyTasks = () => {
           {newTask.length ? <CheckPlato onClick={() => saveNewTask()}></CheckPlato> : null} 
         </CardPlato>
       )}
-      {!kanban.length && <NoTasks />}
+      {!kanban.length && <NoTasks /> }
 
       {active === types[1] && (
         <TaskGroup kanban={kanban} name='doing'>
