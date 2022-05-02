@@ -37,7 +37,7 @@ const DashboardBooks = ({books}) => {
         <RowContainer bookRowContainer>
         {mostRecentBooks.map(book => 
       
-            <BookCardDashboard title={book.name} image={book.imageUrl} _id={book._id}/>
+            <BookCardDashboard key={book._id} title={book.name} image={book.imageUrl} _id={book._id}/>
        
         )}
         </RowContainer>
