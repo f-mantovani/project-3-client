@@ -7,7 +7,7 @@ import useTaskMover from '../../utils/controllers/useTaskMover'
 
 const TaskDotMenu = ({ id, status }) => {
   const deleteTask = useAsyncMutation(tasksConnect.deleteTask, 'kanban')
-  const move = useTaskMover()
+  const { moveTo } = useTaskMover()
 
   return (
     <>
@@ -15,10 +15,10 @@ const TaskDotMenu = ({ id, status }) => {
         <Body>Edit</Body>
       </MenuCard>
       <MenuCard>
-        <Body onClick={() => move(status, 'first', id)}>{status === 'todo' ? 'Move to Doing' : 'Move to To Do'}</Body>
+        <Body onClick={() => moveTo(status, 'first', id)}>{status === 'todo' ? 'Move to Doing' : 'Move to To Do'}</Body>
       </MenuCard>
       <MenuCard>
-        <Body onClick={() => move(status, 'second', id)}>{status === 'done' ? 'Move to Doing' : 'Move to Done'}</Body>
+        <Body onClick={() => moveTo(status, 'second', id)}>{status === 'done' ? 'Move to Doing' : 'Move to Done'}</Body>
       </MenuCard>
       <MenuCard>
         <Body destructive onClick={() => deleteTask(id)}>Delete</Body>

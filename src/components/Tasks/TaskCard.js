@@ -8,15 +8,19 @@ import OutsideClicker from '../OutsideClicker'
 import MenuCollapsable from '../MenuCollapsable'
 import TaskDotMenu from './TaskDotMenu'
 import useCollapseMenu from '../../utils/controllers/useCollapseMenu'
+import useTaskMover from '../../utils/controllers/useTaskMover'
 
 
 const TaskCard = ({ title, status, id }) => {
   const { isOpen, setIsOpen, handleCollapse } = useCollapseMenu()
+  const { clickMover } = useTaskMover()
+
   
   return (
     <CardPlato className='task-card'>
-      <CustomCheckboxPlato checkable>
-        <input type='checkbox' id={id} className='custom-checkbox' />
+      <span onClick={() => {clickMover(status, id)}}></span>
+      <CustomCheckboxPlato checkable >
+        <input type='checkbox' id={id} className='custom-checkbox' checked={status === 'done'} readOnly />
         <label
           htmlFor={id}
           className='task-label'

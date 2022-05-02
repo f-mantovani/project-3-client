@@ -32,6 +32,14 @@ const CustomCheckboxPlato = styled.div`
     margin-left: 2rem;
     border: none;
     outline: none;
+    width: 78vw;
+    min-height: 4rem;
+  }
+
+  @media (min-width: 600px ){
+    .task-add {
+      width: 90vw;
+    }
   }
 
   ${props => props.checkable && `

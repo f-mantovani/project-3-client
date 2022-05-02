@@ -6,6 +6,7 @@ const DotPlato = styled.div`
   border-radius: 100%;
   background: #f1f1f1;
   margin: 1.5px 0;
+  z-index: 2;
 
   ${(props) =>props.required &&`
     position: absolute;

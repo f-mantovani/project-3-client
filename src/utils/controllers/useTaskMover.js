@@ -17,9 +17,7 @@ const useTaskMover = () => {
           id,
           status: 'todo',
         }
-        console.log('entrou no moveTo')
         moveToStatus(payload)
-        console.log('passou pelo moveto')
       }
     }
 
@@ -35,13 +33,27 @@ const useTaskMover = () => {
           id,
           status: 'done',
         }
-        console.log('entrou no moveTo')
         moveToStatus(payload)
-        console.log('passou pelo moveto')
       }
     }
   }
-  return moveTo
+
+  const clickMover = (status, id) => {
+    if (status !== 'done') {
+      const payload = {
+        id,
+        status: 'done',
+      }
+      moveToStatus(payload)
+    } else {
+      const payload = {
+        id,
+        status: 'todo',
+      }
+      moveToStatus(payload)
+    }
+  }
+  return { moveTo, clickMover }
 }
 
 export default useTaskMover

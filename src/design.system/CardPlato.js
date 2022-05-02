@@ -9,6 +9,17 @@ const CardPlato = styled.div`
   padding: 0.75rem 0 0.75rem 1rem;
   min-height: 4rem;
   margin: 0.25em 0;
+  position: relative;
+
+  & > span{
+    content: '';
+    cursor: pointer;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    left: 0;
+    z-index: 2;
+  }
 
   ${(props) => props.muted && `
     .task-label{
