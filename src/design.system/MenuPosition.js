@@ -9,7 +9,7 @@ const MenuPosition = styled.div`
 
   ${props => props.books && `
     right: -10px;
-    left: -280%;
+    left: -300%;
   `}
 `
 

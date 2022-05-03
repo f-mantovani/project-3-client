@@ -26,7 +26,7 @@ function App() {
           <Route path="/private/events" element={<Events/>}/>
           <Route path="/private/mytasks" element={<MyTasks/>}/>
           <Route path="/private/books" element={<Books/>}/>
-          <Route path="/private/book/:_id" element={<BookDetails books={books} />} />
+          <Route path="/private/book/:id" element={<BookDetails books={books} />} />
         </Route>
 
       </Routes>

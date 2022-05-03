@@ -10,6 +10,7 @@ import BookMenuDot from './BookMenuDot'
 import { Link } from 'react-router-dom'
 
 const BookCardDashboard = ({image, title, _id}) => {
+  const id = _id
   const { isOpen, setIsOpen, handleCollapse } = useCollapseMenu()
   return (
     <ColumnContainer bookContainer>
@@ -24,12 +25,12 @@ const BookCardDashboard = ({image, title, _id}) => {
             </MenuCollapsable>
           </OutsideClickerBook>
       </ColumnContainer>
-        <Link to={`/book/${_id}`}>
+        <Link to={`/private/book/${id}`}>
           <img src={image ? image : notAvialble} alt="Book cover"/>
         </Link>
         </ColumnContainer>
         <ColumnContainer bookTitleContainer>
-          <Link to={`/book/${_id}`}>
+          <Link to={`/private/book/${id}`}>
            <Body>{title}</Body>
           </Link>
         </ColumnContainer>

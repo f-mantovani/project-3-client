@@ -1,14 +1,20 @@
-import React, { useLayoutEffect } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
-import { H1 } from '../../design.system/text.styling/styles'
-
+import booksConnect from '../../utils/api.handlers/booksConnect'
 
 const BookDetails = () => {
-  const { _id } = useParams()
- 
+  const { id } = useParams()
 
-  return ( <H1> Marcação do Book details {_id}</H1>
-    
+  
+  const getBook = async (id) => {
+   const book = await booksConnect.getOneBook(id)
+   console.log(book)
+  }
+
+  getBook(id)
+
+  return (
+    <div>BookDetails {id}</div>
   )
 }
 

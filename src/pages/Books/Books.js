@@ -4,8 +4,8 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { Body, H1, H2, Label } from '../../design.system/text.styling/styles'
-import books from '../../books.json'
+import { H1, H2, Label } from '../../design.system/text.styling/styles'
+// import books from '../../books.json'
 import NoBooks from '../../components/Books/NoBooks'
 import ColumnContainer from '../../design.system/ColumnContainer'
 import DotPlato from '../../design.system/DotPlato'
@@ -15,13 +15,20 @@ import searchIcon from '../../assets/search.png'
 import Icon from '../../design.system/Icon'
 import SearchInput from '../../components/Books/SearchInput'
 import GrayArea from '../../design.system/GrayArea'
+import { useQuery } from 'react-query'
+import booksConnect from '../../utils/api.handlers/booksConnect'
 
 const types = ['To Read', 'Done']
 
 const Books = () => {
   const [active, setActive] = useState(types[0])
   const [open, setOpen] = useState(false)
-  // books = []
+  const { isLoading, error, data: books } = useQuery('books', booksConnect.getAllBooks)
+
+  if (isLoading) return "Loading...";
+
+  if (error) return "An error has occurred: " + error.message;
+
 
   const changeOpen = () => {
     setOpen(!open)
