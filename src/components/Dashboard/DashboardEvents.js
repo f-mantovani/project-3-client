@@ -9,7 +9,6 @@ const DashboardEvents = ({ events }) => {
 
   const upcomingEvents = getUpcomingEvents(events)
 
-  console.log(upcomingEvents)
   return (
     <>
         <div>

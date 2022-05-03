@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import booksConnect from '../../utils/api.handlers/booksConnect'
 
 const BookDetails = () => {
   const { id } = useParams()
 
+  const [book, setBook] = useState({})
+
   
   const getBook = async (id) => {
    const book = await booksConnect.getOneBook(id)
-   console.log(book)
+   setBook(book)
   }
 
   getBook(id)

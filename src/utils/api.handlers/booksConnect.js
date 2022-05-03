@@ -10,7 +10,7 @@ class booksConnect extends apiConstructor {
       const { data } = await this.api.get('/')
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -19,7 +19,7 @@ class booksConnect extends apiConstructor {
       const { data } = await this.api.get(`${id}`)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -28,7 +28,7 @@ class booksConnect extends apiConstructor {
       const { data } = await this.api.post('/', newBook)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -37,7 +37,7 @@ class booksConnect extends apiConstructor {
       const { data } = await this.api.put(`/${id}`, updatedBook)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -48,7 +48,7 @@ class booksConnect extends apiConstructor {
       const { data } = await this.api.put(`/book/image/${id}`, imgData)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -57,7 +57,7 @@ class booksConnect extends apiConstructor {
       const { data } = await this.api.delete(`/deleteOne/${id}`)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 }

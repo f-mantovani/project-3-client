@@ -9,7 +9,7 @@ class apiConnect extends apiConstructor {
       const { data } = await this.api.post('/signup', payload)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -18,7 +18,7 @@ class apiConnect extends apiConstructor {
       const { data } = await this.api.post('/login', credentials)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 }
