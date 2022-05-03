@@ -6,9 +6,11 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { Body, Overline } from '../../design.system/text.styling/styles'
+import { Overline } from '../../design.system/text.styling/styles'
 import events from '../../events.json'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
+import addButton from '../../assets/button-add.png'
+
 
 const Events = () => {
 
@@ -59,6 +61,10 @@ const Events = () => {
 }
       <ColumnContainer mt3>
         <Overline destructive> Delete all events </Overline>
+      </ColumnContainer>
+
+      <ColumnContainer addButton>
+        <img src={addButton} alt="Add Button/"/>
       </ColumnContainer>
     </div>
   )

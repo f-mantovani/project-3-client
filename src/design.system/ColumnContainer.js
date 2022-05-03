@@ -100,6 +100,13 @@ const ColumnContainer = styled.div`
     }
   `}
 
+${props => props.addButton && `
+    width: 100%;
+    position: fixed;
+    bottom: 1em;
+    }
+  `}
+
 `
   
 
