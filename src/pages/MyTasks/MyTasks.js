@@ -53,7 +53,27 @@ const MyTasks = () => {
           To Do
         </TaskGroup>
       )}
-      {(!kanban.length || active === types[0]) && (
+      {(!kanban.length && active === types[0]) && (
+        <CardPlato muted>
+          <CustomCheckboxPlato>
+            <input
+              type='checkbox'
+              id='add-new-task'
+              className='custom-checkbox'
+            />
+            <input
+              type='text'
+              className='task-add body'
+              placeholder='Add new task...'
+              value={newTask}
+              onChange={(e) => handleTaskInput(e)}
+            />
+            <label htmlFor='add-new-task' className='task-label'></label>
+          </CustomCheckboxPlato>
+          {newTask.length ? <CheckPlato onClick={() => saveNewTask()}></CheckPlato> : null} 
+        </CardPlato>
+      )}
+      {(kanban.length > 0 && active === types[0]) && (
         <CardPlato muted>
           <CustomCheckboxPlato>
             <input

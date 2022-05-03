@@ -46,6 +46,12 @@ body {
   background-attachment: fixed;
 }
 
+.empty-state {
+  object-fit: contain;
+  width: 10rem;
+  height: 10rem;
+}
+
 h1 {
   font-style: normal;
   font-weight: var(--fw-400);

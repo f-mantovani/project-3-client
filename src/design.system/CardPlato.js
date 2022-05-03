@@ -18,7 +18,7 @@ const CardPlato = styled.div`
     width: 90%;
     height: 100%;
     left: 0;
-    z-index: 2;
+    z-index: 1;
   }
 
   ${(props) => props.muted && `
