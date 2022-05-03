@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import EventCard from '../../components/Events/EventCard'
 import Navbar from '../../components/Navbar'
+import ColumnContainer from '../../design.system/ColumnContainer'
 import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { Body } from '../../design.system/text.styling/styles'
+import { Body, Overline } from '../../design.system/text.styling/styles'
 import events from '../../events.json'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 
@@ -25,10 +26,9 @@ const Events = () => {
 
   return (
     <div>
-    <Navbar/>
     <PageHeaderPlato>
-        <Navbar/>
         <h1>Events</h1>
+        <Navbar />
       </PageHeaderPlato>
       <TabHeaderPlato>
         <div className='tabs'>
@@ -57,6 +57,9 @@ const Events = () => {
         {active === types[1] && 
           pastEvents.map(event => <EventCard done key={event.id} event={event}/>)
 }
+      <ColumnContainer mt3>
+        <Overline destructive> Delete all events </Overline>
+      </ColumnContainer>
     </div>
   )
 }
