@@ -8,9 +8,6 @@ import BookCardDashboard from '../Books/BookCardDashboard'
 
 const DashboardBooks = ({ books }) => {
 
-  console.log(books)
-  
-
   const [mostRecentBooks, setMostRecentBooks] = useState([])
 
   useEffect(() => {
@@ -26,7 +23,7 @@ const DashboardBooks = ({ books }) => {
             <h2>Books recently added</h2>
             {mostRecentBooks.length > 0
             &&
-            <NavLinkPlato to="/books">
+            <NavLinkPlato to="/private/books">
               <Label smalllink>View All</Label>
             </NavLinkPlato>}
         </ColumnContainer>
@@ -47,7 +44,7 @@ const DashboardBooks = ({ books }) => {
 
         <ColumnContainer startSpaceBetween>
           <Body>No books added to this list yet...</Body>
-          <NavLinkPlato to="/books">
+          <NavLinkPlato to="/private/books">
             <Label smalllink>SEARCH FOR A NEW BOOK</Label>
           </NavLinkPlato>
         </ColumnContainer>}

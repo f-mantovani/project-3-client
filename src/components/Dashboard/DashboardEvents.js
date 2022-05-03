@@ -14,7 +14,7 @@ const DashboardEvents = ({ events }) => {
         <div>
     <ColumnContainer rowSpaceBetween>
         <h2>Upcoming Events</h2>
-        {upcomingEvents.length > 0 && <NavLinkPlato to="/events"><Label smalllink>View All</Label></NavLinkPlato>}
+        {upcomingEvents.length > 0 && <NavLinkPlato to="/private/events"><Label smalllink>View All</Label></NavLinkPlato>}
     </ColumnContainer>
     </div>
 
@@ -24,7 +24,7 @@ const DashboardEvents = ({ events }) => {
 
     : <ColumnContainer startSpaceBetween>
         <Body>No events in the next 14 days...</Body>
-        <NavLinkPlato to="/events"><Label smalllink>View Events List</Label></NavLinkPlato>
+        <NavLinkPlato to="/private/events"><Label smalllink>View Events List</Label></NavLinkPlato>
     </ColumnContainer>
 
     }
