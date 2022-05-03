@@ -10,7 +10,7 @@ class tasksConnect extends apiConstructor {
       const { data } = await this.api.get('/')
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -19,7 +19,7 @@ class tasksConnect extends apiConstructor {
       const { data } = await this.api.post('/', newTask)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -28,7 +28,7 @@ class tasksConnect extends apiConstructor {
       const { data } = await this.api.put(`/${id}`, newTitle)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -38,7 +38,7 @@ class tasksConnect extends apiConstructor {
       const { data } = await this.api.put(`/${id}`, {status: status})
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -47,7 +47,7 @@ class tasksConnect extends apiConstructor {
       const { data } = await this.api.delete(`/deleteOne/${id}`)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -56,7 +56,7 @@ class tasksConnect extends apiConstructor {
       const { data } = await this.api.delete('/deleteAll')
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 

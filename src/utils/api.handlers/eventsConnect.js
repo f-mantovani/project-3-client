@@ -10,7 +10,7 @@ class eventsConnect extends apiConstructor {
       const { data } = await this.api.get('/')
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -19,7 +19,7 @@ class eventsConnect extends apiConstructor {
       const { data } = await this.api.post('/', newEvent)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -28,7 +28,7 @@ class eventsConnect extends apiConstructor {
       const { data } = await this.api.put(`/${id}`, updatedEvent)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -37,7 +37,7 @@ class eventsConnect extends apiConstructor {
       const { data } = await this.api.delete(`/deleteOne/${id}`)
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 
@@ -46,7 +46,7 @@ class eventsConnect extends apiConstructor {
       const { data } = await this.api.delete('/deleteAll')
       return data
     } catch (error) {
-      console.log(error.response.data)
+      throw error.response.data
     }
   }
 

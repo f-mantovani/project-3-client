@@ -7,7 +7,7 @@ import { Body, Label } from '../../design.system/text.styling/styles'
 
 
 
-const DashboardTasks = ({kanban}) => {
+const DashboardTasks = ({ kanban }) => {
 
     const renderingCondition = checkTasksInDoing(kanban)
 

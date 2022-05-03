@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import ColumnContainer from '../../design.system/ColumnContainer'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 import RowContainer from '../../design.system/RowContainer'
@@ -7,7 +6,9 @@ import { Body, Label } from '../../design.system/text.styling/styles'
 import getMostRecentBooks from '../../utils/controllers/getMostRecentBooks'
 import BookCardDashboard from '../Books/BookCardDashboard'
 
-const DashboardBooks = ({books}) => {
+const DashboardBooks = ({ books }) => {
+
+  console.log(books)
   
 
   const [mostRecentBooks, setMostRecentBooks] = useState([])

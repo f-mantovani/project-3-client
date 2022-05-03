@@ -29,7 +29,7 @@ const useFormInput = () => {
       setEmail('')
       setPassword('')
     } catch (error) {
-      console.log(error)
+      throw error
     }
   }
   const signUpUser = () => {
