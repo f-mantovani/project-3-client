@@ -5,6 +5,8 @@
   --font-color: #F1F1F1;
   --font-destructive: #E05252;
   --font-link: #73BEC5;
+  --font-muted: rgba(241, 241, 241, 0.5);
+  --bg-clr: linear-gradient(180deg, #042539 0%, #010c13 100%);
   --fw-300: 300;
   --fw-400: 400;
   --fw-600: 600;
@@ -42,6 +44,12 @@ body {
   background: linear-gradient(180deg, #042539 0%, #010c13 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.empty-state {
+  object-fit: contain;
+  width: 10rem;
+  height: 10rem;
 }
 
 h1 {
@@ -143,4 +151,30 @@ h4 {
   color: var(--font-color);
   letter-spacing: 0.015em;
   text-transform: uppercase;
+}
+
+.pb375 {
+  padding-bottom: 3.75rem;
+}
+
+.flex {
+  display: flex;
+} 
+
+.space-between{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mx-075 {
+  margin: 0 .75rem;
+}
+.mx-1 {
+  margin: 0 1rem;
+}
+.mx-15 {
+  margin: 0 1.5rem;
+}
+.mx-2 {
+  margin: 0 2rem;
 }

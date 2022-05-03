@@ -1,12 +1,13 @@
 import apiConstructor from './apiConstructor'
-class apiConnect extends apiConstructor {
+
+class userConnect extends apiConstructor {
   constructor(){
-    super('auth')
+    super('user')
   }
 
-  signUp = async (payload) => {
+  getUser = async () => {
     try {
-      const { data } = await this.api.post('/signup', payload)
+      const { data } = await this.api.get('/')
       return data
     } catch (error) {
       throw error.response.data
@@ -23,5 +24,5 @@ class apiConnect extends apiConstructor {
   }
 }
 
-export default new apiConnect()
+export default new userConnect()
 

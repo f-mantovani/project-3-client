@@ -16,7 +16,7 @@ const CustomCheckboxPlato = styled.div`
   content: '';
   width: 1.25em;
   height: 1.25em;
-  border: 1px solid rgba(241, 241, 241, 0.5);
+  border: 1px solid var(--font-color);
   border-radius: 100%;
   margin-right: 0.75em;
   }
@@ -32,6 +32,14 @@ const CustomCheckboxPlato = styled.div`
     margin-left: 2rem;
     border: none;
     outline: none;
+    width: 78vw;
+    min-height: 4rem;
+  }
+
+  @media (min-width: 600px ){
+    .task-add {
+      width: 90vw;
+    }
   }
 
   ${props => props.checkable && `
@@ -49,7 +57,7 @@ const CustomCheckboxPlato = styled.div`
     }
 
     .custom-checkbox:focus + .task-label::before {
-      box-shadow: 1px solid rgba(241, 241, 241, 0.5);
+      border: 3px solid var(--font-link);
     }   
 
     .custom-checkbox:checked + .task-label::before{

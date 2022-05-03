@@ -38,6 +38,11 @@ export const H2 = styled.h2`
   font-weight: var(--fw-400);
   font-size: var(--fs-sub-title);
   color: var(--font-color);
+
+  ${props => props.muted && `
+    color: var(--font-muted);
+  `}
+
 `
 
 export const H4 = styled.h4`

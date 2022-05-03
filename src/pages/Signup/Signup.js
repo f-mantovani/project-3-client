@@ -7,7 +7,6 @@ import DevelopedFooterPlato from '../../design.system/DevelopedFooterPlato'
 const Signup = () => {
   return (
     <>
-      <Navbar />
       <LogoHeader />
       <SignupForm />
       {/* Login social */}

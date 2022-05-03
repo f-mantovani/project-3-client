@@ -7,7 +7,6 @@ import DevelopedFooterPlato from '../../design.system/DevelopedFooterPlato'
 const Login = () => {
   return (
     <>
-      <Navbar />
       <div>
         <LogoHeader />
         <LoginForm />

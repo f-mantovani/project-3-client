@@ -6,8 +6,7 @@ import { Body, Label } from '../../design.system/text.styling/styles'
 import getMostRecentBooks from '../../utils/controllers/getMostRecentBooks'
 import BookCardDashboard from '../Books/BookCardDashboard'
 
-const DashboardBooks = ({books}) => {
-  
+const DashboardBooks = ({ books }) => {
 
   const [mostRecentBooks, setMostRecentBooks] = useState([])
 
@@ -24,7 +23,7 @@ const DashboardBooks = ({books}) => {
             <h2>Books recently added</h2>
             {mostRecentBooks.length > 0
             &&
-            <NavLinkPlato to="/books">
+            <NavLinkPlato to="/private/books">
               <Label smalllink>View All</Label>
             </NavLinkPlato>}
         </ColumnContainer>
@@ -34,14 +33,18 @@ const DashboardBooks = ({books}) => {
         ? 
         
         <RowContainer bookRowContainer>
-        {mostRecentBooks.map(book => <BookCardDashboard title={book.name} image={book.imageUrl}/>)}
+        {mostRecentBooks.map(book => 
+      
+            <BookCardDashboard key={book._id} title={book.name} image={book.imageUrl} _id={book._id}/>
+       
+        )}
         </RowContainer>
 
         : 
 
         <ColumnContainer startSpaceBetween>
           <Body>No books added to this list yet...</Body>
-          <NavLinkPlato to="/books">
+          <NavLinkPlato to="/private/books">
             <Label smalllink>SEARCH FOR A NEW BOOK</Label>
           </NavLinkPlato>
         </ColumnContainer>}

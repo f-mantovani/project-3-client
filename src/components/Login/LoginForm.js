@@ -22,7 +22,6 @@ const LoginForm = () => {
         </div>
           <div className='login-inputs'>
             <div className='input-field'>
-              
               <InputPlato
                 id='email'
                 name='email'

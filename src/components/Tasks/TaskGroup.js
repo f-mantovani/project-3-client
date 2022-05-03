@@ -15,7 +15,7 @@ const TaskGroup = ({ children, kanban, name }) => {
                 key={element._id}
                 title={element.title}
                 status={element.status}
-                index={element._id}
+                id={element._id}
               />
             ))}
         </div>
