@@ -25,6 +25,15 @@ const RowContainer = styled.div`
 
     `}
 
+    ${props => props.modalHeader && `
+
+    overflow: scroll;
+    padding: 1em;
+    width: 100%;
+
+
+    `}
+
     
 
 

@@ -10,6 +10,10 @@ import { Overline } from '../../design.system/text.styling/styles'
 import events from '../../events.json'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 import addButton from '../../assets/button-add.png'
+import AddModal from '../../components/Modals/ModalHeader'
+import InputPlato from '../../design.system/InputPlato'
+import ModalPlato from '../../components/Modals/ModalPlato'
+import ModalHeader from '../../components/Modals/ModalHeader'
 
 
 const Events = () => {
@@ -17,6 +21,8 @@ const Events = () => {
   const types = ['Upcoming', 'Previous']
 
   const [active, setActive] = useState(types[0])
+
+  const [addModal, setAddModal] = useState(false)
 
   const sortedEvents = getPastAndUpcomingEvents(events)
 
@@ -67,9 +73,29 @@ const Events = () => {
         <Overline destructive> Delete all events </Overline>
       </ColumnContainer>
 
+      
+
+      {addModal
+      ?
+      <ModalPlato> 
+        <ModalHeader title="Create new event" action={() => setAddModal(false)}/>
+
+        <InputPlato addModalTitle
+          placeholder="Type event title...">
+
+        </InputPlato>
+        
+      </ModalPlato>
+      
+      : 
       <ColumnContainer addButton>
-        <img src={addButton} alt="Add Button/"/>
-      </ColumnContainer>
+        <img 
+          src={addButton} 
+          alt="Add Button/"
+          onClick={() => setAddModal(true)}
+          style={{cursor: "pointer"}}
+          />
+      </ColumnContainer>}
     </div>
   )
 }
