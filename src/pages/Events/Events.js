@@ -50,6 +50,8 @@ const Events = () => {
 
         <LineBreak />  
 
+        <ColumnContainer eventList>
+
         {active === types[0] && 
           
           upcomingEvents.map(event => <EventCard key={event.id} event={event}/>)
@@ -59,7 +61,9 @@ const Events = () => {
         {active === types[1] && 
           pastEvents.map(event => <EventCard done key={event.id} event={event}/>)
 }
-      <ColumnContainer mt3>
+
+      </ColumnContainer>
+      <ColumnContainer mt150>
         <Overline destructive> Delete all events </Overline>
       </ColumnContainer>
 

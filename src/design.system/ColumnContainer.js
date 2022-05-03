@@ -27,6 +27,10 @@ const ColumnContainer = styled.div`
   ${props => props.mt075 && `
     margin-top: 0.75rem;
   `}
+
+${props => props.mt150 && `
+    margin-top: 1.5rem;
+  `}
   
   ${props => props.rowSpaceBetween && `
     flex-direction: row;
@@ -104,6 +108,13 @@ ${props => props.addButton && `
     width: 100%;
     position: fixed;
     bottom: 1em;
+    }
+  `}
+
+${props => props.eventList && `
+    display: block;
+    height: 63vh;
+    overflow: scroll;
     }
   `}
 
