@@ -68,15 +68,13 @@ const Events = () => {
 
         {active === types[1] && 
           pastEvents.map(event => <EventCard done key={event.id} event={event}/>)
-}
+        }
 
       </ColumnContainer>
-      <ColumnContainer mt150>
+
+      <ColumnContainer mt100>
         <Overline destructive> Delete all events </Overline>
       </ColumnContainer>
-
-      
-
       
       <ModalPlato toggled={!addModal}> 
           <ModalHeader title="Create new event" action={() => setAddModal(false)}/>
