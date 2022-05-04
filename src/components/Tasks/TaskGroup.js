@@ -52,7 +52,7 @@ const TaskGroup = ({ children, kanban, name }) => {
         </CardPlato>
       )}
       {kanban.length ? (
-        <ColumnContainer mt3>
+        <ColumnContainer  className="pb375 mt-3">
           <Overline destructive onClick={() => deleteTaskList(name)}>
             Delete all tasks from this list
           </Overline>

@@ -7,7 +7,6 @@ import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
 import { Body, ButtonLabel, Overline } from '../../design.system/text.styling/styles'
-import events from '../../events.json'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 import addButton from '../../assets/button-add.png'
 import InputPlato from '../../design.system/InputPlato'
@@ -16,6 +15,8 @@ import ModalHeader from '../../components/Modals/ModalHeader'
 import ModalInput from '../../components/Modals/ModalInput'
 import ButtonPlato from '../../design.system/ButtonPlato'
 import RowContainer from '../../design.system/RowContainer'
+import { useQuery } from 'react-query'
+import eventsConnect from '../../utils/api.handlers/eventsConnect' 
 
 
 const Events = () => {
@@ -25,6 +26,12 @@ const Events = () => {
   const [active, setActive] = useState(types[0])
 
   const [addModal, setAddModal] = useState(false)
+
+  const { isLoading, error, data: events } = useQuery('kanban', eventsConnect.getAllEvents)
+
+  if (isLoading) return "Loading...";
+
+  if (error) return "An error has occurred: " + error.message;
 
   const sortedEvents = getPastAndUpcomingEvents(events)
 
