@@ -77,8 +77,7 @@ const Events = () => {
 
       
 
-      {addModal
-      ?
+      
       <ModalPlato toggled={!addModal}> 
           <ModalHeader title="Create new event" action={() => setAddModal(false)}/>
 
@@ -99,7 +98,7 @@ const Events = () => {
         
       </ModalPlato>
       
-      : 
+      
       <ColumnContainer addButton>
         <img 
           src={addButton} 
@@ -108,7 +107,7 @@ const Events = () => {
           style={{cursor: "pointer"}}
           />
       </ColumnContainer>
-      }
+      
 
       
     </div>
