@@ -122,6 +122,13 @@ ${props => props.eventList && `
     }
   `}
 
+${props => props.noEvents && `
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    height: 60vh;
+    }
+  `}
+
 `
   
 

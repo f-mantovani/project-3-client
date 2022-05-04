@@ -16,6 +16,7 @@ import ModalHeader from '../../components/Modals/ModalHeader'
 import ModalInput from '../../components/Modals/ModalInput'
 import ButtonPlato from '../../design.system/ButtonPlato'
 import RowContainer from '../../design.system/RowContainer'
+import NoEventsCard from '../../components/Events/NoEventsCard'
 
 
 const Events = () => {
@@ -65,7 +66,7 @@ const Events = () => {
 
         {(active === types[0] && upcomingEvents.length === 0) &&
           
-          <p>no upcoming events</p>
+          <NoEventsCard eventType="upcoming"/>
 
         }
 
@@ -77,17 +78,20 @@ const Events = () => {
 
         {(active === types[1] && pastEvents.length === 0) &&
 
-          <p>no past events</p>
+          <NoEventsCard eventType="previous"/>
         }
 
       </ColumnContainer>
-
-
         
-
-      <ColumnContainer mt100>
-        <Overline destructive> Delete all events </Overline>
-      </ColumnContainer>
+        {(pastEvents.length === 0 && upcomingEvents.length === 0) 
+        ?
+        null
+        :
+        <ColumnContainer mt100>
+          <Overline destructive> Delete all events </Overline>
+        </ColumnContainer>
+        }
+      
       
       <ModalPlato toggled={!addModal}> 
           <ModalHeader title="Create new event" action={() => setAddModal(false)}/>
