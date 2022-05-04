@@ -6,7 +6,7 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { Body, ButtonLabel, Overline } from '../../design.system/text.styling/styles'
+import { ButtonLabel, Overline } from '../../design.system/text.styling/styles'
 import events from '../../events.json'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 import addButton from '../../assets/button-add.png'
@@ -30,9 +30,6 @@ const Events = () => {
 
   const { pastEvents, upcomingEvents } = sortedEvents
 
-  console.log(pastEvents, upcomingEvents)
-
-  
 
   return (
     <div>
@@ -60,17 +57,33 @@ const Events = () => {
 
         <ColumnContainer eventList>
 
-        {active === types[0] && 
+        {(active === types[0] && upcomingEvents.length > 0) &&
           
           upcomingEvents.map(event => <EventCard key={event.id} event={event}/>)
 
         }
 
-        {active === types[1] && 
+        {(active === types[0] && upcomingEvents.length === 0) &&
+          
+          <p>no upcoming events</p>
+
+        }
+
+        {(active === types[1] && pastEvents.length > 0) &&
+
           pastEvents.map(event => <EventCard done key={event.id} event={event}/>)
+          
+        }
+
+        {(active === types[1] && pastEvents.length === 0) &&
+
+          <p>no past events</p>
         }
 
       </ColumnContainer>
+
+
+        
 
       <ColumnContainer mt100>
         <Overline destructive> Delete all events </Overline>
