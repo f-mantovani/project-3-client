@@ -6,14 +6,16 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { Overline } from '../../design.system/text.styling/styles'
+import { Body, ButtonLabel, Overline } from '../../design.system/text.styling/styles'
 import events from '../../events.json'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 import addButton from '../../assets/button-add.png'
-import AddModal from '../../components/Modals/ModalHeader'
 import InputPlato from '../../design.system/InputPlato'
 import ModalPlato from '../../components/Modals/ModalPlato'
 import ModalHeader from '../../components/Modals/ModalHeader'
+import ModalInput from '../../components/Modals/ModalInput'
+import ButtonPlato from '../../design.system/ButtonPlato'
+import RowContainer from '../../design.system/RowContainer'
 
 
 const Events = () => {
@@ -77,13 +79,23 @@ const Events = () => {
 
       {addModal
       ?
-      <ModalPlato> 
-        <ModalHeader title="Create new event" action={() => setAddModal(false)}/>
+      <ModalPlato toggled={!addModal}> 
+          <ModalHeader title="Create new event" action={() => setAddModal(false)}/>
 
-        <InputPlato addModalTitle
-          placeholder="Type event title...">
+          <InputPlato addModalTitle
+            placeholder="Type event title...">
 
-        </InputPlato>
+          </InputPlato>
+
+          <ModalInput label="Date" type="date"></ModalInput>
+          <ModalInput label="Hour" type="time" placeholder="00:00 pm"></ModalInput>
+          <ModalInput label="Local" type="text" placeholder="Address or URL"></ModalInput>
+          <ModalInput label="Details" type="text" placeholder="Details about the event..."></ModalInput>  
+
+          <RowContainer modalButtons>
+            <ButtonPlato saveModal><ButtonLabel>Save Event</ButtonLabel></ButtonPlato>
+            <ButtonPlato cancelModal><ButtonLabel>Cancel</ButtonLabel></ButtonPlato> 
+          </RowContainer> 
         
       </ModalPlato>
       
@@ -95,7 +107,10 @@ const Events = () => {
           onClick={() => setAddModal(true)}
           style={{cursor: "pointer"}}
           />
-      </ColumnContainer>}
+      </ColumnContainer>
+      }
+
+      
     </div>
   )
 }

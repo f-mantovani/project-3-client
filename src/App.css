@@ -183,3 +183,7 @@ h4 {
   width: 1.2em;
   cursor:pointer;
 }
+
+*:focus {
+  outline: none;
+}

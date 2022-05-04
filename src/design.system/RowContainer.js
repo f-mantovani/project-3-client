@@ -30,8 +30,13 @@ const RowContainer = styled.div`
     overflow: scroll;
     padding: 1em;
     width: 100%;
+    `}
 
+    ${props => props.modalButtons && `
 
+    padding: 1em;
+    width: 100%;
+    margin-bottom: 1em;
     `}
 
     
