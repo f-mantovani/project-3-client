@@ -13,7 +13,7 @@ const ModalPlato = styled.div `
     align-items: flex-start;
     width: 90vw;
     padding: 0.5em;
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     transition: bottom 0.7s;
