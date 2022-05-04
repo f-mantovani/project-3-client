@@ -51,9 +51,9 @@ class tasksConnect extends apiConstructor {
     }
   }
 
-  deleteAllTasks = async () => {
+  deleteAllTasks = async (status) => {
     try {
-      const { data } = await this.api.delete('/deleteAll')
+      const { data } = await this.api.delete(`/deleteAll/${status}`)
       return data
     } catch (error) {
       throw error.response.data

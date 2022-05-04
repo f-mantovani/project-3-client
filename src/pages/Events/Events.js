@@ -19,10 +19,6 @@ const Events = () => {
 
   const { pastEvents, upcomingEvents } = sortedEvents
 
-  console.log(pastEvents, upcomingEvents)
-
-  
-
   return (
     <div>
     <Navbar/>
@@ -50,12 +46,12 @@ const Events = () => {
 
         {active === types[0] && 
           
-          upcomingEvents.map(event => <EventCard key={event.id} event={event}/>)
+          upcomingEvents.map(event => <EventCard key={event._id} event={event}/>)
 
         }
 
         {active === types[1] && 
-          pastEvents.map(event => <EventCard done key={event.id} event={event}/>)
+          pastEvents.map(event => <EventCard done key={event._id} event={event}/>)
 }
     </div>
   )

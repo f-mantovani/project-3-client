@@ -1,4 +1,3 @@
-import React from 'react'
 import CardPlato from '../../design.system/CardPlato'
 import CustomCheckboxPlato from '../../design.system/CustomCheckboxPlato'
 import ColumnContainer from '../../design.system/ColumnContainer'
