@@ -6,7 +6,7 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { Body, ButtonLabel, Overline } from '../../design.system/text.styling/styles'
+import { ButtonLabel, Overline } from '../../design.system/text.styling/styles'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 import addButton from '../../assets/button-add.png'
 import InputPlato from '../../design.system/InputPlato'
@@ -17,6 +17,7 @@ import ButtonPlato from '../../design.system/ButtonPlato'
 import RowContainer from '../../design.system/RowContainer'
 import { useQuery } from 'react-query'
 import eventsConnect from '../../utils/api.handlers/eventsConnect' 
+import NoEventsCard from '../../components/Events/NoEventsCard'
 
 
 const Events = () => {
@@ -63,23 +64,40 @@ const Events = () => {
 
         <ColumnContainer eventList>
 
-        {active === types[0] && 
+        {(active === types[0] && upcomingEvents.length > 0) &&
           
           upcomingEvents.map(event => <EventCard key={event._id} event={event}/>)
 
         }
 
-        {active === types[1] && 
+        {(active === types[0] && upcomingEvents.length === 0) &&
+          
+          <NoEventsCard eventType="upcoming"/>
+
+        }
+
+        {(active === types[1] && pastEvents.length > 0) &&
+
           pastEvents.map(event => <EventCard done key={event._id} event={event}/>)
-}
+          
+        }
+
+        {(active === types[1] && pastEvents.length === 0) &&
+
+          <NoEventsCard eventType="previous"/>
+        }
 
       </ColumnContainer>
-      <ColumnContainer mt150>
-        <Overline destructive> Delete all events </Overline>
-      </ColumnContainer>
-
+        
+        {(pastEvents.length === 0 && upcomingEvents.length === 0) 
+        ?
+        null
+        :
+        <ColumnContainer mt100>
+          <Overline destructive> Delete all events </Overline>
+        </ColumnContainer>
+        }
       
-
       
       <ModalPlato toggled={!addModal}> 
           <ModalHeader title="Create new event" action={() => setAddModal(false)}/>

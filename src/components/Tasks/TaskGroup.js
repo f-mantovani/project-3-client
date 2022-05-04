@@ -8,7 +8,7 @@ import useAsyncMutation from '../../utils/controllers/useAsyncMutation'
 import useTaskForm from '../../utils/controllers/useTaskForm'
 import TaskCard from './TaskCard'
 
-const TaskGroup = ({ children, kanban, name }) => {
+const TaskGroup = ({ kanban, name, dashboard }) => {
   
   const { newTask, handleTaskInput, saveNewTask } = useTaskForm()
   const deleteTaskList = useAsyncMutation(tasksConnect.deleteAllTasks, 'kanban')
@@ -51,7 +51,7 @@ const TaskGroup = ({ children, kanban, name }) => {
           ) : null}
         </CardPlato>
       )}
-      {kanban.length ? (
+      {!dashboard && kanban.length ? (
         <ColumnContainer  className="pb375 mt-3">
           <Overline destructive onClick={() => deleteTaskList(name)}>
             Delete all tasks from this list

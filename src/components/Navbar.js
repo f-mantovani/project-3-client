@@ -7,6 +7,7 @@ import './Nav/Nav.css'
 import NavUserDisplay from './Nav/NavUserDisplay'
 import removeToken from '../utils/controllers/removeToken'
 import userConnect from '../utils/api.handlers/userConnect'
+import { H4 } from '../design.system/text.styling/styles'
 
 const Navbar = () => {
 
@@ -43,11 +44,31 @@ const Navbar = () => {
     <NavUserDisplay {...user}/>
 
     <ul className={toggle ? "toggled" : "undefined"}>
-      <li><NavLinkPlato to="/private/dashboard">Dashboard</NavLinkPlato></li>
-      <li><NavLinkPlato to="/private/mytasks">My Tasks</NavLinkPlato></li>
-      <li><NavLinkPlato to="/private/events">Events</NavLinkPlato></li>
-      <li><NavLinkPlato to="/private/books">Books</NavLinkPlato></li>
-      <li><NavLinkPlato to="/" onClick={removeToken}>Logout</NavLinkPlato></li>
+      <li className='my-1'><NavLinkPlato to="/private/dashboard">
+        <H4>
+          Dashboard
+        </H4>
+      </NavLinkPlato></li>
+      <li className='my-2'><NavLinkPlato to="/private/mytasks">
+        <H4>
+          My Tasks
+        </H4>
+      </NavLinkPlato></li>
+      <li className='my-2'><NavLinkPlato to="/private/events">
+        <H4>
+          Events
+        </H4>
+      </NavLinkPlato></li>
+      <li className='my-2'><NavLinkPlato to="/private/books">
+        <H4>
+          Books
+        </H4>
+        </NavLinkPlato></li>
+      <li className='my-4'><NavLinkPlato to="/" onClick={removeToken}>
+        <H4 destructive>
+          Logout
+        </H4>
+      </NavLinkPlato></li>
       
     </ul>
 

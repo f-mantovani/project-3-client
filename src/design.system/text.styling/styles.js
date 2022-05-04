@@ -51,6 +51,10 @@ export const H4 = styled.h4`
   font-size: var(--fs-xtra-large);
   line-height: 1;
   color: var(--font-color);
+  
+  ${props => props.destructive && `
+    color: var(--font-destructive)
+  `}
 ` 
 
 

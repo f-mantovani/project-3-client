@@ -18,7 +18,7 @@ const EventCardDate = ({date}) => {
         </RowContainer>
 
         <RowContainer event> 
-            <Body>{formatedDate.toLocaleTimeString().substr(0, 4)} </Body>
+            <Body>{formatedDate.toLocaleTimeString().substr(0, 5)} </Body>
             <Body>{formatedDate.toLocaleTimeString().substr(8, 12)}</Body>
         </RowContainer> 
         

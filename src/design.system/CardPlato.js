@@ -15,7 +15,7 @@ const CardPlato = styled.div`
     content: '';
     cursor: pointer;
     position: absolute;
-    width: 90%;
+    width: 85%;
     height: 100%;
     left: 0;
     z-index: 1;

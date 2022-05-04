@@ -7,9 +7,10 @@ const ColumnContainer = styled.div`
   justify-content: center;
 
   ${props => props.kebab && `
+    margin-left: .75rem;
     min-height: 2.5rem;
     padding-right: 1.125em;
-    position: relative
+    position: relative;
   `}
   
   ${props => props.mt3 && `
@@ -26,6 +27,10 @@ const ColumnContainer = styled.div`
 
   ${props => props.mt075 && `
     margin-top: 0.75rem;
+  `}
+
+${props => props.mt100 && `
+    margin-top: 1rem;
   `}
 
 ${props => props.mt150 && `
@@ -115,6 +120,13 @@ ${props => props.eventList && `
     display: block;
     height: 63vh;
     overflow: scroll;
+    }
+  `}
+
+${props => props.noEvents && `
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    height: 60vh;
     }
   `}
 

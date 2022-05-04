@@ -26,7 +26,7 @@ const DashboardTasks = ({ kanban }) => {
     {renderingCondition
     ? 
 
-    <TaskGroup kanban={kanban} name='doing'> </TaskGroup>
+    <TaskGroup kanban={kanban} name='doing' dashboard='true'> </TaskGroup>
 
     :
 

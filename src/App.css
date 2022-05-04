@@ -181,6 +181,12 @@ h4 {
 .mt-3 {
   margin-top: 3rem;
 }
+.my-2{
+  margin: 2rem 0
+}
+.my-4{
+  margin: 4rem 0
+}
 
 .closing-x {
   width: 1.2em;
