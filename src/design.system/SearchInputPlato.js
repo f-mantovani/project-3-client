@@ -12,7 +12,7 @@ const SearchInputPlato = styled.div`
   background: var(--bg-clr);
   position: fixed;
   bottom: 0;
-  z-index: 100;
+  z-index: 2;
 
   & > div {
     display: flex;

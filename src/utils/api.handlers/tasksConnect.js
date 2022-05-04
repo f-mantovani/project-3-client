@@ -23,9 +23,10 @@ class tasksConnect extends apiConstructor {
     }
   }
 
-  updateTitle = async (id ,newTitle) => {
+  updateTitle = async (payload) => {
+    const { title , id } = payload
     try {
-      const { data } = await this.api.put(`/${id}`, newTitle)
+      const { data } = await this.api.put(`/${id}`, {title: title})
       return data
     } catch (error) {
       throw error.response.data
@@ -51,9 +52,9 @@ class tasksConnect extends apiConstructor {
     }
   }
 
-  deleteAllTasks = async () => {
+  deleteAllTasks = async (status) => {
     try {
-      const { data } = await this.api.delete('/deleteAll')
+      const { data } = await this.api.delete(`/deleteAll/${status}`)
       return data
     } catch (error) {
       throw error.response.data

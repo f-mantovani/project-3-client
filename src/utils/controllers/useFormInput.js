@@ -35,7 +35,6 @@ const useFormInput = () => {
   const signUpUser = () => {
     const newUser = {name, email, password}
     apiConnect.signUp(newUser)
-    console.log(newUser)
     setName('')
     setEmail('')
     setPassword('')

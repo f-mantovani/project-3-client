@@ -28,12 +28,11 @@ const Dashboard = () => {
   useEffect(() => {
     const getUser = async () => {
       const user = await userConnect.getUser()
-      setBooks(user.books)
       setEvents(user.events)
       setKanban(user.tasks)
+      setBooks(user.books)
     }
-    getUser()
-    
+    getUser()  
   }, [])
 
   return (

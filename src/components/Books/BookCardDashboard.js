@@ -7,7 +7,7 @@ import MenuCollapsable from '../MenuCollapsable'
 import useCollapseMenu from '../../utils/controllers/useCollapseMenu'
 import OutsideClickerBook from '../OutsideClickerBook'
 import BookMenuDot from './BookMenuDot'
-import { Link } from 'react-router-dom'
+import NavLinkPlato from '../../design.system/NavLinkPlato'
 
 const BookCardDashboard = ({image, title, _id}) => {
   const id = _id
@@ -25,14 +25,14 @@ const BookCardDashboard = ({image, title, _id}) => {
             </MenuCollapsable>
           </OutsideClickerBook>
       </ColumnContainer>
-        <Link to={`/private/book/${id}`}>
+        <NavLinkPlato to={`/private/book/${id}`}>
           <img src={image ? image : notAvialble} alt="Book cover"/>
-        </Link>
+        </NavLinkPlato>
         </ColumnContainer>
         <ColumnContainer bookTitleContainer>
-          <Link to={`/private/book/${id}`}>
+          <NavLinkPlato to={`/private/book/${id}`}>
            <Body>{title}</Body>
-          </Link>
+          </NavLinkPlato>
         </ColumnContainer>
     </ColumnContainer>
   )

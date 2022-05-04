@@ -34,6 +34,7 @@ const CustomCheckboxPlato = styled.div`
     outline: none;
     width: 78vw;
     min-height: 4rem;
+    cursor: pointer;
   }
 
   @media (min-width: 600px ){

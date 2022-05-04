@@ -1,6 +1,5 @@
 import React from 'react'
 import ButtonPlato from '../../design.system/ButtonPlato'
-import ColumnContainer from '../../design.system/ColumnContainer'
 import InputPlato from '../../design.system/InputPlato'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 import DotPlato from '../../design.system/DotPlato'

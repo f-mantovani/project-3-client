@@ -1,7 +1,6 @@
 import React from 'react'
 import LogoHeader from '../../components/LogoHeader'
 import LoginForm from '../../components/Login/LoginForm'
-import Navbar from '../../components/Navbar'
 import DevelopedFooterPlato from '../../design.system/DevelopedFooterPlato'
 
 const Login = () => {

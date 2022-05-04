@@ -5,6 +5,7 @@ const useTaskMover = () => {
   const moveToStatus = useAsyncMutation(tasksConnect.updateStatus, 'kanban')
 
   const moveTo = (status, position, id) => {
+    
     if (position === 'first') {
       if (status === 'todo') {
         const payload = {
@@ -12,6 +13,7 @@ const useTaskMover = () => {
           status: 'doing',
         }
         moveToStatus(payload)
+        
       } else {
         const payload = {
           id,
@@ -34,6 +36,7 @@ const useTaskMover = () => {
           status: 'done',
         }
         moveToStatus(payload)
+        
       }
     }
   }
@@ -51,6 +54,7 @@ const useTaskMover = () => {
         status: 'todo',
       }
       moveToStatus(payload)
+      
     }
   }
   return { moveTo, clickMover }

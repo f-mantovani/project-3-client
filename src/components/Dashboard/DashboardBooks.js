@@ -12,9 +12,8 @@ const DashboardBooks = ({ books }) => {
 
   useEffect(() => {
     setMostRecentBooks(getMostRecentBooks(books))
-  }, [])
+  }, [books])
   
-
   return (
 
     <>
