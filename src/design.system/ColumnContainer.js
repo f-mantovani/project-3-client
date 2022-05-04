@@ -29,6 +29,10 @@ const ColumnContainer = styled.div`
     margin-top: 0.75rem;
   `}
 
+${props => props.mt100 && `
+    margin-top: 1rem;
+  `}
+
 ${props => props.mt150 && `
     margin-top: 1.5rem;
   `}
@@ -116,6 +120,13 @@ ${props => props.eventList && `
     display: block;
     height: 63vh;
     overflow: scroll;
+    }
+  `}
+
+${props => props.noEvents && `
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    height: 60vh;
     }
   `}
 
