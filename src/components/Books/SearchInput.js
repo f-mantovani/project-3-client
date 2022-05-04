@@ -22,6 +22,7 @@ const SearchInput = ({ changeOpen }) => {
             placeholder='Search by title, author..'
             required
             className='search-input'
+            autoFocus
           />
           <label className='search-label' htmlFor='search'>
             <H2 muted>Search by title, author...</H2>

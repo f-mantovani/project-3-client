@@ -35,6 +35,7 @@ const TaskCard = ({ title, status, id }) => {
             className='task-add body'
             value={newTask}
             onChange={(e) => handleTaskInput(e)}
+            autoFocus
           />
           <label htmlFor='add-new-task' className='task-label'></label>
         </CustomCheckboxPlato>

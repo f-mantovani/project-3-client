@@ -7,9 +7,10 @@ const ColumnContainer = styled.div`
   justify-content: center;
 
   ${props => props.kebab && `
+    margin-left: .75rem;
     min-height: 2.5rem;
     padding-right: 1.125em;
-    position: relative
+    position: relative;
   `}
   
   ${props => props.mt3 && `

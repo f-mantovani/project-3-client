@@ -8,22 +8,24 @@ const CustomCheckboxPlato = styled.div`
   position: relative;
 
   .task-label {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
   }
 
   .task-label::before {
-  content: '';
-  width: 1.25em;
-  height: 1.25em;
-  border: 1px solid var(--font-color);
-  border-radius: 100%;
-  margin-right: 0.75em;
+    content: '';
+    max-width: 1.25em;
+    min-width: 1.25em;
+    max-height: 1.25em;
+    min-height: 1.25em;
+    border: 1px solid var(--font-color);
+    border-radius: 100%;
+    margin-right: 0.75em;
   }
 
   .custom-checkbox{
-  position: absolute;
-  opacity: 0;  
+    position: absolute;
+    opacity: 0;  
   }
 
   .task-add {
@@ -64,8 +66,8 @@ const CustomCheckboxPlato = styled.div`
     .custom-checkbox:checked + .task-label::before{
       content: '';
       border: none;
-      width: 1.35rem;
-      height: 1.35rem;
+      max-width: 1.35rem;
+      max-height: 1.35rem;
       background-image: url(${checkIcon});
       background-size: 1.35rem 1.35rem;
       background-repeat: no-repeat;
