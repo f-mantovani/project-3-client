@@ -23,9 +23,10 @@ class tasksConnect extends apiConstructor {
     }
   }
 
-  updateTitle = async (id ,newTitle) => {
+  updateTitle = async (payload) => {
+    const { title , id } = payload
     try {
-      const { data } = await this.api.put(`/${id}`, newTitle)
+      const { data } = await this.api.put(`/${id}`, {title: title})
       return data
     } catch (error) {
       throw error.response.data

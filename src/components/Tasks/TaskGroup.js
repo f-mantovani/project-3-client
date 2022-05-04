@@ -9,16 +9,14 @@ import useTaskForm from '../../utils/controllers/useTaskForm'
 import TaskCard from './TaskCard'
 
 const TaskGroup = ({ children, kanban, name }) => {
-
+  
   const { newTask, handleTaskInput, saveNewTask } = useTaskForm()
   const deleteTaskList = useAsyncMutation(tasksConnect.deleteAllTasks, 'kanban')
 
   return (
     <>
       <div className='task-group-container'>
-        <div
-          className='task-card-grouping'
-        >
+        <div className='task-card-grouping'>
           {kanban
             .filter((todo) => todo.status === name)
             .map((element) => (
@@ -31,7 +29,7 @@ const TaskGroup = ({ children, kanban, name }) => {
             ))}
         </div>
       </div>
-      {(kanban.length > 0 && name === 'todo') && (
+      {name === 'todo' && (
         <CardPlato muted>
           <CustomCheckboxPlato>
             <input
@@ -48,12 +46,18 @@ const TaskGroup = ({ children, kanban, name }) => {
             />
             <label htmlFor='add-new-task' className='task-label'></label>
           </CustomCheckboxPlato>
-          {newTask.length ? <CheckPlato onClick={() => saveNewTask()}></CheckPlato> : null} 
+          {newTask.length ? (
+            <CheckPlato onClick={() => saveNewTask()}></CheckPlato>
+          ) : null}
         </CardPlato>
       )}
-      <ColumnContainer mt3>
-        <Overline destructive onClick={() => deleteTaskList(name)}> Delete all tasks from this list </Overline>
-      </ColumnContainer>
+      {kanban.length ? (
+        <ColumnContainer mt3>
+          <Overline destructive onClick={() => deleteTaskList(name)}>
+            Delete all tasks from this list
+          </Overline>
+        </ColumnContainer>
+      ) : null}
     </>
   )
 }

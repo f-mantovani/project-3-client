@@ -5,14 +5,14 @@ import tasksConnect from '../../utils/api.handlers/tasksConnect'
 import useAsyncMutation from '../../utils/controllers/useAsyncMutation'
 import useTaskMover from '../../utils/controllers/useTaskMover'
 
-const TaskDotMenu = ({ id, status }) => {
+const TaskDotMenu = ({ id, status, setEdit }) => {
   const deleteTask = useAsyncMutation(tasksConnect.deleteTask, 'kanban')
   const { moveTo } = useTaskMover()
 
   return (
     <>
       <MenuCard>
-        <Body>Edit</Body>
+        <Body onClick={() => {setEdit(true)}}>Edit</Body>
       </MenuCard>
       <MenuCard>
         <Body onClick={() => moveTo(status, 'first', id)}>{status === 'todo' ? 'Move to Doing' : 'Move to To Do'}</Body>

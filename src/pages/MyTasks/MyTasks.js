@@ -9,15 +9,11 @@ import TabPlato from '../../design.system/TabPlato'
 import tasksConnect from '../../utils/api.handlers/tasksConnect'
 import { useQuery } from "react-query";
 
-
-
 const types = ['To Do', 'Doing', 'Done']
 
 const MyTasks = () => {
   
   const [active, setActive] = useState(types[0])
- 
- 
   const { isLoading, error, data: kanban } = useQuery('kanban', tasksConnect.getAllTasks)
 
   if (isLoading) return "Loading...";
@@ -52,8 +48,6 @@ const MyTasks = () => {
         </TaskGroup>
       )}
 
-      {!kanban.length && <NoTasks /> }
-
       {active === types[1] && (
         <TaskGroup kanban={kanban} name='doing'>
           Doing
@@ -65,6 +59,9 @@ const MyTasks = () => {
           Done
         </TaskGroup>
       )}
+
+      {!kanban.length ? <NoTasks /> : null }
+
     </div>
   )
 }
