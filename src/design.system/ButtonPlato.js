@@ -26,6 +26,19 @@ const ButtonPlato = styled.div`
   ${(props) => props.mt2 && `
     margin-top: 2rem;
   `}
+
+${(props) => props.saveModal && `
+    background: linear-gradient(180deg, #77C4CA 0%, #2B546E 100%), linear-gradient(180deg, #77CABB 0%, #1D4941 100%), #3C9A89;
+    box-shadow: 0px 5px 7px rgba(74, 134, 138, 0.25);
+    border-radius: 22px;
+    color: black;
+    padding: 1em;
+    font-weigth: bold;
+  `}
+
+${(props) => props.cancelModal && `
+    color: white;
+  `}
   
 `
 

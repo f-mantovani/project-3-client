@@ -178,3 +178,12 @@ h4 {
 .mx-2 {
   margin: 0 2rem;
 }
+
+.closing-x {
+  width: 1.2em;
+  cursor:pointer;
+}
+
+*:focus {
+  outline: none;
+}

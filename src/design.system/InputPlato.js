@@ -36,6 +36,16 @@ const InputPlato = styled.input`
   :focus {
     outline: none;
   }
+
+  ${props => props.addModalTitle && `
+    width: 80%;
+    font-size: 1em;
+    border: none;
+    ::placeholder {
+     opacity: 1;
+      }
+
+  `}
 `
 
 export default InputPlato
