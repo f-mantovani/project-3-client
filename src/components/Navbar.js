@@ -39,12 +39,6 @@ const Navbar = () => {
     
     
     <SideBar toggled={toggle} className='nav-side-bar'>
-
-    {/* <img onClick={() => setToggle(!toggle)} 
-         src={closeIcon}
-         alt="menu toggle"
-         className={!toggle ? "untoggle-button" : "toggled"}
-         /> */}
     
     <NavUserDisplay {...user}/>
 
