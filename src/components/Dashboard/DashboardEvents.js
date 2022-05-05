@@ -7,31 +7,27 @@ import EventCard from '../Events/EventCard'
 
 const DashboardEvents = ({ events }) => {
 
-  console.log(events)
-
   const upcomingEvents = getUpcomingEvents(events)
-
-  console.log(upcomingEvents)
 
   return (
     <>
-        <div>
-    <ColumnContainer rowSpaceBetween>
-        <h2>Upcoming Events</h2>
-        {upcomingEvents.length > 0 && <NavLinkPlato to="/private/events"><Label smalllink>View All</Label></NavLinkPlato>}
-    </ColumnContainer>
-    </div>
+      <div>
+      <ColumnContainer rowSpaceBetween>
+          <h2>Upcoming Events</h2>
+          {upcomingEvents.length > 0 && <NavLinkPlato to="/private/events"><Label smalllink>View All</Label></NavLinkPlato>}
+      </ColumnContainer>
+      </div>
 
-    {upcomingEvents.length > 0
+      {upcomingEvents.length > 0
 
-    ? upcomingEvents.map(event => <EventCard key={event._id} event={event}/>)
+      ? upcomingEvents.map(event => <EventCard key={event._id} event={event}/>)
 
-    : <ColumnContainer startSpaceBetween>
-        <Body>No events in the next 14 days...</Body>
-        <NavLinkPlato to="/private/events"><Label smalllink>VIEW EVENTS LIST</Label></NavLinkPlato>
-    </ColumnContainer>
+      : <ColumnContainer startSpaceBetween>
+          <Body>No events in the next 14 days...</Body>
+          <NavLinkPlato to="/private/events"><Label smalllink>VIEW EVENTS LIST</Label></NavLinkPlato>
+      </ColumnContainer>
 
-    }
+      }
     </>
   )
 }

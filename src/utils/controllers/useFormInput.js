@@ -32,12 +32,15 @@ const useFormInput = () => {
       throw error
     }
   }
-  const signUpUser = () => {
+  const signUpUser = async () => {
     const newUser = {name, email, password}
-    apiConnect.signUp(newUser)
-    setName('')
-    setEmail('')
-    setPassword('')
+    try {
+      await apiConnect.signUp(newUser)
+      await loginUser()
+      setName('') 
+    } catch (error) {
+      throw error
+    }
   }
 
   return { name, email, password, handleEmailInput, handleNameInput, handlePasswordInput, loginUser, signUpUser }

@@ -14,6 +14,7 @@ import { useQuery } from 'react-query'
 import eventsConnect from '../../utils/api.handlers/eventsConnect' 
 import NoEventsCard from '../../components/Events/NoEventsCard'
 import AddEvent from '../../components/Events/AddEvent'
+import useAsyncMutation from '../../utils/controllers/useAsyncMutation'
 
 const Events = () => {
 
@@ -23,7 +24,7 @@ const Events = () => {
 
   const [addModal, setAddModal] = useState(false)
 
-
+  const deleteAllEvents = useAsyncMutation(eventsConnect.deleteAllEvents, 'events')
 
   const { isLoading, error, data: events } = useQuery('events', eventsConnect.getAllEvents)
 
@@ -34,6 +35,7 @@ const Events = () => {
   const sortedEvents = getPastAndUpcomingEvents(events)
   
   const { pastEvents, upcomingEvents } = sortedEvents
+
 
   return (
     <div>
@@ -90,7 +92,7 @@ const Events = () => {
         ?
         null
         :
-        <ColumnContainer mt100>
+        <ColumnContainer mt100 onClick={() => deleteAllEvents()}>
           <Overline destructive> Delete all events </Overline>
         </ColumnContainer>
         }
@@ -100,9 +102,6 @@ const Events = () => {
           <AddEvent setAddModal={setAddModal}/>
         </ModalPlato>
 
-      
-      
-      
       <ColumnContainer addButton>
         <img 
           src={addButton} 
