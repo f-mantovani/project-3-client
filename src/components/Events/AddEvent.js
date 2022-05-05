@@ -7,6 +7,7 @@ import useEventForm from '../../utils/controllers/useEventForm'
 import ModalHeader from '../Modals/ModalHeader'
 import ModalInput from '../Modals/ModalInput'
 
+
 const AddEvent = ({setAddModal}) => {
 
   const { 
@@ -34,6 +35,8 @@ const AddEvent = ({setAddModal}) => {
         >
       </InputPlato>
 
+     
+        
       <ModalInput label="Date" type="date" value={newDate} onChange={(e) => handleDateInput(e)}></ModalInput>
       <ModalInput label="Hour" type="time" placeholder="00:00 pm" value={newTime} onChange={(e) => handleTimeInput(e)}></ModalInput>
       <ModalInput label="Local" type="text" placeholder="Address or URL" value={newLocal} onChange={(e) => handleLocalInput(e)}></ModalInput>
