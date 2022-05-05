@@ -41,8 +41,18 @@ const InputPlato = styled.input`
     width: 80%;
     font-size: 1em;
     border: none;
+    font-style: normal;
+    font-weight: var(--fw-400);
+    font-size: var(--fs-main-title);
+    line-height: 120%;
+    color: var(--font-color);
     ::placeholder {
      opacity: 1;
+     font-style: normal;
+      font-weight: var(--fw-400);
+      font-size: var(--fs-main-title);
+      line-height: 120%;
+      color: var(--font-muted);
       }
 
   `}
