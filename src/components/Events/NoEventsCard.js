@@ -1,7 +1,7 @@
 import React from 'react'
 import noEventsImg from '../../assets/picto-empty-state.png'
 import ColumnContainer from '../../design.system/ColumnContainer'
-import { Body, H2, H4 } from '../../design.system/text.styling/styles'
+import { Body, H4 } from '../../design.system/text.styling/styles'
 
 const NoEventsCard = ({eventType}) => {
   return (

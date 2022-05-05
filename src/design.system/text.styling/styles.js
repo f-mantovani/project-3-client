@@ -113,6 +113,14 @@ export const ButtonLabel = styled.p`
   line-height: var(--fs-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+
+  ${props => props.light && `
+    color: var(--font-color)
+  `}
+  
+   ${props => props.destructive && `
+    color: var(--font-destructive)
+  `}
 ` 
 
 export const Overline = styled.p`
@@ -127,6 +135,10 @@ export const Overline = styled.p`
   ${props => props.destructive && `
     color: var(--font-destructive)
   `}
+
+  ${(props) => props.muted &&`
+      color: #73BEC5;
+    `}
 ` 
 
 

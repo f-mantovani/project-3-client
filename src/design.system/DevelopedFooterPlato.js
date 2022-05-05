@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 
-const DevelopedFooterPlato = styled.p`
+const DevelopedFooterPlato = styled.div`
   text-transform: none;
   font-weight: 400;
-  color: rgba(241, 241, 241, 0.5);
-  position: absolute;
-  width: 100%;
+  color: var(--font-muted);
+  width: 50%;
   text-align: center;
-  bottom: .5rem;
-  
+  position: fixed;
+  bottom: calc(0% + 1rem);
 `
 
 export default DevelopedFooterPlato

@@ -7,7 +7,8 @@ import './Nav/Nav.css'
 import NavUserDisplay from './Nav/NavUserDisplay'
 import removeToken from '../utils/controllers/removeToken'
 import userConnect from '../utils/api.handlers/userConnect'
-import { H4 } from '../design.system/text.styling/styles'
+import { H4, Overline } from '../design.system/text.styling/styles'
+import DevelopedFooterPlato from '../design.system/DevelopedFooterPlato'
 
 const Navbar = () => {
 
@@ -71,6 +72,10 @@ const Navbar = () => {
       </NavLinkPlato></li>
       
     </ul>
+
+    <DevelopedFooterPlato>
+      <Overline muted> Developed by F. Mantovani and L. Mendes @ 2022 </Overline>
+    </DevelopedFooterPlato>
 
     
     
