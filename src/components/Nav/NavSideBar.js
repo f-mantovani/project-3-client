@@ -4,7 +4,7 @@ import styled from 'styled-components'
     const SideBar = styled.nav `
         
         
-        width: ${props => props.toggled ? "0%" : "60%"};
+        width: ${props => props.toggled ? "0" : "260px"};
         padding: ${props => props.toggled ? "0" : "0.5em 1em"};
 
         background: linear-gradient(180deg, #042539 0%, #010C13 100%);

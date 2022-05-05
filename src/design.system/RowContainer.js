@@ -39,6 +39,13 @@ const RowContainer = styled.div`
     margin-bottom: 1em;
     `}
 
+    ${props => props.userInfoArea && `
+
+   
+    width: 100%;
+    margin: 1em 0;
+    `}
+
     
 
 
