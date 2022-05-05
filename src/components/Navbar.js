@@ -5,7 +5,7 @@ import SideBar from './Nav/NavSideBar'
 import menuToggle from '../assets/burger-icon.png'
 import './Nav/Nav.css'
 import NavUserDisplay from './Nav/NavUserDisplay'
-import removeToken from '../utils/controllers/removeToken'
+import useRemoveToken from '../utils/controllers/useRemoveToken'
 import userConnect from '../utils/api.handlers/userConnect'
 import { H4, Overline } from '../design.system/text.styling/styles'
 import DevelopedFooterPlato from '../design.system/DevelopedFooterPlato'
@@ -45,27 +45,27 @@ const Navbar = () => {
     <NavUserDisplay {...user}/>
 
     <ul className={toggle ? "toggled" : "undefined"}>
-      <li className='my-1'><NavLinkPlato to="/private/dashboard">
+      <li className='my-1'><NavLinkPlato to="/">
         <H4>
           Dashboard
         </H4>
       </NavLinkPlato></li>
-      <li className='my-2'><NavLinkPlato to="/private/mytasks">
+      <li className='my-2'><NavLinkPlato to="/mytasks">
         <H4>
           My Tasks
         </H4>
       </NavLinkPlato></li>
-      <li className='my-2'><NavLinkPlato to="/private/events">
+      <li className='my-2'><NavLinkPlato to="/events">
         <H4>
           Events
         </H4>
       </NavLinkPlato></li>
-      <li className='my-2'><NavLinkPlato to="/private/books">
+      <li className='my-2'><NavLinkPlato to="/books">
         <H4>
           Books
         </H4>
         </NavLinkPlato></li>
-      <li className='my-4'><NavLinkPlato to="/" onClick={removeToken}>
+      <li className='my-4'><NavLinkPlato to="/login" onClick={useRemoveToken}>
         <H4 destructive>
           Logout
         </H4>

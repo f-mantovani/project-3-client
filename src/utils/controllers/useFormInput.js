@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import apiConnect from '../api.handlers/apiConnect'
-
 import saveToken from './saveToken'
 
 const useFormInput = () => {
@@ -25,7 +24,7 @@ const useFormInput = () => {
     try {
       const data = await apiConnect.logIn(logUser)
       saveToken(data)
-      navigate('/private/dashboard')
+      navigate('/')
       setEmail('')
       setPassword('')
     } catch (error) {

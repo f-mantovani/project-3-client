@@ -19,7 +19,7 @@ const DashboardBooks = ({ books }) => {
     <>
         <ColumnContainer rowSpaceBetween>
 
-            <h2>Books recently added</h2>
+            <h2>Books to read</h2>
             {mostRecentBooks.length > 0
             &&
             <NavLinkPlato to="/private/books">

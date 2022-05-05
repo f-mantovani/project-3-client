@@ -22,7 +22,8 @@
 .toggle-gray-cover {
     width: 100vw;
     height: 200vh;
-    background: rgba(220, 220, 220, 0.3);
+    background: var(--bg-blur);
+    opacity: .9;
     position: fixed;
     top:0;
     right: 0;
