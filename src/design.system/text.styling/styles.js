@@ -127,6 +127,10 @@ export const Overline = styled.p`
   ${props => props.destructive && `
     color: var(--font-destructive)
   `}
+
+  ${(props) => props.muted &&`
+      color: #73BEC5;
+    `}
 ` 
 
 

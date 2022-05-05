@@ -32,7 +32,7 @@ const DashboardTasks = ({ kanban }) => {
 
     <ColumnContainer startSpaceBetween>
         <Body>No tasks created in this list yet...</Body>
-        <NavLinkPlato to="/private/mytasks"><Label smalllink>View To Do List</Label></NavLinkPlato>
+        <NavLinkPlato to="/private/mytasks"><Label smalllink> VIEW TO DO LIST</Label></NavLinkPlato>
     </ColumnContainer>}
 
     </>

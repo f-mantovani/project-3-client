@@ -6,18 +6,14 @@ import LineBreak from '../../design.system/LineBreakePlato'
 import PageHeaderPlato from '../../design.system/PageHeaderPlato'
 import TabHeaderPlato from '../../design.system/TabHeaderPlato'
 import TabPlato from '../../design.system/TabPlato'
-import { ButtonLabel, Overline } from '../../design.system/text.styling/styles'
+import { Overline } from '../../design.system/text.styling/styles'
 import getPastAndUpcomingEvents from '../../utils/controllers/getPastEvents'
 import addButton from '../../assets/button-add.png'
-import InputPlato from '../../design.system/InputPlato'
 import ModalPlato from '../../components/Modals/ModalPlato'
-import ModalHeader from '../../components/Modals/ModalHeader'
-import ModalInput from '../../components/Modals/ModalInput'
-import ButtonPlato from '../../design.system/ButtonPlato'
-import RowContainer from '../../design.system/RowContainer'
 import { useQuery } from 'react-query'
 import eventsConnect from '../../utils/api.handlers/eventsConnect' 
 import NoEventsCard from '../../components/Events/NoEventsCard'
+import AddEvent from '../../components/Events/AddEvent'
 
 
 const Events = () => {
@@ -28,15 +24,16 @@ const Events = () => {
 
   const [addModal, setAddModal] = useState(false)
 
-  const { isLoading, error, data: events } = useQuery('kanban', eventsConnect.getAllEvents)
+  const { isLoading, error, data: events } = useQuery('events', eventsConnect.getAllEvents)
 
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
 
   const sortedEvents = getPastAndUpcomingEvents(events)
-
+  
   const { pastEvents, upcomingEvents } = sortedEvents
+
 
   return (
     <div>
@@ -99,25 +96,9 @@ const Events = () => {
         }
       
       
-      <ModalPlato toggled={!addModal}> 
-          <ModalHeader title="Create new event" action={() => setAddModal(false)}/>
-
-          <InputPlato addModalTitle
-            placeholder="Type event title...">
-
-          </InputPlato>
-
-          <ModalInput label="Date" type="date"></ModalInput>
-          <ModalInput label="Hour" type="time" placeholder="00:00 pm"></ModalInput>
-          <ModalInput label="Local" type="text" placeholder="Address or URL"></ModalInput>
-          <ModalInput label="Details" type="text" placeholder="Details about the event..."></ModalInput>  
-
-          <RowContainer modalButtons>
-            <ButtonPlato saveModal><ButtonLabel>Save Event</ButtonLabel></ButtonPlato>
-            <ButtonPlato cancelModal><ButtonLabel>Cancel</ButtonLabel></ButtonPlato> 
-          </RowContainer> 
-        
-      </ModalPlato>
+        <ModalPlato toggled={!addModal}>  
+          <AddEvent setAddModal={setAddModal}/>
+        </ModalPlato>
       
       
       <ColumnContainer addButton>
