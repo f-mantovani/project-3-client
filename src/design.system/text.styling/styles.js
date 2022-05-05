@@ -75,7 +75,7 @@ export const Subtitle2 = styled.p`
   `}
 
   ${(props) => props.muted &&`
-    color: rgba(241, 241, 241, 0.5);
+    color: var(--font-muted);
   `}
 `
 

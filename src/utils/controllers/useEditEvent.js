@@ -56,7 +56,7 @@ const useEditEvent = (title, local, details, date, id) => {
     const hour = newTime.slice(0, 2)
     const minutes = newTime.slice(3, 5)
 
-    return new Date(year, month, day, hour, minutes).toISOString()
+    return new Date(year, month - 1, day, hour, minutes).toISOString()
   }
 
   const saveEdit = () => {

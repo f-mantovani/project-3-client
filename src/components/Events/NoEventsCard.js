@@ -1,12 +1,13 @@
 import React from 'react'
-import noEventsImg from '../../assets/picto-empty-state.png'
+import noEventsImg from '../../assets/noEvents3x.png'
 import ColumnContainer from '../../design.system/ColumnContainer'
+import EmptyState from '../../design.system/EmptyState'
 import { Body, H4 } from '../../design.system/text.styling/styles'
 
 const NoEventsCard = ({eventType}) => {
   return (
     <ColumnContainer noEvents>
-      <img src={noEventsImg} alt="No Events to display"/>
+      <EmptyState src={noEventsImg} alt="No Events to display"/>
       <H4>No {eventType} events to display</H4>
       {eventType === "upcoming"
       ?

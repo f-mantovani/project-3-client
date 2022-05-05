@@ -32,7 +32,7 @@ const useEventForm = () => {
     const day = newDate.slice(8, 10)
     const hour = newTime.slice(0, 2)
     const minutes = newTime.slice(3, 5)
-    return new Date(year, month, day, hour, minutes).toISOString()
+    return new Date(year, month - 1 , day, hour, minutes).toISOString()
   }
 
   const saveNewEvent = () => {

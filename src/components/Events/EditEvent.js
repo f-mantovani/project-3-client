@@ -25,7 +25,7 @@ const EditEvent = ({ _id, title, local, details, date, setEditModal}) => {
 
   return (
     <>
-      <ModalHeader title="Create new event" action={() => setEditModal(false)}/>
+      <ModalHeader title="Edit event" action={() => setEditModal(false)}/>
 
       <InputPlato addModalTitle
         placeholder="Type event title..."
@@ -40,8 +40,10 @@ const EditEvent = ({ _id, title, local, details, date, setEditModal}) => {
       <ModalInput label="Details" type="text" placeholder="Details about the event..." value={newDetails} onChange={(e) => handleDetailsInput(e)}></ModalInput>  
 
       <RowContainer modalButtons>
-        <ButtonLabel light onClick={() => {saveEdit(); setEditModal(false)}}>Edit Event</ButtonLabel>
-        <ButtonLabel destructive onClick={() => setEditModal(false)}>Cancel</ButtonLabel> 
+        <ButtonPlato saveModal>
+          <ButtonLabel light onClick={() => {saveEdit(); setEditModal(false)}}>Save Event</ButtonLabel>
+        </ButtonPlato>
+        <ButtonLabel light onClick={() => setEditModal(false)}>Cancel</ButtonLabel> 
       </RowContainer> 
     </>
   )

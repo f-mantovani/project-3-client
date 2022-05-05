@@ -35,7 +35,6 @@ const Events = () => {
   
   const { pastEvents, upcomingEvents } = sortedEvents
 
-
   return (
     <div>
     <PageHeaderPlato>
