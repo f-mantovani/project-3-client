@@ -9,6 +9,10 @@ import DashboardEvents from '../../components/Dashboard/DashboardEvents'
 import DashboardBooks from '../../components/Dashboard/DashboardBooks'
 import ColumnContainer from '../../design.system/ColumnContainer'
 import userConnect from '../../utils/api.handlers/userConnect'
+import { useQuery } from 'react-query'
+import eventsConnect from '../../utils/api.handlers/eventsConnect'
+import tasksConnect from '../../utils/api.handlers/tasksConnect'
+import booksConnect from '../../utils/api.handlers/booksConnect'
 
 
 const Dashboard = () => {
@@ -17,23 +21,13 @@ const Dashboard = () => {
 
   const [active, setActive] = useState(types[0])
 
-  // Some data mocking for rendering test
+  const { data: events } = useQuery('events', eventsConnect.getAllEvents)
+  const { data: books } = useQuery('books', booksConnect.getAllBooks)
+  const { isLoading, error, data: kanban } = useQuery('kanban', tasksConnect.getAllTasks)
 
-  const [kanban, setKanban] = useState([])
-  const [events, setEvents] = useState([])
-  const [books, setBooks] = useState([])
+  if (isLoading) return "Loading...";
 
-  
-  
-  useEffect(() => {
-    const getUser = async () => {
-      const user = await userConnect.getUser()
-      setEvents(user.events)
-      setKanban(user.tasks)
-      setBooks(user.books)
-    }
-    getUser()  
-  }, [])
+  if (error) return "An error has occurred: " + error.message;
 
   return (
     <div>

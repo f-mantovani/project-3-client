@@ -102,9 +102,6 @@ const Events = () => {
           <AddEvent setAddModal={setAddModal}/>
         </ModalPlato>
 
-      
-      
-      
       <ColumnContainer addButton>
         <img 
           src={addButton} 
