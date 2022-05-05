@@ -1,9 +1,12 @@
 import React from 'react'
 import MenuCard from '../../design.system/MenuCard'
 import { Body } from '../../design.system/text.styling/styles'
+import useAsyncMutation from '../../utils/controllers/useAsyncMutation'
+import eventsConnect from '../../utils/api.handlers/eventsConnect'
 
 
 const EventDotMenu = ({ id, setEditModal }) => {
+  const deleteEvent = useAsyncMutation(eventsConnect.deleteEvent, 'events')
 
   return (
     <>
@@ -14,7 +17,7 @@ const EventDotMenu = ({ id, setEditModal }) => {
         <Body>View Details</Body>
       </MenuCard>
       <MenuCard>
-        <Body destructive>Delete Event</Body>
+        <Body destructive onClick={() => deleteEvent(id)}>Delete Event</Body>
       </MenuCard>
     </>
   )
