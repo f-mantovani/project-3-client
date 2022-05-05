@@ -3,12 +3,12 @@ import MenuCard from '../../design.system/MenuCard'
 import { Body } from '../../design.system/text.styling/styles'
 
 
-const EventDotMenu = () => {
+const EventDotMenu = ({ id, setEditModal }) => {
 
   return (
     <>
       <MenuCard>
-        <Body>Edit Event</Body>
+        <Body onClick={() => setEditModal(true)}>Edit Event</Body>
       </MenuCard>
       <MenuCard>
         <Body>View Details</Body>

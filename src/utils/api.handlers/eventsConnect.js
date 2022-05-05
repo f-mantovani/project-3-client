@@ -23,9 +23,10 @@ class eventsConnect extends apiConstructor {
     }
   }
 
-  updateEvent = async (id ,updatedEvent) => {
+  updateEvent = async ({id ,payload}) => {
     try {
-      const { data } = await this.api.put(`/${id}`, updatedEvent)
+      const { data } = await this.api.put(`/${id}`, payload)
+      console.log(data)
       return data
     } catch (error) {
       throw error.response.data

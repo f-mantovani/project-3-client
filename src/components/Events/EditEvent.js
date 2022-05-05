@@ -3,11 +3,11 @@ import ButtonPlato from '../../design.system/ButtonPlato'
 import InputPlato from '../../design.system/InputPlato'
 import RowContainer from '../../design.system/RowContainer'
 import { ButtonLabel } from '../../design.system/text.styling/styles'
-import useEventForm from '../../utils/controllers/useEventForm'
+import useEditEvent from '../../utils/controllers/useEditEvent'
 import ModalHeader from '../Modals/ModalHeader'
 import ModalInput from '../Modals/ModalInput'
 
-const AddEvent = ({setAddModal}) => {
+const EditEvent = ({ _id, title, local, details, date, setEditModal}) => {
 
   const { 
     newTitle, 
@@ -20,12 +20,12 @@ const AddEvent = ({setAddModal}) => {
     handleTimeInput, 
     handleLocalInput, 
     handleDetailsInput, 
-    saveNewEvent 
-  } = useEventForm()
+    saveEdit 
+  } = useEditEvent(title, local, details, date, _id)
 
   return (
     <>
-      <ModalHeader title="Create new event" action={() => setAddModal(false)}/>
+      <ModalHeader title="Create new event" action={() => setEditModal(false)}/>
 
       <InputPlato addModalTitle
         placeholder="Type event title..."
@@ -40,11 +40,11 @@ const AddEvent = ({setAddModal}) => {
       <ModalInput label="Details" type="text" placeholder="Details about the event..." value={newDetails} onChange={(e) => handleDetailsInput(e)}></ModalInput>  
 
       <RowContainer modalButtons>
-        <ButtonPlato saveModal onClick={() => {saveNewEvent(); setAddModal(false)}}><ButtonLabel>Save Event</ButtonLabel></ButtonPlato>
-        <ButtonPlato cancelModal onClick={() => setAddModal(false)}><ButtonLabel>Cancel</ButtonLabel></ButtonPlato> 
+        <ButtonPlato saveModal onClick={() => {saveEdit(); setEditModal(false)}}><ButtonLabel>Save Event</ButtonLabel></ButtonPlato>
+        <ButtonPlato cancelModal onClick={() => setEditModal(false)}><ButtonLabel>Cancel</ButtonLabel></ButtonPlato> 
       </RowContainer> 
     </>
   )
 }
 
-export default AddEvent
+export default EditEvent

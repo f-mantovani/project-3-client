@@ -15,7 +15,6 @@ import eventsConnect from '../../utils/api.handlers/eventsConnect'
 import NoEventsCard from '../../components/Events/NoEventsCard'
 import AddEvent from '../../components/Events/AddEvent'
 
-
 const Events = () => {
 
   const types = ['Upcoming', 'Previous']
@@ -23,6 +22,8 @@ const Events = () => {
   const [active, setActive] = useState(types[0])
 
   const [addModal, setAddModal] = useState(false)
+
+
 
   const { isLoading, error, data: events } = useQuery('events', eventsConnect.getAllEvents)
 
@@ -99,6 +100,8 @@ const Events = () => {
         <ModalPlato toggled={!addModal}>  
           <AddEvent setAddModal={setAddModal}/>
         </ModalPlato>
+
+      
       
       
       <ColumnContainer addButton>

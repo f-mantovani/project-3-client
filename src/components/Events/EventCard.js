@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import useCollapseMenu from '../../utils/controllers/useCollapseMenu'
 import CardPlato from '../../design.system/CardPlato'
 import ColumnContainer from '../../design.system/ColumnContainer'
@@ -8,14 +8,18 @@ import EventCardDate from './EventCardDate'
 import OutsideClicker from '../OutsideClicker'
 import MenuCollapsable from '../MenuCollapsable'
 import EventDotMenu from './EventDotMenu'
+import ModalPlato from '../Modals/ModalPlato'
+import EditEvent from './EditEvent'
 
 const EventCard = ({event, done}) => {
 
   const { isOpen, setIsOpen, handleCollapse } = useCollapseMenu()
 
+  const [editModal, setEditModal] = useState(false)
+
 
   return (
-    <CardPlato>
+    <CardPlato >
 
         <EventCardDate date={event.date}/>
 
@@ -30,10 +34,14 @@ const EventCard = ({event, done}) => {
         <DotPlato />
         <OutsideClicker isOpen={isOpen} setIsOpen={setIsOpen}>
             <MenuCollapsable>
-              <EventDotMenu/>
+              <EventDotMenu id={event._id} setEditModal={setEditModal}/>
             </MenuCollapsable>
           </OutsideClicker>
         </ColumnContainer>
+
+        <ModalPlato toggled={!editModal}>  
+          <EditEvent {...event} setEditModal={setEditModal} />
+        </ModalPlato>
         
     </CardPlato>
   )
