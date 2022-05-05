@@ -7,7 +7,11 @@ import EventCard from '../Events/EventCard'
 
 const DashboardEvents = ({ events }) => {
 
+  console.log(events)
+
   const upcomingEvents = getUpcomingEvents(events)
+
+  console.log(upcomingEvents)
 
   return (
     <>
