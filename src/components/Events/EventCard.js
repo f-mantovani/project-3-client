@@ -25,7 +25,7 @@ const EventCard = ({event, done}) => {
 
         <ColumnContainer eventText>
             {done ? <Subtitle2 muted done>{event.title}</Subtitle2> : <Subtitle2>{event.title}</Subtitle2>}
-            {done ? <Body muted done>{event.description}</Body> : <Body>{event.description}</Body> }
+            {done ? <Body muted done>{event.details}</Body> : <Body>{event.details}</Body> }
         </ColumnContainer>
 
         <ColumnContainer kebab='true' onClick={() => handleCollapse()}>
