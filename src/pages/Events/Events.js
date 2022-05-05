@@ -31,9 +31,13 @@ const Events = () => {
 
   if (error) return "An error has occurred: " + error.message;
 
+  console.log(events)
+
   const sortedEvents = getPastAndUpcomingEvents(events)
   
   const { pastEvents, upcomingEvents } = sortedEvents
+
+  console.log(pastEvents, upcomingEvents)
 
 
   return (
