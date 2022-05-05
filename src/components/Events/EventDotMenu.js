@@ -5,7 +5,7 @@ import useAsyncMutation from '../../utils/controllers/useAsyncMutation'
 import eventsConnect from '../../utils/api.handlers/eventsConnect'
 
 
-const EventDotMenu = ({ id, setEditModal }) => {
+const EventDotMenu = ({ id, setEditModal, setDetailsOpen}) => {
   const deleteEvent = useAsyncMutation(eventsConnect.deleteEvent, 'events')
 
   return (
@@ -14,7 +14,7 @@ const EventDotMenu = ({ id, setEditModal }) => {
         <Body onClick={() => setEditModal(true)}>Edit Event</Body>
       </MenuCard>
       <MenuCard>
-        <Body>View Details</Body>
+        <Body onClick={() => setDetailsOpen(true)}>View Details</Body>
       </MenuCard>
       <MenuCard>
         <Body destructive onClick={() => deleteEvent(id)}>Delete Event</Body>
