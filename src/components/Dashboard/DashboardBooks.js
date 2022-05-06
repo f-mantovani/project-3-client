@@ -19,10 +19,10 @@ const DashboardBooks = ({ books }) => {
     <>
         <ColumnContainer rowSpaceBetween>
 
-            <h2>Books recently added</h2>
+            <h2>Books to read</h2>
             {mostRecentBooks.length > 0
             &&
-            <NavLinkPlato to="/private/books">
+            <NavLinkPlato to="/books">
               <Label smalllink>View All</Label>
             </NavLinkPlato>}
         </ColumnContainer>
@@ -43,7 +43,7 @@ const DashboardBooks = ({ books }) => {
 
         <ColumnContainer startSpaceBetween>
           <Body>No books added to this list yet...</Body>
-          <NavLinkPlato to="/private/books">
+          <NavLinkPlato to="/books">
             <Label smalllink>SEARCH FOR A NEW BOOK</Label>
           </NavLinkPlato>
         </ColumnContainer>}

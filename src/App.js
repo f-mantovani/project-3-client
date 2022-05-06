@@ -9,30 +9,28 @@ import MyTasks from './pages/MyTasks/MyTasks';
 import Books from './pages/Books/Books';
 import BookDetails from './components/Books/BookDetails';
 import PrivateOutlet from './components/PrivateOutlet'
-import books from './books.json'
 import User from './pages/User/User';
 
 const queryClient = new QueryClient()
 
 function App() {
-  
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+    
+      <QueryClientProvider client={queryClient}>
+        <Routes>
+          <Route path="/login" element={ <Login />} />
+          <Route path="/signup" element={<Signup />} />
+          
+          <Route path="/" element={<PrivateOutlet> <Dashboard /> </PrivateOutlet>}/>
+          <Route path="events" element={<PrivateOutlet> <Events /> </PrivateOutlet>}/>
+          <Route path="mytasks" element={<PrivateOutlet> <MyTasks /> </PrivateOutlet>}/>
+          <Route path="books" element={<PrivateOutlet> <Books /> </PrivateOutlet>}/>
+          <Route path="book/:id" element={<PrivateOutlet> <BookDetails /> </PrivateOutlet>}/>
+          <Route path="user" element={<PrivateOutlet> <User/> </PrivateOutlet>}/>
 
-        <Route path='/private' element={<PrivateOutlet />}>
-          <Route path="/private/dashboard" element={<Dashboard/>}/>
-          <Route path="/private/user" element={<User/>}/>
-          <Route path="/private/events" element={<Events/>}/>
-          <Route path="/private/mytasks" element={<MyTasks/>}/>
-          <Route path="/private/books" element={<Books/>}/>
-          <Route path="/private/book/:id" element={<BookDetails books={books} />} />
-        </Route>
-
-      </Routes>
-    </QueryClientProvider>
+        </Routes>
+      </QueryClientProvider>
   );
 }
 

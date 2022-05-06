@@ -7,6 +7,8 @@
   --font-link: #73BEC5;
   --font-muted: rgba(241, 241, 241, 0.5);
   --bg-clr: linear-gradient(180deg, #042539 0%, #010c13 100%);
+  --bg-menu: #020F17;
+  --bg-blur: #1A1A1A;
   --fw-300: 300;
   --fw-400: 400;
   --fw-600: 600;
@@ -164,6 +166,16 @@ h4 {
   align-items: center;
 }
 
+.position-bottom{
+  margin: 0 auto;
+  width: calc(100% - 4rem);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  bottom:  1rem;
+}
+
 .mx-075 {
   margin: 0 .75rem;
 }
@@ -181,6 +193,9 @@ h4 {
 }
 .my-025{
   margin: .25rem 0
+}
+.my-15{
+  margin: 1.5rem 0
 }
 .my-2{
   margin: 2rem 0

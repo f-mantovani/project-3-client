@@ -7,7 +7,7 @@ import styled from 'styled-components'
         width: ${props => props.toggled ? "0" : "260px"};
         padding: ${props => props.toggled ? "0" : "0.5em 1em"};
 
-        background: linear-gradient(180deg, #042539 0%, #010C13 100%);
+        background: var(--bg-menu);
         color: white;
         height: 100vh;
         overflow: hidden;

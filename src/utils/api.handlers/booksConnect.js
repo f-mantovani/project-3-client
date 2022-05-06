@@ -52,9 +52,9 @@ class booksConnect extends apiConstructor {
     }
   }
 
-  deleteBooks = async (id) => {
+  deleteBook = async (id) => {
     try {
-      const { data } = await this.api.delete(`/deleteOne/${id}`)
+      const { data } = await this.api.delete(`/delete/${id}`)
       return data
     } catch (error) {
       throw error.response.data
