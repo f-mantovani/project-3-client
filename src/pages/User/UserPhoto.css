@@ -1,0 +1,18 @@
+
+.user-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 10em;
+    overflow: hidden;
+    margin: 1em 0;
+    object-fit: cover;
+}
+
+.user-photo img {
+    object-fit: cover;
+}
+
+.user-photo:hover {
+    filter: grayscale(0.80);
+    cursor: pointer;
+}

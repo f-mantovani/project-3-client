@@ -26,7 +26,6 @@ const RowContainer = styled.div`
     `}
 
     ${props => props.modalHeader && `
-
     overflow: scroll;
     padding: 1em;
     width: 100%;
@@ -59,6 +58,7 @@ const RowContainer = styled.div`
       
       & img {
         width: 1.5em;
+        cursor: pointer;
       }
     `}
     

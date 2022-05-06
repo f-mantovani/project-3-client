@@ -142,6 +142,12 @@ ${props => props.userContainer && `
     justify-content: space-between;
   `}
 
+${props => props.userPhoto && `
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  `}
+
 `
   
 
