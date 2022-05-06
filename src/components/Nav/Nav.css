@@ -45,7 +45,13 @@
 
 .user-info {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
 
+}
+
+.edit-pencil {
+    width: 1em;
 }
 
 .user-info img {

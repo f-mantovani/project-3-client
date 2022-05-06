@@ -1,5 +1,6 @@
 import React from 'react'
 import noPhoto from '../../assets/user.png'
+import editPencil from '../../assets/edit-pencil.png'
 
 const NavUserDisplay = ({photo, name, email, display}) => {
 
@@ -18,6 +19,14 @@ const NavUserDisplay = ({photo, name, email, display}) => {
             : <p className='body'>email@email.com</p>}
 
         </div>
+
+        
+            <img 
+              src={editPencil} 
+              alt="Edit user information"
+              className="edit-pencil"
+              />
+        
 
     </div>
   )
