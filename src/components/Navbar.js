@@ -25,6 +25,10 @@ const Navbar = () => {
     getUser()
   }, [])
 
+  const logout = () => {
+    localStorage.removeItem('token')
+  }
+
   return (
     <div>
     {toggle &&
@@ -79,7 +83,7 @@ const Navbar = () => {
           Books
         </H4>
         </NavLinkPlato></li>
-      <li className='my-4'><NavLinkPlato to="/login" onClick={useRemoveToken}>
+      <li className='my-4'><NavLinkPlato to="/login" onClick={() => logout()}>
         <H4 destructive>
           Logout
         </H4>

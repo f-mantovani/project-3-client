@@ -18,13 +18,13 @@ const SignupForm = () => {
 
   return (
     <>
-      <div className='login-container'>
-        <fieldset>
+      <div className='login-container' >
+        <fieldset >
         <div>
           <legend className='main-title'>Create new account</legend>
           <div className='signup-header'>
             <p className='overline'>Already have an account?</p>
-            <NavLinkPlato to='/' signup="true">Login Here</NavLinkPlato>
+            <NavLinkPlato to='/login' signup="true">Login Here</NavLinkPlato>
           </div>
         </div>
           <div className='login-inputs'>
