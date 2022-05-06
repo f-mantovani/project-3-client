@@ -67,7 +67,7 @@ ${props => props.mt150 && `
 
   ${props => props.bookContainer && `
       margin: 1em 1em;
-      border-radius: 0.5rem;
+      border-radius: .5em;
       width: 10em;
       min-width: 9em;
       height: 14em;

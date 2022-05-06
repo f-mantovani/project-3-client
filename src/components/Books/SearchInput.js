@@ -7,14 +7,20 @@ import close from '../../assets/x.png'
 import booksConnect from '../../utils/api.handlers/booksConnect'
 import BookCardDashboard from './BookCardDashboard'
 import RowContainer from '../../design.system/RowContainer'
+import BookNotFound from './BookNotFound'
 
-const SearchInput = ({ changeOpen }) => {
+const SearchInput = ({ changeOpen, changeAddModal }) => {
+  
   const [search, setSearch] = useState('')
   const [booksSearched, setBooksSearched] = useState([])
+  const [notFound, setNotFound] = useState(false)
 
   const searchBook = async () => {
     try {
       const bookList = await booksConnect.searchBook(search)
+      if (!bookList.length) {
+        setNotFound(true)
+      }
       setBooksSearched(bookList)
     } catch (error) {
       throw error.message
@@ -48,7 +54,7 @@ const SearchInput = ({ changeOpen }) => {
           </label>
         </div>
 
-        <RowContainer bookRowContainer>
+        <RowContainer bookRowContainer >
           {booksSearched.length
             ? booksSearched.map((book) => (
                 <BookCardDashboard
@@ -59,6 +65,8 @@ const SearchInput = ({ changeOpen }) => {
                   bookPage
                 />
               ))
+            : 
+            notFound ? <BookNotFound changeAddModal={changeAddModal} changeOpen={changeOpen} /> 
             : null}
         </RowContainer>
       </SearchInputPlato>

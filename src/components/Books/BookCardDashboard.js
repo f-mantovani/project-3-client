@@ -27,7 +27,7 @@ const BookCardDashboard = ({image, title, _id, status, bookPage}) => {
             </MenuCollapsable>
           </OutsideClickerBook>
       </ColumnContainer>}
-        <NavLinkPlato to={`/book/${id}`}>
+        <NavLinkPlato to={`/book/${id}`} style={{borderRadius: ".5em"}}>
           <img src={image ? image : notAvialble} alt="Book cover"/>
         </NavLinkPlato>
         </ColumnContainer>
