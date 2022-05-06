@@ -166,6 +166,16 @@ h4 {
   align-items: center;
 }
 
+.position-bottom{
+  margin: 0 auto;
+  width: calc(100% - 4rem);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  bottom:  1rem;
+}
+
 .mx-075 {
   margin: 0 .75rem;
 }
@@ -183,6 +193,9 @@ h4 {
 }
 .my-025{
   margin: .25rem 0
+}
+.my-15{
+  margin: 1.5rem 0
 }
 .my-2{
   margin: 2rem 0

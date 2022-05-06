@@ -14,9 +14,10 @@ class userConnect extends apiConstructor {
     }
   }
 
-  logIn = async (credentials) => {
+  changeBookshelves = async (payload) => {
+    const { oldStatus, status, id } = payload
     try {
-      const { data } = await this.api.post('/login', credentials)
+      const { data } = await this.api.put(`/book/${id}`, {oldStatus, status})
       return data
     } catch (error) {
       throw error.response.data

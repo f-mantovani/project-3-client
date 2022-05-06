@@ -1,9 +1,9 @@
 import React from 'react'
 import ModalInputPlato from '../../design.system/ModalInputPlato'
 
-const ModalInput = ({label, type, placeholder, value, onChange, readOnly}) => {
+const ModalInput = ({label, type, placeholder, value, onChange, readOnly, className}) => {
   return (
-    <ModalInputPlato>
+    <ModalInputPlato className={className}>
         <label>{label}</label>
         <input
         type={type}

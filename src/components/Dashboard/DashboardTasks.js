@@ -18,7 +18,7 @@ const DashboardTasks = ({ kanban }) => {
     <ColumnContainer rowSpaceBetween>
         <h2>Tasks in "Doing"</h2>
         {renderingCondition && 
-        <NavLinkPlato to="/private/mytasks"><Label smalllink>View All</Label></NavLinkPlato>
+        <NavLinkPlato to="/mytasks"><Label smalllink>View All</Label></NavLinkPlato>
         }
     </ColumnContainer>
     </div>
@@ -32,7 +32,7 @@ const DashboardTasks = ({ kanban }) => {
 
     <ColumnContainer startSpaceBetween>
         <Body>No tasks created in this list yet...</Body>
-        <NavLinkPlato to="/private/mytasks"><Label smalllink> VIEW TO DO LIST</Label></NavLinkPlato>
+        <NavLinkPlato to="/mytasks"><Label smalllink> VIEW TO DO LIST</Label></NavLinkPlato>
     </ColumnContainer>}
 
     </>

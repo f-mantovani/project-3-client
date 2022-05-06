@@ -9,28 +9,30 @@ import OutsideClickerBook from '../OutsideClickerBook'
 import BookMenuDot from './BookMenuDot'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 
-const BookCardDashboard = ({image, title, _id}) => {
+const BookCardDashboard = ({image, title, _id, status, bookPage}) => {
+
   const id = _id
   const { isOpen, setIsOpen, handleCollapse } = useCollapseMenu()
+  
   return (
     <ColumnContainer bookContainer>
         <ColumnContainer bookImgContainer>
-        <ColumnContainer kebabBooks onClick={handleCollapse}>
+        {bookPage && <ColumnContainer kebabBooks onClick={handleCollapse}>
         <DotPlato />
         <DotPlato />
         <DotPlato />
         <OutsideClickerBook isOpen={isOpen} setIsOpen={setIsOpen}>
             <MenuCollapsable>
-              <BookMenuDot />
+              <BookMenuDot id={id} status={status} />
             </MenuCollapsable>
           </OutsideClickerBook>
-      </ColumnContainer>
-        <NavLinkPlato to={`/private/book/${id}`}>
+      </ColumnContainer>}
+        <NavLinkPlato to={`/book/${id}`}>
           <img src={image ? image : notAvialble} alt="Book cover"/>
         </NavLinkPlato>
         </ColumnContainer>
         <ColumnContainer bookTitleContainer>
-          <NavLinkPlato to={`/private/book/${id}`}>
+          <NavLinkPlato to={`/book/${id}`}>
            <Body>{title}</Body>
           </NavLinkPlato>
         </ColumnContainer>
