@@ -29,29 +29,32 @@ const User = () => {
       </PageHeaderPlato>
 
       <ColumnContainer noEvents>
-          <div>
+          <ColumnContainer noEvents>
             {image
             ? <img src={image} alt="User Profile"/>
-            : <img src={noUserPhoto} alt="User Profile"/>
+            : <img className='userImg' src={noUserPhoto} alt="User Profile"/>
             }
-          </div>
+            <Body>Click on the photo to update</Body>
+          </ColumnContainer>
 
           
+            <RowContainer userProfile>
+            <ColumnContainer userContainer>
+                <ColumnContainer userProfile>
+                        <Label>Name:</Label>
+                        <Body>{name}</Body>
+                </ColumnContainer>
 
-            <ColumnContainer userProfile>
-            <img src={editPencil} alt="edit user info"/>
-                <RowContainer userProfile>
-                    <Label>Name:</Label>
-                </RowContainer>
-                <Body>{name}</Body>
+                <ColumnContainer userProfile>
+                        <Label>Email:</Label>
+                        <Body>{email}</Body>
+                </ColumnContainer>
+
             </ColumnContainer>
 
-            <ColumnContainer userProfile>
-                <RowContainer userProfile>
-                    <Label>Email:</Label>
-                </RowContainer>
-                <Body>{email}</Body>
-            </ColumnContainer>
+            <img src={editPencil} alt='Edit user info'/>
+
+            </RowContainer>
 
 
           

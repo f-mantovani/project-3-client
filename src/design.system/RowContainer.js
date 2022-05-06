@@ -54,8 +54,12 @@ const RowContainer = styled.div`
 
     ${props => props.userProfile && `
       justify-content: center;
-      width: 40%;
+      width: 90%;
       margin-bottom: 0.5em;
+      
+      & img {
+        width: 1.5em;
+      }
     `}
     
 

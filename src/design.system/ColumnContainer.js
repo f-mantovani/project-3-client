@@ -131,12 +131,15 @@ ${props => props.noEvents && `
   `}
 
 ${props => props.userProfile && `
-    width: 80%;
+    align-items: flex-start;
+    width: 100%;
+  `}
 
-    & img {
-      width: 1.5em;
-      margin-bottom: 1em;
-    }
+${props => props.userContainer && `
+    align-items: flex-start;
+    width: 80%;
+    height: 10vh;
+    justify-content: space-between;
   `}
 
 `
