@@ -31,7 +31,7 @@ const TaskGroup = ({ kanban, name, dashboard }) => {
       </div>
       {name === 'todo' && (
         <CardPlato muted>
-          <CustomCheckboxPlato>
+          <CustomCheckboxPlato onKeyDown={(e) => e.key === 'Enter' && saveNewTask()}>
             <input
               type='checkbox'
               id='add-new-task'

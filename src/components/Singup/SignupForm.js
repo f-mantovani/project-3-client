@@ -18,7 +18,7 @@ const SignupForm = () => {
 
   return (
     <>
-      <div className='login-container' >
+      <div className='login-container' onKeyDown={(e) => e.key === 'Enter' && signUpUser()}>
         <fieldset >
         <div>
           <legend className='main-title'>Create new account</legend>
