@@ -38,6 +38,17 @@ ${(props) => props.saveModal && `
 
 ${(props) => props.cancelModal && `
     color: white;
+    cursor: pointer;
+  `}
+
+${(props) => props.uploadImgModal && `
+    color: white;
+    cursor: pointer;
+    font-size: 0.7em;
+    border: 2px solid white;
+    text-align: center;
+    line-height: 2.4em;
+    border-radius: 1em;
   `}
   
 `
