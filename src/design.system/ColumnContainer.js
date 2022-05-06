@@ -121,9 +121,6 @@ ${props => props.addButton && `
     justify-content: flex-end;
     position: relative;
     bottom: -2em;
-    @media (min-width: 600px) {
-      
-    }
   `}
 
 ${props => props.eventList && `

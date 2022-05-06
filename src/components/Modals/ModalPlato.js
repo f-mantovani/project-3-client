@@ -18,6 +18,10 @@ const ModalPlato = styled.div `
     transform: translateX(-50%);
     transition: bottom 0.7s;
 
+    @media (min-width: 600px) {
+        width: 30vw;
+    }
+
    
 
 `
