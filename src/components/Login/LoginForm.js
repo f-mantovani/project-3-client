@@ -11,15 +11,17 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className='login-container'>
+      <div className='login-container' onKeyDownCapture={(e) => e.key === 'Enter' && loginUser()}>
         <fieldset>
-        <div>
-          <legend className='main-title'>Access your account</legend>
-          <div className='signup-header'>
-            <p className='overline'>Don’T have an account YET?</p>
-            <NavLinkPlato to='/signup' signup="true">Register Here</NavLinkPlato>
+          <div>
+            <legend className='main-title'>Access your account</legend>
+            <div className='signup-header'>
+              <p className='overline'>Don’T have an account YET?</p>
+              <NavLinkPlato to='/signup' signup='true'>
+                Register Here
+              </NavLinkPlato>
+            </div>
           </div>
-        </div>
           <div className='login-inputs'>
             <div className='input-field'>
               <InputPlato
@@ -30,10 +32,11 @@ const LoginForm = () => {
                 required
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
-              <label className='input-label' htmlFor='email'>Email address </label>
+              <label className='input-label' htmlFor='email'>
+                Email address
+              </label>
             </div>
             <div className='input-field'>
-              
               <InputPlato
                 id='password'
                 name='password'
@@ -43,10 +46,18 @@ const LoginForm = () => {
                 required
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
-              <label className='input-label' htmlFor='password'>Password </label>
+              <label className='input-label' htmlFor='password'>
+                Password
+              </label>
             </div>
             <div className='login-btn-group'>
-              <ButtonPlato login="true" onClick={loginUser}>Login</ButtonPlato>
+              <ButtonPlato
+                login='true'
+                onClick={loginUser}
+                
+              >
+                Login
+              </ButtonPlato>
             </div>
           </div>
         </fieldset>
