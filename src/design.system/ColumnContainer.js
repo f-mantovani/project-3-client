@@ -11,6 +11,7 @@ const ColumnContainer = styled.div`
     min-height: 2.5rem;
     padding-right: 1.125em;
     position: relative;
+    cursor: pointer;
   `}
   
   ${props => props.mt3 && `
