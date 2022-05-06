@@ -38,7 +38,7 @@ const Books = () => {
 
   if (error) return 'An error has occurred: ' + error.message
 
-  // console.log(books)
+
 
   const changeOpen = () => {
     setOpen(!open)

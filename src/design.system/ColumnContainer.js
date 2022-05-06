@@ -89,11 +89,15 @@ ${props => props.mt150 && `
     `}
 
   ${props => props.bookTitleContainer && `
-      height:20%;
-      width: 100%;
-      padding: 0 0.3em;
+      margin: auto auto auto .5rem;
       align-items: flex-start;
-      }
+      justify-content: flex-start;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+              line-clamp: 2; 
+      -webkit-box-orient: vertical;
     `}
 
   ${props => props.kebabBooks && `

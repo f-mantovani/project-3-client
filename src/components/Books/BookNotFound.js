@@ -13,7 +13,7 @@ const BookNotFound = ({changeAddModal, changeOpen}) => {
         <H2>Ops, book not found!</H2>
         <Body className='line-break'>Check if it was typed correctly or add a new book to your list:</Body>
       </ColumnContainer>
-      <ButtonPlato login mt2 onClick={() => {changeAddModal(); console.log('click'); changeOpen()}}>Add new book</ButtonPlato>
+      <ButtonPlato login mt2 onClick={() => {changeAddModal(); changeOpen()}}>Add new book</ButtonPlato>
     </ColumnContainer>
   )
 }
