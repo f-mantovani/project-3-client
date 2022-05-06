@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar'
 import TabPlato from '../../design.system/TabPlato'
 import LineBreak from '../../design.system/LineBreakePlato'
@@ -12,6 +12,7 @@ import { useQuery } from 'react-query'
 import eventsConnect from '../../utils/api.handlers/eventsConnect'
 import tasksConnect from '../../utils/api.handlers/tasksConnect'
 import booksConnect from '../../utils/api.handlers/booksConnect'
+import userConnect from '../../utils/api.handlers/userConnect'
 
 
 
@@ -21,13 +22,25 @@ const Dashboard = () => {
 
   const [active, setActive] = useState(types[0])
 
+  const [books, setBooks] = useState([])
+  
+  const getBooks = async () => {
+    const user = await userConnect.getUser()
+    setBooks(user.booksToRead)
+  }
+
+  useEffect(() => {
+    getBooks()
+  }, [])
+
   const { data: events } = useQuery('events', eventsConnect.getAllEvents)
-  const { data: books } = useQuery('books', booksConnect.getAllBooks)
   const { isLoading, error, data: kanban } = useQuery('kanban', tasksConnect.getAllTasks)
 
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
+
+  
 
   return (
     <div>
@@ -57,11 +70,17 @@ const Dashboard = () => {
         {active === types[0] && 
 
         <>
-        <DashboardTasks kanban={kanban}/> 
+        <div className='mb-2'>
+          <DashboardTasks kanban={kanban}/>  
+        </div>
 
-        <DashboardEvents events={events}/>
+        <div className='mb-2'>
+          <DashboardEvents events={events}/>
+        </div>
 
-        <DashboardBooks books={books}/>
+        <div className='mb-2'>
+          <DashboardBooks books={books}/>
+        </div>
 
         {/* Page Breather */}
         <ColumnContainer>
