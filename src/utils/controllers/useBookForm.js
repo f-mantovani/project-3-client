@@ -3,15 +3,15 @@ import booksConnect from '../api.handlers/booksConnect'
 import useAsyncMutation from './useAsyncMutation'
 
 const useBookForm = () => {
-  const [ title, setTitle ] = useState('')
+  const [ name, setName ] = useState('')
   const [ author, setAuthor] = useState('')
   const [ year, setYear ] = useState('')
   const [ sinopsis, setSinopsis ] = useState('')
   const [ imageUrl, setImageUrl ] = useState(null)
   const createBook = useAsyncMutation(booksConnect.createBook, 'user')
 
-  const handleTitleInput = (e) => {
-    setTitle(e.target.value)
+  const handleNameInput = (e) => {
+    setName(e.target.value)
   }
   const handleAuthorInput = (e) => {
     setAuthor(e.target.value)
@@ -27,16 +27,15 @@ const useBookForm = () => {
   }
 
   const saveNewBook = () => {
-    const payload = {title, author, year, sinopsis, imageUrl}
-    console.log(payload)
-    // createTask(payload)
-    // setTitle('')
-    // setAuthor('')
-    // setYear('')
-    // setSinopsis('')
-    // setImageUrl('')
+    const payload = {name, author, year, sinopsis, imageUrl}
+    createBook(payload)
+    setName('')
+    setAuthor('')
+    setYear('')
+    setSinopsis('')
+    setImageUrl('')
   }
-  return { title, author, year, sinopsis, imageUrl, handleTitleInput, handleAuthorInput, handleYearInput, handleSinopsisInput, handleImageUrlInput, saveNewBook }
+  return { name, author, year, sinopsis, imageUrl, handleNameInput, handleAuthorInput, handleYearInput, handleSinopsisInput, handleImageUrlInput, saveNewBook }
 }
 
 export default useBookForm

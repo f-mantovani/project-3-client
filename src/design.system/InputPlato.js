@@ -35,10 +35,11 @@ const InputPlato = styled.input`
 
   :focus {
     outline: none;
+    
   }
 
   ${props => props.addModalTitle && `
-    width: 80%;
+    width: 100%;
     font-size: 1em;
     border: none;
     font-style: normal;
