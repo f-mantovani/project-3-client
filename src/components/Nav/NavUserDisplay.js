@@ -1,10 +1,10 @@
 import React from 'react'
 import noPhoto from '../../assets/user.png'
 
-const NavUserDisplay = ({photo, name, email}) => {
+const NavUserDisplay = ({photo, name, email, display}) => {
 
   return (
-    <div className="user-info">
+    <div className={display}>
         {photo
         ? <img src={photo} alt='User profile'/>
         : <img src={noPhoto} alt='User profile'/>}

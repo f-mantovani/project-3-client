@@ -43,14 +43,18 @@ const Navbar = () => {
     
     
     <SideBar toggled={toggle} className='nav-side-bar'>
+
+    <RowContainer closingMenu>
+      <img  src={closeX} 
+            alt='Close menu'
+            className={toggle ? "toggled" : "closing-x"}
+            onClick={() => setToggle(!toggle)}
+          />
+    </RowContainer>
     
     <RowContainer userInfoArea>
-    <NavUserDisplay {...user}/>
-    <img  src={closeX} 
-          alt='Close menu'
-          className='closing-x'
-          onClick={() => setToggle(!toggle)}
-         />
+    <NavUserDisplay display={toggle ? "toggled" : "user-info"} {...user}/>
+    
     
     </RowContainer>
 
