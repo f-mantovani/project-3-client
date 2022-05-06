@@ -131,7 +131,7 @@ const Books = () => {
           </>
         )}
       {active === types[1] &&
-        (books.booksReading.length || books.booksToRead.length || books.booksDone.length) && (
+        (books.booksReading.length || books.booksToRead.length || books.booksDone.length) ? (
           <>
             <ColumnContainer rowSpaceBetween>
               <H2>Done</H2>
@@ -154,7 +154,7 @@ const Books = () => {
               ))}
             </RowContainer>
           </>
-        )}
+        ) : null }
 
         <ModalPlato toggled={!addModal}>  
           <AddBook changeAddModal={changeAddModal} searchModal={changeOpen}/>
