@@ -130,6 +130,15 @@ ${props => props.noEvents && `
     }
   `}
 
+${props => props.userProfile && `
+    width: 80%;
+
+    & img {
+      width: 1.5em;
+      margin-bottom: 1em;
+    }
+  `}
+
 `
   
 

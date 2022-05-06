@@ -5,7 +5,7 @@ import userConnect from '../../utils/api.handlers/userConnect'
 import ColumnContainer from '../../design.system/ColumnContainer'
 import noUserPhoto from '../../assets/user-photo.png'
 import RowContainer from '../../design.system/RowContainer'
-import { Body } from '../../design.system/text.styling/styles'
+import { Body, Label } from '../../design.system/text.styling/styles'
 import editPencil from '../../assets/edit-pencil.png'
 
 const User = () => {
@@ -28,7 +28,7 @@ const User = () => {
         <Navbar />
       </PageHeaderPlato>
 
-      <ColumnContainer>
+      <ColumnContainer noEvents>
           <div>
             {image
             ? <img src={image} alt="User Profile"/>
@@ -36,17 +36,25 @@ const User = () => {
             }
           </div>
 
-          <img src={editPencil} alt="Edit user info"/>
+          
 
-          <RowContainer>
-              <Body>Name:</Body>
-              <Body>{name}</Body>
+            <ColumnContainer userProfile>
+            <img src={editPencil} alt="edit user info"/>
+                <RowContainer userProfile>
+                    <Label>Name:</Label>
+                </RowContainer>
+                <Body>{name}</Body>
+            </ColumnContainer>
 
-          </RowContainer>
-          <RowContainer>
-              <Body>Email:</Body>
-              <Body>{email}</Body>
-          </RowContainer>
+            <ColumnContainer userProfile>
+                <RowContainer userProfile>
+                    <Label>Email:</Label>
+                </RowContainer>
+                <Body>{email}</Body>
+            </ColumnContainer>
+
+
+          
       </ColumnContainer>
 
 
