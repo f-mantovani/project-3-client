@@ -17,9 +17,10 @@ const RowContainer = styled.div`
     ${props => props.bookRowContainer && `
 
     overflow: scroll;
-
+    
     & > div {
-
+      
+      
       align-self: center;
     }
 

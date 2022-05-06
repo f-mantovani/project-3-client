@@ -16,7 +16,16 @@ class booksConnect extends apiConstructor {
 
   getOneBook = async (id) => {
     try {
-      const { data } = await this.api.get(`${id}`)
+      const { data } = await this.api.get(`/bookOne/${id}`)
+      return data
+    } catch (error) {
+      throw error.response.data
+    }
+  }
+
+  searchBook = async (search) => {
+    try {
+      const { data } = await this.api.get(`/bookSearch/${search}`)
       return data
     } catch (error) {
       throw error.response.data

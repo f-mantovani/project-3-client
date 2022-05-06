@@ -16,12 +16,17 @@ import SearchInput from '../../components/Books/SearchInput'
 import GrayArea from '../../design.system/GrayArea'
 import { useQuery } from 'react-query'
 import userConnect from '../../utils/api.handlers/userConnect'
+import ModalPlato from '../../components/Modals/ModalPlato'
+import AddBook from '../../components/Books/AddBook'
 
 const types = ['To Read', 'Done']
 
 const Books = () => {
+
   const [active, setActive] = useState(types[0])
   const [open, setOpen] = useState(false)
+
+  const [addModal, setAddModal] = useState(false)
 
   const {
     isLoading,
@@ -39,12 +44,16 @@ const Books = () => {
     setOpen(!open)
   }
 
+  const changeAddModal = () => {
+    setAddModal(!addModal)
+  }
+
   return (
     <>
       {open && (
         <>
           <GrayArea onClick={() => changeOpen()} />
-          <SearchInput changeOpen={changeOpen} />
+          <SearchInput changeOpen={changeOpen} changeAddModal={changeAddModal}/>
         </>
       )}
       <PageHeaderPlato>
@@ -73,7 +82,7 @@ const Books = () => {
         <LineBreak />
       </TabHeaderPlato>
       {!(books.booksReading.length || books.booksToRead.length || books.booksDone.length) &&
-        active === types[0] && <NoBooks />}
+        active === types[0] && <NoBooks changeOpen={changeOpen} />}
       {active === types[0] &&
         (books.booksReading.length || books.booksToRead.length || books.booksDone.length) && (
           <>
@@ -146,6 +155,10 @@ const Books = () => {
             </RowContainer>
           </>
         )}
+
+        <ModalPlato toggled={!addModal}>  
+          <AddBook changeAddModal={changeAddModal} searchModal={changeOpen}/>
+        </ModalPlato>
     </>
   )
 }

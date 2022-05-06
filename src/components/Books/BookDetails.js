@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { H1, Overline } from '../../design.system/text.styling/styles'
 import booksConnect from '../../utils/api.handlers/booksConnect'
@@ -17,8 +17,10 @@ const BookDetails = () => {
    const book = await booksConnect.getOneBook(id)
    setBook(book)
   }
-  getBook(id)
-
+  useEffect(() => {
+    getBook(id)
+  }, [])
+  
   return (
     <>
       <DetailsHeader action={() => navigate(-1)} />
