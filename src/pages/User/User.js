@@ -7,19 +7,30 @@ import noUserPhoto from '../../assets/user-photo.png'
 import RowContainer from '../../design.system/RowContainer'
 import { Body, Label } from '../../design.system/text.styling/styles'
 import editPencil from '../../assets/edit-pencil.png'
+import ModalPlato from '../../components/Modals/ModalPlato'
+import EditUser from '../../components/User/EditUser'
+import SetPhotoInput from '../../components/User/SetPhotoInput'
+import './UserPhoto.css'
 
 const User = () => {
+
     const [user, setUser] = useState({})
+    const [editModal, setEditModal] = useState(false)
+    const [changePicModal, setChangePicModal] = useState(false)
+
+    const getUser = async () => {
+        const userFromDB = await userConnect.getUser()
+        setUser(userFromDB)
+      }
+      
 
     useEffect(() => {
-        const getUser = async () => {
-          const userFromDB = await userConnect.getUser()
-          setUser(userFromDB)
-        }
         getUser()
       }, [])
 
-      const { name, email, image } = user
+      const { name, email, profileImage } = user
+
+      
 
   return (
     <div>
@@ -29,12 +40,29 @@ const User = () => {
       </PageHeaderPlato>
 
       <ColumnContainer noEvents>
+
+        <ColumnContainer mt150>
+              <Label>Click on your photo</Label>
+              <Label>to upload a new one</Label>
+        </ColumnContainer>
+     
           <ColumnContainer noEvents>
-            {image
-            ? <img src={image} alt="User Profile"/>
-            : <img className='userImg' src={noUserPhoto} alt="User Profile"/>
+          <div className="user-photo">
+            {profileImage
+            ? <img src={profileImage} alt="User Profile" onClick={() => setChangePicModal(true)}/>
+            : <img className='userImg' src={noUserPhoto} alt="User Profile" onClick={() => setChangePicModal(!changePicModal)}/>
             }
-            <Body>Click on the photo to update</Body>
+          </div>
+
+          
+            
+        <ModalPlato toggled={!changePicModal}>
+            <SetPhotoInput getUser={getUser} setChangePicModal={setChangePicModal}/>
+        </ModalPlato>
+
+        
+            
+
           </ColumnContainer>
 
           
@@ -52,15 +80,18 @@ const User = () => {
 
             </ColumnContainer>
 
-            <img src={editPencil} alt='Edit user info'/>
+            <img    src={editPencil} 
+                    alt='Edit user info'
+                    onClick={() => setEditModal(!editModal)}
+                    />
 
             </RowContainer>
-
-
           
       </ColumnContainer>
 
-
+      <ModalPlato toggled={!editModal}>
+          <EditUser name={name} email={email} setEditModal={setEditModal} getUser={getUser}/>
+      </ModalPlato>
 
     </div>
   )
