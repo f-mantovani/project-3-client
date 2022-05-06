@@ -1,6 +1,7 @@
 import React from 'react'
 import noPhoto from '../../assets/user.png'
 import editPencil from '../../assets/edit-pencil.png'
+import NavLinkPlato from '../../design.system/NavLinkPlato'
 
 const NavUserDisplay = ({photo, name, email, display}) => {
 
@@ -21,12 +22,13 @@ const NavUserDisplay = ({photo, name, email, display}) => {
         </div>
 
         
+        <NavLinkPlato to="/private/user">
             <img 
               src={editPencil} 
               alt="Edit user information"
               className="edit-pencil"
               />
-        
+        </NavLinkPlato>
 
     </div>
   )

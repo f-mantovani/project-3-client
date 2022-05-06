@@ -10,6 +10,7 @@ import Books from './pages/Books/Books';
 import BookDetails from './components/Books/BookDetails';
 import PrivateOutlet from './components/PrivateOutlet'
 import books from './books.json'
+import User from './pages/User/User';
 
 const queryClient = new QueryClient()
 
@@ -23,6 +24,7 @@ function App() {
 
         <Route path='/private' element={<PrivateOutlet />}>
           <Route path="/private/dashboard" element={<Dashboard/>}/>
+          <Route path="/private/user" element={<User/>}/>
           <Route path="/private/events" element={<Events/>}/>
           <Route path="/private/mytasks" element={<MyTasks/>}/>
           <Route path="/private/books" element={<Books/>}/>
