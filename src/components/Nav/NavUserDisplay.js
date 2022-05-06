@@ -22,7 +22,7 @@ const NavUserDisplay = ({photo, name, email, display}) => {
         </div>
 
         
-        <NavLinkPlato to="/private/user">
+        <NavLinkPlato to="/user">
             <img 
               src={editPencil} 
               alt="Edit user information"
