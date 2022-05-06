@@ -130,6 +130,18 @@ ${props => props.noEvents && `
     }
   `}
 
+${props => props.userProfile && `
+    align-items: flex-start;
+    width: 100%;
+  `}
+
+${props => props.userContainer && `
+    align-items: flex-start;
+    width: 80%;
+    height: 10vh;
+    justify-content: space-between;
+  `}
+
 `
   
 

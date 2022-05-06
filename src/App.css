@@ -190,8 +190,12 @@ h4 {
 }
 
 .closing-x {
-  width: 1.2em;
+  width: 1.5em;
   cursor:pointer;
+}
+
+.userImg {
+  width: 10em;
 }
 
 *:focus {

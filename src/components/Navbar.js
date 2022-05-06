@@ -9,6 +9,8 @@ import removeToken from '../utils/controllers/removeToken'
 import userConnect from '../utils/api.handlers/userConnect'
 import { H4, Overline } from '../design.system/text.styling/styles'
 import DevelopedFooterPlato from '../design.system/DevelopedFooterPlato'
+import RowContainer from '../design.system/RowContainer'
+import closeX from '../assets/x.png'
 
 const Navbar = () => {
 
@@ -41,8 +43,20 @@ const Navbar = () => {
     
     
     <SideBar toggled={toggle} className='nav-side-bar'>
+
+    <RowContainer closingMenu>
+      <img  src={closeX} 
+            alt='Close menu'
+            className={toggle ? "toggled" : "closing-x"}
+            onClick={() => setToggle(!toggle)}
+          />
+    </RowContainer>
     
-    <NavUserDisplay {...user}/>
+    <RowContainer userInfoArea>
+    <NavUserDisplay display={toggle ? "toggled" : "user-info"} {...user}/>
+    
+    
+    </RowContainer>
 
     <ul className={toggle ? "toggled" : "undefined"}>
       <li className='my-1'><NavLinkPlato to="/private/dashboard">
@@ -73,9 +87,11 @@ const Navbar = () => {
       
     </ul>
 
-    <DevelopedFooterPlato>
-      <Overline muted> Developed by F. Mantovani and L. Mendes @ 2022 </Overline>
-    </DevelopedFooterPlato>
+
+      <DevelopedFooterPlato className={toggle ? "toggled" : "undefined"}>
+        <Overline muted> Developed by F. Mantovani and L. Mendes @ 2022 </Overline>
+      </DevelopedFooterPlato>
+
 
     
     

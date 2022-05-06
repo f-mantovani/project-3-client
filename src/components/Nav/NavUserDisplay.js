@@ -1,10 +1,12 @@
 import React from 'react'
 import noPhoto from '../../assets/user.png'
+import editPencil from '../../assets/edit-pencil.png'
+import NavLinkPlato from '../../design.system/NavLinkPlato'
 
-const NavUserDisplay = ({photo, name, email}) => {
+const NavUserDisplay = ({photo, name, email, display}) => {
 
   return (
-    <div className="user-info">
+    <div className={display}>
         {photo
         ? <img src={photo} alt='User profile'/>
         : <img src={noPhoto} alt='User profile'/>}
@@ -18,6 +20,15 @@ const NavUserDisplay = ({photo, name, email}) => {
             : <p className='body'>email@email.com</p>}
 
         </div>
+
+        
+        <NavLinkPlato to="/private/user">
+            <img 
+              src={editPencil} 
+              alt="Edit user information"
+              className="edit-pencil"
+              />
+        </NavLinkPlato>
 
     </div>
   )
