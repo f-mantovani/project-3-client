@@ -9,7 +9,7 @@ import MyTasks from './pages/MyTasks/MyTasks';
 import Books from './pages/Books/Books';
 import BookDetails from './components/Books/BookDetails';
 import PrivateOutlet from './components/PrivateOutlet'
-
+import User from './pages/User/User';
 
 const queryClient = new QueryClient()
 
@@ -27,6 +27,7 @@ function App() {
           <Route path="mytasks" element={<PrivateOutlet> <MyTasks /> </PrivateOutlet>}/>
           <Route path="books" element={<PrivateOutlet> <Books /> </PrivateOutlet>}/>
           <Route path="book/:id" element={<PrivateOutlet> <BookDetails /> </PrivateOutlet>}/>
+          <Route path="user" element={<PrivateOutlet> <User/> </PrivateOutlet>}/>
 
         </Routes>
       </QueryClientProvider>

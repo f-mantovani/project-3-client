@@ -39,6 +39,28 @@ const RowContainer = styled.div`
     margin-bottom: 1em;
     `}
 
+    ${props => props.closingMenu && `
+
+    justify-content: flex-end;
+    margin: 1em 0 0.5em 0;
+    `}
+
+    ${props => props.userInfoArea && `
+
+   
+    width: 100%;
+    margin: 1em 0 2em 0;
+    `}
+
+    ${props => props.userProfile && `
+      justify-content: center;
+      width: 90%;
+      margin-bottom: 0.5em;
+      
+      & img {
+        width: 1.5em;
+      }
+    `}
     
 
 

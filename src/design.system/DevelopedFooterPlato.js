@@ -4,10 +4,13 @@ const DevelopedFooterPlato = styled.div`
   text-transform: none;
   font-weight: 400;
   color: var(--font-muted);
-  width: 50%;
+  width: 130px;
   text-align: center;
-  position: fixed;
+  position: absolute;
   bottom: calc(0% + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+
 `
 
 export default DevelopedFooterPlato
