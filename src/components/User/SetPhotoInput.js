@@ -4,12 +4,13 @@ import ColumnContainer from '../../design.system/ColumnContainer'
 import RowContainer from '../../design.system/RowContainer'
 import { ButtonLabel, H2 } from '../../design.system/text.styling/styles'
 import ModalHeader from '../Modals/ModalHeader'
+import userConnect from '../../utils/api.handlers/userConnect'
 import './SetPhotoInput.css'
 
 
-const SetPhotoInput = ({ setChangePicModal }) => {
+const SetPhotoInput = ({ setChangePicModal, getUser }) => {
 
-  const [file, setFile] = useState('')
+  const [file, setFile] = useState()
   const [imageURL, setImageURL] = useState('')
 
   const handleChangeImg = (e) => {
@@ -20,6 +21,18 @@ const SetPhotoInput = ({ setChangePicModal }) => {
       setImageURL(imageUrl)
 
   }
+
+  const handleUpdateImg = async () => {
+      try {
+          await userConnect.updateImage(file)
+          setFile(null)
+          setImageURL(null)
+          getUser()
+      } catch (error) {
+          
+      }
+  }
+
 
 
   return (
@@ -41,9 +54,9 @@ const SetPhotoInput = ({ setChangePicModal }) => {
 
         <RowContainer modalButtons>
         <ButtonPlato saveModal>
-          <ButtonLabel light>Save New Photo</ButtonLabel>
+          <ButtonLabel light onClick={() => {handleUpdateImg(); setFile(null); setImageURL(null); setChangePicModal(false)}}>Save New Photo</ButtonLabel>
         </ButtonPlato>
-        <ButtonLabel light onClick={() => {setChangePicModal(false); setFile(''); setImageURL('')}}>Cancel</ButtonLabel> 
+        <ButtonLabel light onClick={() => {setChangePicModal(false); setFile(null); setImageURL(null)}}>Cancel</ButtonLabel> 
       </RowContainer> 
     </ColumnContainer>
     </>

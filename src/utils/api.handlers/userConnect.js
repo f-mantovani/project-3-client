@@ -27,11 +27,13 @@ class userConnect extends apiConstructor {
   updateImage = async (file) => {
 
     try {
+      const imgData = new FormData()
+      imgData.append('image', file)
 
-      const { data } = await this.api.put(' /profile-image', file)
-      return data
+      await this.api.put('/profile-image/', imgData)
+      
     } catch (error) {
-      throw error.respose.data
+      throw error.response
     }
   }
 

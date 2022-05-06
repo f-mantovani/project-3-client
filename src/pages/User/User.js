@@ -10,6 +10,7 @@ import editPencil from '../../assets/edit-pencil.png'
 import ModalPlato from '../../components/Modals/ModalPlato'
 import EditUser from '../../components/User/EditUser'
 import SetPhotoInput from '../../components/User/SetPhotoInput'
+import './UserPhoto.css'
 
 const User = () => {
 
@@ -27,7 +28,9 @@ const User = () => {
         getUser()
       }, [])
 
-      const { name, email, image } = user
+      const { name, email, profileImage } = user
+
+      
 
   return (
     <div>
@@ -37,15 +40,27 @@ const User = () => {
       </PageHeaderPlato>
 
       <ColumnContainer noEvents>
+
+        <ColumnContainer mt150>
+              <Label>Click on your photo</Label>
+              <Label>to upload a new one</Label>
+        </ColumnContainer>
+     
           <ColumnContainer noEvents>
-            {image
-            ? <img src={image} alt="User Profile" onClick={() => setChangePicModal(true)}/>
+          <div className="user-photo">
+            {profileImage
+            ? <img src={profileImage} alt="User Profile" onClick={() => setChangePicModal(true)}/>
             : <img className='userImg' src={noUserPhoto} alt="User Profile" onClick={() => setChangePicModal(!changePicModal)}/>
             }
+          </div>
+
+          
             
         <ModalPlato toggled={!changePicModal}>
-            <SetPhotoInput setChangePicModal={setChangePicModal}/>
+            <SetPhotoInput getUser={getUser} setChangePicModal={setChangePicModal}/>
         </ModalPlato>
+
+        
             
 
           </ColumnContainer>
