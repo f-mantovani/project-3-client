@@ -115,8 +115,14 @@ ${props => props.mt150 && `
 
 ${props => props.addButton && `
     width: 100%;
-    position: fixed;
-    bottom: 1em;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    bottom: -2em;
+    @media (min-width: 600px) {
+      
     }
   `}
 
