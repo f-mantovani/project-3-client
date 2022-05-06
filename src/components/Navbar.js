@@ -87,9 +87,11 @@ const Navbar = () => {
       
     </ul>
 
-    <DevelopedFooterPlato>
-      <Overline muted> Developed by F. Mantovani and L. Mendes @ 2022 </Overline>
-    </DevelopedFooterPlato>
+
+      <DevelopedFooterPlato className={toggle ? "toggled" : "undefined"}>
+        <Overline muted> Developed by F. Mantovani and L. Mendes @ 2022 </Overline>
+      </DevelopedFooterPlato>
+
 
     
     

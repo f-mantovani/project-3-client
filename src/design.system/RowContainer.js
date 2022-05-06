@@ -51,7 +51,6 @@ const RowContainer = styled.div`
     width: 100%;
     margin: 1em 0 2em 0;
     `}
-
     
 
 
