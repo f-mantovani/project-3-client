@@ -47,17 +47,22 @@
 .user-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 
 }
 
 .edit-pencil {
     width: 1em;
-}
-
-.user-info img {
     max-width: 100%;
     object-fit: contain;
-    margin-right: 0.3em;
+    margin-left: 0.3em;
+}
+
+
+.nav-profile-img {
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
 }
 

@@ -2,13 +2,14 @@ import React from 'react'
 import noPhoto from '../../assets/user.png'
 import editPencil from '../../assets/edit-pencil.png'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
+import './Nav.css'
 
-const NavUserDisplay = ({photo, name, email, display}) => {
+const NavUserDisplay = ({profileImage, name, email, display}) => {
 
   return (
     <div className={display}>
-        {photo
-        ? <img src={photo} alt='User profile'/>
+        {profileImage
+        ? <img className="nav-profile-img" src={profileImage} alt='User profile'/>
         : <img src={noPhoto} alt='User profile'/>}
 
         <div>

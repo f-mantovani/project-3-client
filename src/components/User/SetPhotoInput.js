@@ -48,7 +48,7 @@ const SetPhotoInput = ({ setChangePicModal, getUser }) => {
 
             {imageURL
             ? <img  src={imageURL} alt='New user photography'/>
-            : <H2 className="no-image-display">PREVIEW YOUR PHOTO</H2>}
+            : <H2 className="no-image-display">PREVIEW YOUR NEW PHOTO</H2>}
 
         </div>
 
@@ -56,7 +56,7 @@ const SetPhotoInput = ({ setChangePicModal, getUser }) => {
         <ButtonPlato saveModal>
           <ButtonLabel light onClick={() => {handleUpdateImg(); setFile(null); setImageURL(null); setChangePicModal(false)}}>Save New Photo</ButtonLabel>
         </ButtonPlato>
-        <ButtonLabel light onClick={() => {setChangePicModal(false); setFile(null); setImageURL(null)}}>Cancel</ButtonLabel> 
+        <ButtonLabel light onClick={() => {setChangePicModal(false)}}>Cancel</ButtonLabel> 
       </RowContainer> 
     </ColumnContainer>
     </>
