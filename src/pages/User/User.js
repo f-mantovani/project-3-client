@@ -7,9 +7,13 @@ import noUserPhoto from '../../assets/user-photo.png'
 import RowContainer from '../../design.system/RowContainer'
 import { Body, Label } from '../../design.system/text.styling/styles'
 import editPencil from '../../assets/edit-pencil.png'
+import ModalPlato from '../../components/Modals/ModalPlato'
+import EditUser from '../../components/User/EditUser'
 
 const User = () => {
+
     const [user, setUser] = useState({})
+    const [editModal, setEditModal] = useState(false)
 
     useEffect(() => {
         const getUser = async () => {
@@ -52,15 +56,18 @@ const User = () => {
 
             </ColumnContainer>
 
-            <img src={editPencil} alt='Edit user info'/>
+            <img    src={editPencil} 
+                    alt='Edit user info'
+                    onClick={() => setEditModal(!editModal)}
+                    />
 
             </RowContainer>
-
-
           
       </ColumnContainer>
 
-
+      <ModalPlato toggled={!editModal}>
+          <EditUser setEditModal={setEditModal}/>
+      </ModalPlato>
 
     </div>
   )
