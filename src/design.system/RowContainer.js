@@ -59,6 +59,7 @@ const RowContainer = styled.div`
       
       & img {
         width: 1.5em;
+        cursor: pointer;
       }
     `}
     

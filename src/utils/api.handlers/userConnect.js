@@ -14,6 +14,27 @@ class userConnect extends apiConstructor {
     }
   }
 
+  updateUser = async (payload) => {
+    
+    try {
+      const { data } = await this.api.put('/', payload)
+      return data
+    } catch (error) {
+      throw error.response.data
+    }
+  }
+
+  updateImage = async (file) => {
+
+    try {
+
+      const { data } = await this.api.put(' /profile-image', file)
+      return data
+    } catch (error) {
+      throw error.respose.data
+    }
+  }
+
   changeBookshelves = async (payload) => {
     const { oldStatus, status, id } = payload
     try {
@@ -23,6 +44,7 @@ class userConnect extends apiConstructor {
       throw error.response.data
     }
   }
+
 }
 
 export default new userConnect()

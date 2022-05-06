@@ -9,17 +9,21 @@ import { Body, Label } from '../../design.system/text.styling/styles'
 import editPencil from '../../assets/edit-pencil.png'
 import ModalPlato from '../../components/Modals/ModalPlato'
 import EditUser from '../../components/User/EditUser'
+import ModalInputPlato from '../../design.system/ModalInputPlato'
+import ModalInput from '../../components/Modals/ModalInput'
 
 const User = () => {
 
     const [user, setUser] = useState({})
     const [editModal, setEditModal] = useState(false)
 
+    const getUser = async () => {
+        const userFromDB = await userConnect.getUser()
+        setUser(userFromDB)
+      }
+      
+
     useEffect(() => {
-        const getUser = async () => {
-          const userFromDB = await userConnect.getUser()
-          setUser(userFromDB)
-        }
         getUser()
       }, [])
 
@@ -38,7 +42,9 @@ const User = () => {
             ? <img src={image} alt="User Profile"/>
             : <img className='userImg' src={noUserPhoto} alt="User Profile"/>
             }
-            <Body>Click on the photo to update</Body>
+            <Body>Upload a new photo below</Body>
+            
+
           </ColumnContainer>
 
           
@@ -66,7 +72,7 @@ const User = () => {
       </ColumnContainer>
 
       <ModalPlato toggled={!editModal}>
-          <EditUser setEditModal={setEditModal}/>
+          <EditUser name={name} email={email} setEditModal={setEditModal} getUser={getUser}/>
       </ModalPlato>
 
     </div>
