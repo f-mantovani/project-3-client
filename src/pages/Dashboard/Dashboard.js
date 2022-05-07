@@ -23,17 +23,24 @@ const Dashboard = () => {
   const [active, setActive] = useState(types[0])
 
   const [books, setBooks] = useState([])
+  const [events, setEvents] = useState([])
   
   const getBooks = async () => {
     const user = await userConnect.getUser()
     setBooks(user.booksToRead)
   }
 
+  const getEvents = async () => {
+    const events = await eventsConnect.getAllEvents()
+    setEvents(events)
+  }
+
   useEffect(() => {
     getBooks()
+    getEvents()
   }, [])
 
-  const { data: events } = useQuery('events', eventsConnect.getAllEvents)
+ 
   const { isLoading, error, data: kanban } = useQuery('kanban', tasksConnect.getAllTasks)
 
   if (isLoading) return "Loading...";

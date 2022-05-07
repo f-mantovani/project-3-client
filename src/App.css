@@ -29,6 +29,10 @@
   padding: 0;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 input {
   font-family: inherit;
 }

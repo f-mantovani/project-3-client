@@ -4,7 +4,7 @@ const SearchInputPlato = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 15rem;
-  width: 80%;
+  width: 100%;
   font-style: normal;
   font-weight: var(--fw-400);
   font-size: var(--fs-sub-title);
