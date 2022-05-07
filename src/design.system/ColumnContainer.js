@@ -11,6 +11,7 @@ const ColumnContainer = styled.div`
     min-height: 2.5rem;
     padding-right: 1.125em;
     position: relative;
+    cursor: pointer;
   `}
   
   ${props => props.mt3 && `
@@ -115,9 +116,12 @@ ${props => props.mt150 && `
 
 ${props => props.addButton && `
     width: 100%;
-    position: fixed;
-    bottom: 1em;
-    }
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    bottom: -2em;
   `}
 
 ${props => props.eventList && `

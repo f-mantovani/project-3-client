@@ -12,6 +12,9 @@ const SearchInputPlato = styled.div`
   border-radius: 1rem 1rem 0px 0px;
   background: var(--bg-clr);
   position: fixed;
+  left: 50%;
+  transition: 1s;
+  transform: translateX(-50%);
   bottom: 0;
   transform: translate(-50%);
   left: 50%;
@@ -22,6 +25,10 @@ const SearchInputPlato = styled.div`
     align-items: center;
     margin-top: 2rem;
   }
+
+  @media (min-width: 600px ){
+    width: 60%;
+    }
 
   .search-input{ 
     width: 17rem;

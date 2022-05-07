@@ -133,7 +133,8 @@ export const Overline = styled.p`
   text-transform: uppercase;
 
   ${props => props.destructive && `
-    color: var(--font-destructive)
+    color: var(--font-destructive);
+    cursor: pointer;
   `}
 
   ${(props) => props.muted &&`
