@@ -128,7 +128,10 @@ ${props => props.eventList && `
     display: block;
     height: 63vh;
     overflow: scroll;
+    ::-webkit-scrollbar{
+      display: none;
     }
+
   `}
 
 ${props => props.noEvents && `

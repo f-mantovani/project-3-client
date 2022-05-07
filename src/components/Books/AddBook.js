@@ -40,7 +40,7 @@ const AddEvent = ({changeAddModal}) => {
       <ModalInput label="Author" type="text" placeholder="Name" value={author} onChange={(e) => handleAuthorInput(e)} />
       <ModalInput label="Year" type="number" placeholder="YYYY" value={year} onChange={(e) => handleYearInput(e)} />
       <ModalTextArea label="Sinopsis" type="textarea" placeholder="Book details" value={sinopsis} onChange={(e) => handleSinopsisInput(e)} />
-      <ModalInput label="ImageUrl" type="text" placeholder="Book cover url" value={imageUrl} onChange={(e) => handleImageUrlInput(e)} />  
+      <ModalInput label="Book Cover" type="text" placeholder="Book cover url" value={imageUrl} onChange={(e) => handleImageUrlInput(e)} />  
 
       <RowContainer modalButtons>
         <ButtonPlato saveModal onClick={() => saveNewBook()}><ButtonLabel>Save Book</ButtonLabel></ButtonPlato>

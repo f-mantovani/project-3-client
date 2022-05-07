@@ -54,7 +54,7 @@ const SetPhotoInput = ({ setChangePicModal, getUser }) => {
 
         <RowContainer modalButtons>
         <ButtonPlato saveModal>
-          <ButtonLabel light onClick={() => {handleUpdateImg(); setFile(null); setImageURL(null); setChangePicModal(false)}}>Save New Photo</ButtonLabel>
+          <ButtonLabel onClick={() => {handleUpdateImg(); setFile(null); setImageURL(null); setChangePicModal(false)}}>Save New Photo</ButtonLabel>
         </ButtonPlato>
         <ButtonLabel light onClick={() => {setChangePicModal(false)}}>Cancel</ButtonLabel> 
       </RowContainer> 
