@@ -44,10 +44,10 @@ const EventCard = ({event, done}) => {
         </ColumnContainer>
 
         <ColumnContainer kebab='true' onClick={() => handleCollapse()}>
-        <DotPlato />
-        <DotPlato />
-        <DotPlato />
-        <OutsideClicker isOpen={isOpen} setIsOpen={setIsOpen}>
+          <DotPlato />
+          <DotPlato />
+          <DotPlato />
+          <OutsideClicker isOpen={isOpen} setIsOpen={setIsOpen}>
             <MenuCollapsable>
               <EventDotMenu id={event._id} setEditModal={setEditModal} setDetailsOpen={setDetailsOpen}/>
             </MenuCollapsable>

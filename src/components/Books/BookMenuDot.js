@@ -19,7 +19,7 @@ const BookMenuDot = ({id, status }) => {
       </MenuCard>
 
       <MenuCard onClick={() => changeBookshelves({id, oldStatus: status, status: 'booksDone' })}>
-        <Body>Add to Done</Body>
+        <Body>Move to Done</Body>
       </MenuCard>
     </>
   )

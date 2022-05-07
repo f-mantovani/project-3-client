@@ -86,12 +86,7 @@ const Books = () => {
           <>
             <ColumnContainer rowSpaceBetween>
               <H2>Reading now</H2>
-              <ColumnContainer kebab>
-                <DotPlato />
-                <DotPlato />
-                <DotPlato />
-              </ColumnContainer>
-            </ColumnContainer>
+            </ColumnContainer> 
             <RowContainer bookRowContainer>
               {books.booksReading.map((book) => (
                 <BookCardDashboard
@@ -107,11 +102,6 @@ const Books = () => {
             <div className='pb375'>
               <ColumnContainer rowSpaceBetween mt325>
                 <H2>Reading list</H2>
-                <ColumnContainer kebab>
-                  <DotPlato />
-                  <DotPlato />
-                  <DotPlato />
-                </ColumnContainer>
               </ColumnContainer>
               <RowContainer bookRowContainer>
                 {books.booksToRead.map((book) => (
@@ -133,11 +123,6 @@ const Books = () => {
           <>
             <ColumnContainer rowSpaceBetween>
               <H2>Done</H2>
-              <ColumnContainer kebab>
-                <DotPlato />
-                <DotPlato />
-                <DotPlato />
-              </ColumnContainer>
             </ColumnContainer>
             <RowContainer bookRowContainer>
               {books.booksDone.map((book) => (

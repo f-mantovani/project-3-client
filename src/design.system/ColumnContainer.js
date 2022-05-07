@@ -10,7 +10,8 @@ const ColumnContainer = styled.div`
     margin-left: .75rem;
     min-height: 2.5rem;
     padding-right: 1.125em;
-    position: relative;
+    position: absolute;
+    right: .5rem;
     cursor: pointer;
   `}
   
@@ -128,7 +129,10 @@ ${props => props.eventList && `
     display: block;
     height: 63vh;
     overflow: scroll;
+    ::-webkit-scrollbar{
+      display: none;
     }
+
   `}
 
 ${props => props.noEvents && `

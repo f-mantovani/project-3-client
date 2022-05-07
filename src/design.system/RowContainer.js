@@ -30,6 +30,9 @@ const RowContainer = styled.div`
     overflow: scroll;
     padding: 1em;
     width: 100%;
+        ::-webkit-scrollbar{
+        display: none;
+      }
     `}
 
     ${props => props.modalButtons && `

@@ -41,7 +41,7 @@ const SearchInput = ({ changeOpen, changeAddModal }) => {
           <input
             id='search'
             name='search'
-            type='text'
+            type='search'
             placeholder='Search by title, author..'
             required
             value={search}

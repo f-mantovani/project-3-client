@@ -42,7 +42,7 @@ const EditUser = ({name, email, setEditModal, getUser}) => {
 
       <RowContainer modalButtons>
         <ButtonPlato saveModal>
-          <ButtonLabel light onClick={() => {handleUpdateUser(); setEditModal(false)}}>Save Changes</ButtonLabel>
+          <ButtonLabel onClick={() => {handleUpdateUser(); setEditModal(false)}}>Save Changes</ButtonLabel>
         </ButtonPlato>
         <ButtonLabel light onClick={() => setEditModal(false)}>Cancel</ButtonLabel> 
       </RowContainer> 
