@@ -56,7 +56,9 @@ const Dashboard = () => {
         <h1>Dashboard</h1>
         <Navbar/>
       </PageHeaderPlato>
-      <TabHeaderPlato>
+
+      {/* SOME FUTURE CHANGES IN HERE - DEVELOPMENT */}
+      {/* <TabHeaderPlato>
         <div className='tabs'>
           {types.map((type) => (
             <TabPlato
@@ -72,7 +74,7 @@ const Dashboard = () => {
         </div>
         </TabHeaderPlato>
 
-        <LineBreak />    
+        <LineBreak />     */}
         
         {active === types[0] && 
 

@@ -10,9 +10,6 @@ const InputPlato = styled.input`
   border-bottom: 1px solid #f1f1f1;
   color: var(--font-color);
 
-  ::-webkit-scrollbar{
-    display: none;
-  }
   ::placeholder {
     opacity: 0;
   }

@@ -43,7 +43,7 @@ const AddEvent = ({changeAddModal}) => {
       <ModalInput label="Book Cover" type="text" placeholder="Book cover url" value={imageUrl} onChange={(e) => handleImageUrlInput(e)} />  
 
       <RowContainer modalButtons>
-        <ButtonPlato saveModal onClick={() => saveNewBook()}><ButtonLabel>Save Book</ButtonLabel></ButtonPlato>
+        <ButtonPlato saveModal onClick={() => {saveNewBook(); changeAddModal()}}><ButtonLabel>Save Book</ButtonLabel></ButtonPlato>
         <ButtonPlato cancelModal onClick={() => changeAddModal()} ><ButtonLabel>Cancel</ButtonLabel></ButtonPlato> 
       </RowContainer> 
     </>

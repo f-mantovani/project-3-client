@@ -10,7 +10,8 @@ const ColumnContainer = styled.div`
     margin-left: .75rem;
     min-height: 2.5rem;
     padding-right: 1.125em;
-    position: relative;
+    position: absolute;
+    right: .5rem;
     cursor: pointer;
   `}
   
