@@ -4,6 +4,7 @@ import ButtonPlato from '../../design.system/ButtonPlato'
 import InputPlato from '../../design.system/InputPlato'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
+import { Overline } from '../../design.system/text.styling/styles.js'
 
 const LoginForm = () => {
   const { email, password, handleEmailInput, handlePasswordInput, loginUser } =
@@ -50,6 +51,7 @@ const LoginForm = () => {
                 Password
               </label>
             </div>
+            {message?.length ? <Overline destructive> {message} </Overline> : null}
             <div className='login-btn-group'>
               <ButtonPlato
                 login='true'
