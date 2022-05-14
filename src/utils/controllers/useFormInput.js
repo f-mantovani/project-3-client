@@ -42,6 +42,10 @@ const useFormInput = () => {
     const newUser = {name, email, password}
     try {
       setMessage('')
+      if (name === '' || email === '' || password === ''){
+        setMessage('All fields are required')
+        return
+      }
       await apiConnect.signUp(newUser)
       await loginUser()
       setName('') 

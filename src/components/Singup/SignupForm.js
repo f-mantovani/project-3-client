@@ -66,11 +66,11 @@ const SignupForm = () => {
               <label className='input-label' htmlFor='password'>Password </label>
               <DotPlato required='true' />
             </div>
+            {message?.length ? <Overline destructive> {message} </Overline> : null}
             <div className='login-btn-group'>
               <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
             </div>
           </div>
-          {message?.length && <Overline destructive> {message} </Overline>}
         </fieldset>
       </div>
     </>
