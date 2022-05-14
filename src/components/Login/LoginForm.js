@@ -37,6 +37,7 @@ const LoginForm = () => {
                 placeholder='johndoe@email.com'
                 value={email}
                 required
+                errorFeedback={message.length}
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='email'>

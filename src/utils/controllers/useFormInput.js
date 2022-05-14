@@ -24,9 +24,17 @@ const useFormInput = () => {
     const logUser = {email, password}
     try {
       setMessage('')
-      if (email === '' || password === '') {
-        setMessage('All fields are required')
+      if (email === '' && password === '') {
+        setMessage('Email and password are required')
         return 
+      }
+      if (email === '' && password.length !== 0) {
+        setMessage('Email is required')
+        return
+      }
+      if (email.length !== 0 && password === ''){
+        setMessage('Password is required')
+        return
       }
       const data = await apiConnect.logIn(logUser)
       saveToken(data)
