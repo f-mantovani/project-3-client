@@ -7,7 +7,7 @@ import useFormInput from '../../utils/controllers/useFormInput'
 import { Overline } from '../../design.system/text.styling/styles.js'
 
 const LoginForm = () => {
-  const { email, password, handleEmailInput, handlePasswordInput, loginUser } =
+  const { email, password, message, handleEmailInput, handlePasswordInput, loginUser } =
     useFormInput()
 
   return (
