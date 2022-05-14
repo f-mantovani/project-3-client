@@ -5,10 +5,16 @@ import InputPlato from '../../design.system/InputPlato'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
 import { Overline } from '../../design.system/text.styling/styles.js'
+import DotPlato from '../../design.system/DotPlato'
 
 const LoginForm = () => {
-  const { email, password, message, handleEmailInput, handlePasswordInput, loginUser } =
-    useFormInput()
+  const { email,
+          password, 
+          message, 
+          handleEmailInput, 
+          handlePasswordInput, 
+          loginUser 
+  } = useFormInput()
 
   return (
     <>
@@ -36,6 +42,7 @@ const LoginForm = () => {
               <label className='input-label' htmlFor='email'>
                 Email address
               </label>
+              <DotPlato required='true' />
             </div>
             <div className='input-field'>
               <InputPlato
@@ -50,6 +57,7 @@ const LoginForm = () => {
               <label className='input-label' htmlFor='password'>
                 Password
               </label>
+              <DotPlato required='true' />
             </div>
             {message?.length ? <Overline destructive> {message} </Overline> : null}
             <div className='login-btn-group'>
