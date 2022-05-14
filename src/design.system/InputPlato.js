@@ -54,8 +54,10 @@ const InputPlato = styled.input`
       font-size: var(--fs-main-title);
       line-height: 120%;
       color: var(--font-muted);
-      }
+  `}
 
+  ${props => props.errorFeedback && `
+      border-bottom: 1px solid var(--font-destructive)
   `}
 `
 
