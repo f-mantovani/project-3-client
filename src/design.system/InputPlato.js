@@ -56,9 +56,10 @@ const InputPlato = styled.input`
       color: var(--font-muted);
   `}
 
-  ${props => props.errorFeedback && `
-      border-bottom: 1px solid var(--font-destructive)
-  `}
+  &.error {
+    border-bottom: 1px solid var(--font-destructive);
+  }
+  
 `
 
 export default InputPlato
