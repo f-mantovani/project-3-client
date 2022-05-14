@@ -4,6 +4,7 @@ import InputPlato from '../../design.system/InputPlato'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 import DotPlato from '../../design.system/DotPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
+import { Overline } from '../../design.system/text.styling/styles.js'
 
 const SignupForm = () => {
   const {

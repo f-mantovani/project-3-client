@@ -53,3 +53,5 @@ const useFormInput = () => {
 
   return { name, email, password, message, handleEmailInput, handleNameInput, handlePasswordInput, loginUser, signUpUser }
 }
+
+export default useFormInput
