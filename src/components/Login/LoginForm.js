@@ -52,7 +52,7 @@ const LoginForm = () => {
                 placeholder='*********'
                 value={password}
                 required
-                errorFeedback={message.length ?  'true' : 'false'}
+                errorFeedback={message.length}
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='password'>
