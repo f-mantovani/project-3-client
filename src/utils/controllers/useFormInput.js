@@ -7,6 +7,7 @@ const useFormInput = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
   const navigate = useNavigate()
 
   const handleNameInput = (e) => { 
@@ -22,27 +23,33 @@ const useFormInput = () => {
   const loginUser = async () => {
     const logUser = {email, password}
     try {
+      setMessage('')
+      if (email === '' || password === '') {
+        setMessage('All fields are required')
+        return 
+      }
       const data = await apiConnect.logIn(logUser)
       saveToken(data)
       navigate('/')
       setEmail('')
       setPassword('')
     } catch (error) {
+      setMessage('Username and/or Password incorrect')
       throw error
     }
   }
   const signUpUser = async () => {
     const newUser = {name, email, password}
     try {
+      setMessage('')
       await apiConnect.signUp(newUser)
       await loginUser()
       setName('') 
     } catch (error) {
+      setMessage('Email already in use')
       throw error
     }
   }
 
-  return { name, email, password, handleEmailInput, handleNameInput, handlePasswordInput, loginUser, signUpUser }
+  return { name, email, password, message, handleEmailInput, handleNameInput, handlePasswordInput, loginUser, signUpUser }
 }
-
-export default useFormInput

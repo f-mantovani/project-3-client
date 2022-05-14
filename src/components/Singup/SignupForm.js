@@ -11,6 +11,7 @@ const SignupForm = () => {
     email,
     password,
     signUpUser,
+    message,
     handleNameInput,
     handleEmailInput,
     handlePasswordInput,
@@ -68,6 +69,7 @@ const SignupForm = () => {
               <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
             </div>
           </div>
+          {message?.length && <Overline destructive> {message} </Overline>}
         </fieldset>
       </div>
     </>
