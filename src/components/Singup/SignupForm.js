@@ -12,12 +12,19 @@ const SignupForm = () => {
     email,
     password,
     signUpUser,
+    emailMessage,
+    passwordMessage,
+    nameMessage,
     message,
     success,
     handleNameInput,
     handleEmailInput,
     handlePasswordInput,
   } = useFormInput()
+
+  console.log(nameMessage)
+  console.log(emailMessage)
+  console.log(passwordMessage)
 
   return (
     <>
@@ -37,12 +44,13 @@ const SignupForm = () => {
                 placeholder='John Doe'
                 type='text'
                 value={name}
-                className={message?.includes('name') ? 'error' : null}
-                required
+                className={nameMessage !== '' && 'error'}
+                required='true'
                 onChange={(e) => handleNameInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='name'>Name </label>
               <DotPlato required='true' />
+              {nameMessage?.length ? <Overline className='mt-05' destructive> {nameMessage} </Overline> : null}
             </div>
             <div className='input-field'>
               <InputPlato
@@ -50,25 +58,27 @@ const SignupForm = () => {
                 placeholder='johndoe@email.com'
                 type='text'
                 value={email}
-                className={message?.includes('email') ? 'error' : null}
-                required
+                className={(message.includes('email') && 'error') || (emailMessage !== '' && 'error')}
+                required='true'
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='email'>Email address </label>
               <DotPlato required='true' />
+              {emailMessage?.length ? <Overline className='mt-05' destructive> {emailMessage} </Overline> : null}
             </div>
             <div className='input-field'>
               <InputPlato
                 id='password'
                 placeholder='***********'
                 type='password'
-                className={message?.includes('password') ? 'error' : null}
-                required
+                className={passwordMessage !== '' && 'error'}
+                required='true'
                 value={password}
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='password'>Password </label>
               <DotPlato required='true' />
+              {passwordMessage?.length ? <Overline className='mt-05' destructive> {passwordMessage} </Overline> : null}
             </div>
             {success?.length ? <ButtonLabel> {success} </ButtonLabel> : null}
             {message?.length ? <Overline destructive> {message} </Overline> : null}

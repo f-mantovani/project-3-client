@@ -7,72 +7,70 @@ const useFormInput = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [nameMessage, setNameMessage] = useState('')
+  const [emailMessage, setEmailMessage] = useState('')
+  const [passwordMessage, setPasswordMessage] = useState('')
   const [message, setMessage] = useState('')
   const [success, setSuccess] = useState('')
   const navigate = useNavigate()
 
-  const handleNameInput = (e) => { 
+  const handleNameInput = (e) => {
     setName(e.target.value)
   }
-  const handleEmailInput = (e) => { 
+  const handleEmailInput = (e) => {
     setEmail(e.target.value)
   }
   const handlePasswordInput = (e) => {
     setPassword(e.target.value)
   }
-  const handleErrorFeedbackLogin = (email, password) => {
+  const handleFeedbackLogin = (email, password) => {
     setMessage('')
-    if (email === '' && password === '') {
-      setMessage('email and password are required')
-      throw new Error('email and password are required') 
-    }
-    if (email === '' && password !== '') {
-      setMessage('email is required')
-      throw new Error('email is required')
-    }
-    if (email !== '' && password === ''){
-      setMessage('password is required')
-      throw new Error('password is required')
+    setEmailMessage('')
+    setPasswordMessage('')
+    if (email === '' || password === '') {
+      if (email === '') {
+        setEmailMessage('email is required')
+      }
+      if (password === '') {
+        setPasswordMessage('password is required')
+      }
+      throw new Error('Fields missing')
     }
   }
 
-  const handleErrorFeedbackSignup = (email, password, name) => {
+  const handleFeedbackSignup = (email, password, name) => {
     setMessage('')
-    if (email === '' && password === '' && name === '') {
-      setMessage('name, email and password are required')
-      throw new Error('name, email and password are required')
-    }
-    if (email === '' && password === '' && name !== ''){
-      setMessage('email and password are required')
-      throw new Error('email and password are required')
-    }
-    if (email !== '' && password === '' && name === ''){
-      setMessage('name and password are required')
-      throw new Error('name and password are required')
-    }
-    if (email === '' && password !== '' && name === ''){
-      setMessage('name and email are required')
-      throw new Error('name and email are required')
-    }
-    if (email !== '' && password === '' && name !== ''){
-      setMessage('password is required')
-      throw new Error('password is required')
-    }
-    if (email !== '' && password !== '' && name === ''){
-      setMessage('name is required')
-      throw new Error('name is required')
-    }
-    if (email === '' && password !== '' && name !== ''){
-      setMessage('email is required')
-      throw new Error('email is required')
+    setEmailMessage('')
+    setPasswordMessage('')
+    setNameMessage('')
+    if (email === '' || password === '' || name === '') {
+      if (email === '') {
+        setEmailMessage('email is required')
+      }
+      if (password === '') {
+        setPasswordMessage('password is required')
+      }
+      if (name === '') {
+        setNameMessage('name is required')
+      }
+      throw new Error('Fields missing')
     }
   }
 
+  const handleErrorSignup = (error) => {
+    if (error.error === 'User already exists') {
+      setMessage('email already in use')
+      return
+    }
+    
+    if (error.message === 'Fields missing') return
+    setMessage('please use a valid email')
+  }
 
   const loginUser = async () => {
-    const logUser = {email, password}
+    const logUser = { email, password }
     try {
-      handleErrorFeedbackLogin(email, password)
+      handleFeedbackLogin(email, password)
       const data = await apiConnect.logIn(logUser)
       saveToken(data)
       navigate('/dashboard')
@@ -85,28 +83,39 @@ const useFormInput = () => {
       throw error
     }
   }
+
   const signUpUser = async () => {
-    const newUser = {name, email, password}
+    const newUser = { name, email, password }
     try {
-      handleErrorFeedbackSignup(email, password, name)
+      handleFeedbackSignup(email, password, name)
       await apiConnect.signUp(newUser)
       setSuccess('user created successfully')
       await loginUser()
-      setName('') 
+      setName('')
+      setEmail('')
+      setPassword('')
       setSuccess('')
     } catch (error) {
-      console.log('eu sou o primeiro erro e o log', error.error.slice(0, 22))
-      if (error.error.slice(0, 22) === 'User validation failed') {
-        setMessage('please use a valid email')
-      }
-      if (error.error === 'User already exists') {
-        setMessage('email already in use')
-      }
+      handleErrorSignup(error)
       throw error
     }
   }
 
-  return { name, email, password, message, success,handleEmailInput, handleNameInput, handlePasswordInput, loginUser, signUpUser }
+  return {
+    name,
+    email,
+    password,
+    nameMessage,
+    emailMessage,
+    passwordMessage,
+    message,
+    success,
+    handleEmailInput,
+    handleNameInput,
+    handlePasswordInput,
+    loginUser,
+    signUpUser,
+  }
 }
 
 export default useFormInput

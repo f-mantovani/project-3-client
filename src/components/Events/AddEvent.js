@@ -37,10 +37,10 @@ const AddEvent = ({setAddModal}) => {
 
      
         
-      <ModalInput label="Date" type="date" value={newDate} onChange={(e) => handleDateInput(e)}></ModalInput>
-      <ModalInput label="Hour" type="time" placeholder="00:00 pm" value={newTime} onChange={(e) => handleTimeInput(e)}></ModalInput>
-      <ModalInput label="Local" type="text" placeholder="Address or URL" value={newLocal} onChange={(e) => handleLocalInput(e)}></ModalInput>
-      <ModalInput label="Details" type="text" placeholder="Details about the event..." value={newDetails} onChange={(e) => handleDetailsInput(e)}></ModalInput>  
+      <ModalInput label="Date" type="date" value={newDate} onChange={(e) => handleDateInput(e)}/>
+      <ModalInput label="Hour" type="time" placeholder="00:00 pm" value={newTime} onChange={(e) => handleTimeInput(e)}/>
+      <ModalInput label="Local" type="text" placeholder="Address or URL" value={newLocal} onChange={(e) => handleLocalInput(e)}/>
+      <ModalInput label="Details" type="text" placeholder="Details about the event..." value={newDetails} onChange={(e) => handleDetailsInput(e)}/>  
 
       <RowContainer modalButtons>
         <ButtonPlato saveModal onClick={() => {saveNewEvent(); setAddModal(false)}}><ButtonLabel>Save Event</ButtonLabel></ButtonPlato>

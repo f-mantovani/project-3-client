@@ -9,7 +9,9 @@ import DotPlato from '../../design.system/DotPlato'
 
 const LoginForm = () => {
   const { email,
-          password, 
+          password,
+          emailMessage,
+          passwordMessage, 
           message, 
           handleEmailInput, 
           handlePasswordInput, 
@@ -36,14 +38,15 @@ const LoginForm = () => {
                 name='email'
                 placeholder='johndoe@email.com'
                 value={email}
-                required
-                className={message.includes('email') ? 'error' : null}
+                required='true'
+                className={(message.includes('email') && 'error') || (emailMessage !== '' && 'error')}
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='email'>
                 Email address
               </label>
               <DotPlato required='true' />
+              {emailMessage?.length ? <Overline className='mt-05' destructive> {emailMessage} </Overline> : null}
             </div>
             <div className='input-field'>
               <InputPlato
@@ -52,16 +55,17 @@ const LoginForm = () => {
                 type='password'
                 placeholder='*********'
                 value={password}
-                required
-                className={message.includes('password') ? 'error' : null}
+                required='true'
+                className={(message.includes('password') && 'error') || (passwordMessage !== '' && 'error')}
                 onChange={(e) => handlePasswordInput(e)}
               ></InputPlato>  
               <label className='input-label' htmlFor='password'>
                 Password
               </label>
               <DotPlato required='true' />
+              {passwordMessage?.length ? <Overline className='mt-05' destructive> {passwordMessage} </Overline> : null}
             </div>
-            {message?.length ? <Overline destructive> {message} </Overline> : null}
+            {message?.length ? <Overline className='mx-075' destructive> {message} </Overline> : null}
             <div className='login-btn-group'>
               <ButtonPlato
                 login='true'

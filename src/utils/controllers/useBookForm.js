@@ -7,7 +7,7 @@ const useBookForm = () => {
   const [ author, setAuthor] = useState('')
   const [ year, setYear ] = useState('')
   const [ sinopsis, setSinopsis ] = useState('')
-  const [ imageUrl, setImageUrl ] = useState(null)
+  const [ imageUrl, setImageUrl ] = useState('')
   const createBook = useAsyncMutation(booksConnect.createBook, 'user')
 
   const handleNameInput = (e) => {
