@@ -65,7 +65,7 @@ const LoginForm = () => {
               <DotPlato required='true' />
               {passwordMessage?.length ? <Overline className='mt-05' destructive> {passwordMessage} </Overline> : null}
             </div>
-            {message?.length ? <Overline className='mx-075' destructive> {message} </Overline> : null}
+            {message?.length ? <Overline className='mx-05' destructive> {message} </Overline> : null}
             <div className='login-btn-group'>
               <ButtonPlato
                 login='true'

@@ -22,10 +22,6 @@ const SignupForm = () => {
     handlePasswordInput,
   } = useFormInput()
 
-  console.log(nameMessage)
-  console.log(emailMessage)
-  console.log(passwordMessage)
-
   return (
     <>
       <div className='login-container' onKeyDown={(e) => e.key === 'Enter' && signUpUser()}>
@@ -80,8 +76,8 @@ const SignupForm = () => {
               <DotPlato required='true' />
               {passwordMessage?.length ? <Overline className='mt-05' destructive> {passwordMessage} </Overline> : null}
             </div>
-            {success?.length ? <ButtonLabel> {success} </ButtonLabel> : null}
-            {message?.length ? <Overline destructive> {message} </Overline> : null}
+            {success?.length ? <ButtonLabel className='mx-05'> {success} </ButtonLabel> : null}
+            {message?.length ? <Overline className='mx-05' destructive> {message} </Overline> : null}
             <div className='login-btn-group'>
               <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
             </div>

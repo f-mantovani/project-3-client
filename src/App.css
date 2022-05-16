@@ -176,6 +176,9 @@ h4 {
   bottom:  1rem;
 }
 
+.mx-05 {
+  margin: 0 .5rem;
+}
 .mx-075 {
   margin: 0 .75rem;
 }
