@@ -37,7 +37,7 @@ const LoginForm = () => {
                 placeholder='johndoe@email.com'
                 value={email}
                 required
-                className={message?.contains('Email') ? 'error' : ''}
+                className={message.includes('email') ? 'error' : null}
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
               <label className='input-label' htmlFor='email'>
@@ -53,9 +53,9 @@ const LoginForm = () => {
                 placeholder='*********'
                 value={password}
                 required
-                className={message?.contains('Password') ? 'error' : ''}
+                className={message.includes('password') ? 'error' : null}
                 onChange={(e) => handlePasswordInput(e)}
-              ></InputPlato>
+              ></InputPlato>  
               <label className='input-label' htmlFor='password'>
                 Password
               </label>

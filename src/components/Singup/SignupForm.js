@@ -4,7 +4,7 @@ import InputPlato from '../../design.system/InputPlato'
 import NavLinkPlato from '../../design.system/NavLinkPlato'
 import DotPlato from '../../design.system/DotPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
-import { Overline } from '../../design.system/text.styling/styles.js'
+import { ButtonLabel, Overline } from '../../design.system/text.styling/styles.js'
 
 const SignupForm = () => {
   const {
@@ -13,6 +13,7 @@ const SignupForm = () => {
     password,
     signUpUser,
     message,
+    success,
     handleNameInput,
     handleEmailInput,
     handlePasswordInput,
@@ -26,7 +27,7 @@ const SignupForm = () => {
           <legend className='main-title'>Create new account</legend>
           <div className='signup-header'>
             <p className='overline'>Already have an account?</p>
-            <NavLinkPlato to='/login' signup="true">Login Here</NavLinkPlato>
+            <NavLinkPlato to='/' signup="true">Login Here</NavLinkPlato>
           </div>
         </div>
           <div className='login-inputs'>
@@ -36,6 +37,7 @@ const SignupForm = () => {
                 placeholder='John Doe'
                 type='text'
                 value={name}
+                className={message?.includes('name') ? 'error' : null}
                 required
                 onChange={(e) => handleNameInput(e)}
               ></InputPlato>
@@ -48,6 +50,7 @@ const SignupForm = () => {
                 placeholder='johndoe@email.com'
                 type='text'
                 value={email}
+                className={message?.includes('email') ? 'error' : null}
                 required
                 onChange={(e) => handleEmailInput(e)}
               ></InputPlato>
@@ -59,6 +62,7 @@ const SignupForm = () => {
                 id='password'
                 placeholder='***********'
                 type='password'
+                className={message?.includes('password') ? 'error' : null}
                 required
                 value={password}
                 onChange={(e) => handlePasswordInput(e)}
@@ -66,6 +70,7 @@ const SignupForm = () => {
               <label className='input-label' htmlFor='password'>Password </label>
               <DotPlato required='true' />
             </div>
+            {success?.length ? <ButtonLabel> {success} </ButtonLabel> : null}
             {message?.length ? <Overline destructive> {message} </Overline> : null}
             <div className='login-btn-group'>
               <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>

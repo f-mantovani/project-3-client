@@ -63,7 +63,7 @@ const Navbar = () => {
     </RowContainer>
 
     <ul className={toggle ? "toggled" : "undefined"}>
-      <li className='my-1'><NavLinkPlato to="/">
+      <li className='my-1'><NavLinkPlato to="/dashboard">
         <H4>
           Dashboard
         </H4>
