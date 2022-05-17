@@ -82,7 +82,8 @@ const SignupForm = () => {
             </div>
             {success?.length ? <ButtonLabel className='mx-05'> {success} </ButtonLabel> : null}
             {message?.length ? <Overline className='mx-05' destructive> {message} </Overline> : null}
-            {loading ? (<ClipLoader color={color} loading={loading} css={styleLoader} />) : (<div className='login-btn-group'>
+            {loading ? (<ClipLoader color={color} loading={loading} css={styleLoader} />) : 
+            (<div className='login-btn-group'>
               <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
             </div>)}
           </div>
