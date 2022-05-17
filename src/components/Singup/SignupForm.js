@@ -5,6 +5,7 @@ import NavLinkPlato from '../../design.system/NavLinkPlato'
 import DotPlato from '../../design.system/DotPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
 import { ButtonLabel, Overline } from '../../design.system/text.styling/styles.js'
+import { ClipLoader } from 'react-spinners'
 
 const SignupForm = () => {
   const {
@@ -20,6 +21,9 @@ const SignupForm = () => {
     handleNameInput,
     handleEmailInput,
     handlePasswordInput,
+    loading,
+    color,
+    styleLoader,
   } = useFormInput()
 
   return (
@@ -78,9 +82,9 @@ const SignupForm = () => {
             </div>
             {success?.length ? <ButtonLabel className='mx-05'> {success} </ButtonLabel> : null}
             {message?.length ? <Overline className='mx-05' destructive> {message} </Overline> : null}
-            <div className='login-btn-group'>
+            {loading ? (<ClipLoader color={color} loading={loading} css={styleLoader} />) : (<div className='login-btn-group'>
               <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
-            </div>
+            </div>)}
           </div>
         </fieldset>
       </div>

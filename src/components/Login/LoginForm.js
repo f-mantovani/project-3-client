@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.css'
 import ButtonPlato from '../../design.system/ButtonPlato'
 import InputPlato from '../../design.system/InputPlato'
@@ -6,6 +6,7 @@ import NavLinkPlato from '../../design.system/NavLinkPlato'
 import useFormInput from '../../utils/controllers/useFormInput'
 import { Overline } from '../../design.system/text.styling/styles.js'
 import DotPlato from '../../design.system/DotPlato'
+import { ClipLoader } from 'react-spinners'
 
 const LoginForm = () => {
   const { email,
@@ -15,8 +16,13 @@ const LoginForm = () => {
           message, 
           handleEmailInput, 
           handlePasswordInput, 
-          loginUser 
+          loginUser,
+          loading,
+          color,
+          styleLoader,
   } = useFormInput()
+
+
 
   return (
     <>
@@ -66,15 +72,13 @@ const LoginForm = () => {
               {passwordMessage?.length ? <Overline className='mt-05' destructive> {passwordMessage} </Overline> : null}
             </div>
             {message?.length ? <Overline className='mx-05' destructive> {message} </Overline> : null}
-            <div className='login-btn-group'>
-              <ButtonPlato
-                login='true'
-                onClick={loginUser}
-                
-              >
+            
+            {loading ? (<ClipLoader color={color} loading={loading} css={styleLoader}  />) :
+            (<div className='login-btn-group'>
+              <ButtonPlato login='true' onClick={loginUser}>
                 Login
               </ButtonPlato>
-            </div>
+            </div>)}
           </div>
         </fieldset>
       </div>
