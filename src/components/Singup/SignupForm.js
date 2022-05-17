@@ -32,11 +32,14 @@ const SignupForm = () => {
         <fieldset >
         <div>
           <legend className='main-title'>Create new account</legend>
+
           <div className='signup-header'>
             <p className='overline'>Already have an account?</p>
             <NavLinkPlato to='/' signup="true">Login Here</NavLinkPlato>
           </div>
+
         </div>
+
           <div className='login-inputs'>
             <div className='input-field'>
               <InputPlato
@@ -52,6 +55,7 @@ const SignupForm = () => {
               <DotPlato required='true' />
               {nameMessage?.length ? <Overline className='mt-05' destructive> {nameMessage} </Overline> : null}
             </div>
+
             <div className='input-field'>
               <InputPlato
                 id='email'
@@ -66,6 +70,7 @@ const SignupForm = () => {
               <DotPlato required='true' />
               {emailMessage?.length ? <Overline className='mt-05' destructive> {emailMessage} </Overline> : null}
             </div>
+
             <div className='input-field'>
               <InputPlato
                 id='password'
@@ -80,12 +85,18 @@ const SignupForm = () => {
               <DotPlato required='true' />
               {passwordMessage?.length ? <Overline className='mt-05' destructive> {passwordMessage} </Overline> : null}
             </div>
+
             {success?.length ? <ButtonLabel className='mx-05'> {success} </ButtonLabel> : null}
+
             {message?.length ? <Overline className='mx-05' destructive> {message} </Overline> : null}
-            {loading ? (<ClipLoader color={color} loading={loading} css={styleLoader} />) : 
-            (<div className='login-btn-group'>
-              <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
-            </div>)}
+
+            {loading ? 
+              (<ClipLoader color={color} loading={loading} css={styleLoader} />) 
+              : 
+              (<div className='login-btn-group'>
+                <ButtonPlato login="true" onClick={signUpUser}>Create Account</ButtonPlato>
+              </div>)
+            }
           </div>
         </fieldset>
       </div>

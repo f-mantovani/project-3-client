@@ -22,21 +22,23 @@ const LoginForm = () => {
           styleLoader,
   } = useFormInput()
 
-
-
   return (
     <>
       <div className='login-container' onKeyDownCapture={(e) => e.key === 'Enter' && loginUser()}>
         <fieldset>
           <div>
+
             <legend className='main-title'>Access your account</legend>
+
             <div className='signup-header'>
               <p className='overline'>Don’T have an account YET?</p>
               <NavLinkPlato to='/signup' signup='true'>
                 Register Here
               </NavLinkPlato>
             </div>
+
           </div>
+
           <div className='login-inputs'>
             <div className='input-field'>
               <InputPlato
@@ -54,6 +56,7 @@ const LoginForm = () => {
               <DotPlato required='true' />
               {emailMessage?.length ? <Overline className='mt-05' destructive> {emailMessage} </Overline> : null}
             </div>
+
             <div className='input-field'>
               <InputPlato
                 id='password'
@@ -71,14 +74,18 @@ const LoginForm = () => {
               <DotPlato required='true' />
               {passwordMessage?.length ? <Overline className='mt-05' destructive> {passwordMessage} </Overline> : null}
             </div>
+
             {message?.length ? <Overline className='mx-05' destructive> {message} </Overline> : null}
             
-            {loading ? (<ClipLoader color={color} loading={loading} css={styleLoader}  />) :
-            (<div className='login-btn-group'>
-              <ButtonPlato login='true' onClick={loginUser}>
-                Login
-              </ButtonPlato>
-            </div>)}
+            {loading ? 
+              (<ClipLoader color={color} loading={loading} css={styleLoader}  />) 
+              :
+              (<div className='login-btn-group'>
+                <ButtonPlato login='true' onClick={loginUser}>
+                  Login
+                </ButtonPlato>
+              </div>)
+            }
           </div>
         </fieldset>
       </div>
