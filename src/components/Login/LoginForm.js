@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Login.css'
 import ButtonPlato from '../../design.system/ButtonPlato'
 import InputPlato from '../../design.system/InputPlato'
@@ -7,6 +7,8 @@ import useFormInput from '../../utils/controllers/useFormInput'
 import { Overline } from '../../design.system/text.styling/styles.js'
 import DotPlato from '../../design.system/DotPlato'
 import { ClipLoader } from 'react-spinners'
+import userConnect from '../../utils/api.handlers/userConnect'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
   const { email,
@@ -18,9 +20,32 @@ const LoginForm = () => {
           handlePasswordInput, 
           loginUser,
           loading,
+          setLoading,
           color,
           styleLoader,
   } = useFormInput()
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const checkUser = async () => {
+      try {
+        if (localStorage.getItem('token')){
+          setLoading(true)
+          const user = await userConnect.getUser()
+          console.log(user)
+          if (user) {
+            navigate('/dashboard')
+          }
+        }
+      } catch (error) {
+        setLoading(false)
+        throw error
+      }
+    }
+    checkUser()
+  
+  }, [])
 
   return (
     <>

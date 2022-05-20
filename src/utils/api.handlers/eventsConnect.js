@@ -8,6 +8,7 @@ class eventsConnect extends apiConstructor {
   getAllEvents = async () => {
     try {
       const { data } = await this.api.get('/')
+      console.log(data)
       return data
     } catch (error) {
       throw error.response.data

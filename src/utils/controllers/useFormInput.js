@@ -81,6 +81,9 @@ const useFormInput = () => {
       handleFeedbackLogin(email, password)
       setLoading(true)
       const data = await apiConnect.logIn(logUser)
+      if (localStorage.getItem('token')){
+        localStorage.removeItem('token')
+      }
       saveToken(data)
       navigate('/dashboard')
       setEmail('')
@@ -126,6 +129,7 @@ const useFormInput = () => {
     message,
     success,
     loading,
+    setLoading,
     color,
     styleLoader,
     handleEmailInput,

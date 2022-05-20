@@ -27,6 +27,7 @@ const Dashboard = () => {
   
   const getBooks = async () => {
     const user = await userConnect.getUser()
+    console.log(user)
     setBooks(user.booksToRead)
   }
 
