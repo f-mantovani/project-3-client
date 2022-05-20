@@ -19,10 +19,10 @@ function App() {
     
       <QueryClientProvider client={queryClient}>
         <Routes>
-          <Route path="/login" element={ <Login />} />
+          <Route path="/" element={ <Login />} />
           <Route path="/signup" element={<Signup />} />
           
-          <Route path="/" element={<PrivateOutlet> <Dashboard /> </PrivateOutlet>}/>
+          <Route path="/dashboard" element={<PrivateOutlet> <Dashboard /> </PrivateOutlet>}/>
           <Route path="events" element={<PrivateOutlet> <Events /> </PrivateOutlet>}/>
           <Route path="mytasks" element={<PrivateOutlet> <MyTasks /> </PrivateOutlet>}/>
           <Route path="books" element={<PrivateOutlet> <Books /> </PrivateOutlet>}/>

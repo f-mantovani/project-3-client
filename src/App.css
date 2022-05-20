@@ -176,6 +176,9 @@ h4 {
   bottom:  1rem;
 }
 
+.mx-05 {
+  margin: 0 .5rem;
+}
 .mx-075 {
   margin: 0 .75rem;
 }
@@ -190,6 +193,9 @@ h4 {
 }
 .mx-auto {
   margin: 0 auto;
+}
+.mt-05{
+  margin-top: .5rem;
 }
 .mt-3 {
   margin-top: 3rem;

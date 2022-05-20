@@ -54,9 +54,12 @@ const InputPlato = styled.input`
       font-size: var(--fs-main-title);
       line-height: 120%;
       color: var(--font-muted);
-      }
-
   `}
+
+  &.error {
+    border-bottom: 1px solid var(--font-destructive);
+  }
+  
 `
 
 export default InputPlato
