@@ -16,7 +16,8 @@ const ButtonPlato = styled.div`
     box-shadow: 0px 5px 7px rgba(74, 134, 138, 0.25);
     border-radius: 22px;
     padding: 1em 1.5em;
-    
+
+
   
     :hover {
       background: #5491A0;

@@ -4,7 +4,7 @@ const PrivateOutlet = ( { children } ) => {
 
   const auth = localStorage.getItem('token')
 
-  return auth ? children : <Navigate to='/login' />
+  return auth ? children : <Navigate to='/' />
 }
 
 export default PrivateOutlet

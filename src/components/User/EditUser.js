@@ -16,9 +16,6 @@ const EditUser = ({name, email, setEditModal, getUser}) => {
     setNewEmail(email)
   }, [name, email])
 
-  console.log(newName)
-  console.log(newEmail)
-
   const handleUpdateUser = async () => {
     const payload = {name: newName, email: newEmail}
 
