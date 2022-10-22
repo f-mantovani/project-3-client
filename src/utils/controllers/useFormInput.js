@@ -87,6 +87,7 @@ const useFormInput = () => {
       setPassword('')
       setLoading(false)
     } catch (error) {
+      console.log('entrei no catch',error)
       if (error.error === 'Email or password incorrect') {
         setMessage('email and/or password incorrect')
       }
