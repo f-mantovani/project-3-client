@@ -1,5 +1,5 @@
 import axios from 'axios'
-import useRemoveToken from '../controllers/useRemoveToken'
+import removeToken from '../controllers/removeToken'
 
 class apiConstructor {
   constructor(path) {
@@ -24,8 +24,7 @@ class apiConstructor {
     this.api.interceptors.response.use(
       (response) => response,
       (error) => {
-        useRemoveToken(error)
-        throw error
+        removeToken(error)
       }
     )
   }

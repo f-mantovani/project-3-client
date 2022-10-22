@@ -10,10 +10,26 @@ import Books from './pages/Books/Books';
 import BookDetails from './components/Books/BookDetails';
 import PrivateOutlet from './components/PrivateOutlet'
 import User from './pages/User/User';
+import userConnect from './utils/api.handlers/userConnect';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const queryClient = new QueryClient()
 
 function App() {
+
+  const navigate = useNavigate()
+
+  const verify = async () => {
+    const verified = await userConnect.verifyUser()
+    if (verified) {
+      navigate('/dashboard')
+    }
+  } 
+
+  useEffect(() =>{
+    verify()
+  }, [])
 
   return (
     

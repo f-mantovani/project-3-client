@@ -14,6 +14,15 @@ class userConnect extends apiConstructor {
     }
   }
 
+  verifyUser = async () => {
+    try {
+      const { data } = await this.api.get('/verify')
+      return data
+    } catch (error) {
+      throw error.response.data
+    }
+  }
+
   updateUser = async (payload) => {
     
     try {
