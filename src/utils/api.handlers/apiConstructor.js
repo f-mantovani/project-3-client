@@ -25,6 +25,7 @@ class apiConstructor {
       (response) => response,
       (error) => {
         removeToken(error)
+        throw error
       }
     )
   }
