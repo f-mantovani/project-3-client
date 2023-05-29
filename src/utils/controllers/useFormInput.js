@@ -14,7 +14,7 @@ const useFormInput = () => {
   const [message, setMessage] = useState('')
   const [success, setSuccess] = useState('')
   const [loading, setLoading] = useState(false)
-  const [color, setColor] = useState('#73BEC5')
+  const [color] = useState('#73BEC5')
   const navigate = useNavigate()
 
   const styleLoader = css`
@@ -87,7 +87,6 @@ const useFormInput = () => {
       setPassword('')
       setLoading(false)
     } catch (error) {
-      console.log('entrei no catch',error)
       if (error.error === 'Email or password incorrect') {
         setMessage('email and/or password incorrect')
       }

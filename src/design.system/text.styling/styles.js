@@ -16,7 +16,7 @@ export const Body = styled.p`
     text-decoration-line: line-through;;
   `}
   
-  ${(props) =>props.muted && `
+  ${(props) => props.muted && `
     color: rgba(241, 241, 241, 0.5);
   `}
 
